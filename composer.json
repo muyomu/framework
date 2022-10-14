@@ -1,0 +1,17 @@
+{
+    "name": "muyomu/framework",
+    "description": "The booter of muyomu framework",
+    "type": "library",
+    "license": "apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "Muyomu\\Framework\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mutian"
+        }
+    ],
+    "require": {}
+}
