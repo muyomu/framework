@@ -3,7 +3,7 @@
     "description": "The booter of muyomu framework",
     "type": "library",
     "license": "apache-2.0",
-    "stablity": "dev",
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "muyomu\\framework\\": "src/"
