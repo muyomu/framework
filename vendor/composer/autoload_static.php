@@ -7,16 +7,31 @@ namespace Composer\Autoload;
 class ComposerStaticInit285847b743627f36d86dd5241b8b5228
 {
     public static $prefixLengthsPsr4 = array (
-        'M' => 
+        'm' => 
         array (
-            'Muyomu\\Framework\\' => 17,
+            'muyomu\\router\\' => 14,
+            'muyomu\\framework\\' => 17,
+            'muyomu\\executor\\' => 16,
+            'muyomu\\dpara\\' => 13,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Muyomu\\Framework\\' => 
+        'muyomu\\router\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/muyomu/router/src',
+        ),
+        'muyomu\\framework\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'muyomu\\executor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/muyomu/executor/src',
+        ),
+        'muyomu\\dpara\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/muyomu/dpara/src',
         ),
     );
 

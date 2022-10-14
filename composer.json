@@ -14,5 +14,9 @@
             "name": "mutian"
         }
     ],
-    "require": {}
+    "require": {
+        "muyomu/router": "1.0.0",
+        "muyomu/dpara": "1.0.0",
+        "muyomu/executor": "1.0.0"
+    }
 }

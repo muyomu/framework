@@ -6,5 +6,8 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Muyomu\\Framework\\' => array($baseDir . '/src'),
+    'muyomu\\router\\' => array($vendorDir . '/muyomu/router/src'),
+    'muyomu\\framework\\' => array($baseDir . '/src'),
+    'muyomu\\executor\\' => array($vendorDir . '/muyomu/executor/src'),
+    'muyomu\\dpara\\' => array($vendorDir . '/muyomu/dpara/src'),
 );

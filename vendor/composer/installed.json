@@ -1,0 +1,123 @@
+{
+    "packages": [
+        {
+            "name": "muyomu/dpara",
+            "version": "v1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/dpara.git",
+                "reference": "106ec9a2d46c09180f9ba8b73e7b0c1ac1dbc43d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/dpara/zipball/106ec9a2d46c09180f9ba8b73e7b0c1ac1dbc43d",
+                "reference": "106ec9a2d46c09180f9ba8b73e7b0c1ac1dbc43d",
+                "shasum": ""
+            },
+            "time": "2022-10-14T12:23:06+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\dpara\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian"
+                }
+            ],
+            "description": "The dynamic paramater resolver of muyomu framework",
+            "support": {
+                "issues": "https://github.com/muyomu/dpara/issues",
+                "source": "https://github.com/muyomu/dpara/tree/v1.0.0"
+            },
+            "install-path": "../muyomu/dpara"
+        },
+        {
+            "name": "muyomu/executor",
+            "version": "v1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/executor.git",
+                "reference": "a49eb5995db34ee7d4fd91d924f84caff874ab98"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/executor/zipball/a49eb5995db34ee7d4fd91d924f84caff874ab98",
+                "reference": "a49eb5995db34ee7d4fd91d924f84caff874ab98",
+                "shasum": ""
+            },
+            "time": "2022-10-14T12:22:46+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\executor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian"
+                }
+            ],
+            "description": "The executor of muyomu framework",
+            "support": {
+                "issues": "https://github.com/muyomu/executor/issues",
+                "source": "https://github.com/muyomu/executor/tree/v1.0.0"
+            },
+            "install-path": "../muyomu/executor"
+        },
+        {
+            "name": "muyomu/router",
+            "version": "v1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/router.git",
+                "reference": "68a54ec07f1772dcaab9f517fa953f30c6880ca2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/router/zipball/68a54ec07f1772dcaab9f517fa953f30c6880ca2",
+                "reference": "68a54ec07f1772dcaab9f517fa953f30c6880ca2",
+                "shasum": ""
+            },
+            "time": "2022-10-14T12:22:31+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\router\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian"
+                }
+            ],
+            "description": "The router of muyomu framework",
+            "support": {
+                "issues": "https://github.com/muyomu/router/issues",
+                "source": "https://github.com/muyomu/router/tree/v1.0.0"
+            },
+            "install-path": "../muyomu/router"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

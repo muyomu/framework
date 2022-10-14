@@ -1,0 +1,18 @@
+{
+    "name": "muyomu/executor",
+    "description": "The executor of muyomu framework",
+    "type": "library",
+    "license": "apache-2.0",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "muyomu\\executor\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mutian"
+        }
+    ],
+    "require": {}
+}
