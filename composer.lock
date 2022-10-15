@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cdc4be550b46dc9e2a1fa512614fdc16",
+    "content-hash": "e900f1338ea408f20dd0627fac8d0a70",
     "packages": [
         {
             "name": "muyomu/dpara",
@@ -80,16 +80,16 @@
         },
         {
             "name": "muyomu/router",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/router.git",
-                "reference": "68a54ec07f1772dcaab9f517fa953f30c6880ca2"
+                "reference": "f347e6346717c042a16095b8fd258dad0f1291a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/router/zipball/68a54ec07f1772dcaab9f517fa953f30c6880ca2",
-                "reference": "68a54ec07f1772dcaab9f517fa953f30c6880ca2",
+                "url": "https://api.github.com/repos/muyomu/router/zipball/f347e6346717c042a16095b8fd258dad0f1291a8",
+                "reference": "f347e6346717c042a16095b8fd258dad0f1291a8",
                 "shasum": ""
             },
             "type": "library",
@@ -110,9 +110,9 @@
             "description": "The router of muyomu framework",
             "support": {
                 "issues": "https://github.com/muyomu/router/issues",
-                "source": "https://github.com/muyomu/router/tree/v1.0.0"
+                "source": "https://github.com/muyomu/router/tree/v1.0.1"
             },
-            "time": "2022-10-14T12:22:31+00:00"
+            "time": "2022-10-15T07:43:04+00:00"
         }
     ],
     "packages-dev": [],

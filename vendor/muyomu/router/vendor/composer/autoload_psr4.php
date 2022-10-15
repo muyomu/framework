@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Muyomu\\Router\\' => array($baseDir . '/src'),
+    'muyomu\\router\\' => array($baseDir . '/src'),
 );
