@@ -88,10 +88,10 @@ class Rule
     }
 
     /**
-     * @param object $middleware
+     * @param string $middleware
      * @return Rule
      */
-    public function setMiddleware(object $middleware): Rule
+    public function setMiddleware(string $middleware): Rule
     {
         $this->middleware = $middleware;
         return $this;
