@@ -2,6 +2,8 @@
 
 namespace muyomu\framework;
 
+use muyomu\database\base\DataType;
+use muyomu\database\base\Document;
 use muyomu\database\exception\KeyNotFond;
 use muyomu\database\exception\RepeatDefinition;
 use muyomu\dpara\DparaClient;
@@ -43,7 +45,8 @@ class CreateApp implements Serve
         $document = RouterClient::getRule($this->request->getURL());
         $rule =$document->getData();
         $request_db = $this->request->getDataBase();
-        $request_db->insert("rule",$rule);
+        $document = new Document(DataType::OBJECT,Date("Y:M:D h:m:s"),Date("Y:M:D h:m:s"),0,$rule);
+        $request_db->insert("rule",$document);
 
         /*
          * 动态参数解析
@@ -61,6 +64,8 @@ class CreateApp implements Serve
         $rawController[sizeof($rawController)-1] = $upper;
         $endpoint = "app\\controller\\".implode("\\",$rawController);
         $rule->setController($endpoint);
+        $this->request->getDataBase()->select("rule")->setModifyTime(date("Y:M:D h:m:s"));
+        $this->request->getDataBase()->select("rule")->setVersion($this->request->getDataBase()->select("rule")->getVersion()+1);
 
         /*
          * web执行
