@@ -12,7 +12,7 @@ class Rule
 
     private string $handle;
 
-    private string $middleware;
+    private object $middleware;
 
     private array $pathPara;
 
@@ -64,9 +64,9 @@ class Rule
     }
 
     /**
-     * @return string
+     * @return object
      */
-    public function getMiddleware(): string
+    public function getMiddleware(): object
     {
         return $this->middleware;
     }
@@ -80,9 +80,10 @@ class Rule
     }
 
     /**
-     * @param string $middleware
+     * @param object $middleware
+     * @return Rule
      */
-    public function setMiddleware(string $middleware): Rule
+    public function setMiddleware(object $middleware): Rule
     {
         $this->middleware = $middleware;
         return $this;
