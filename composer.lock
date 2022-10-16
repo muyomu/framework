@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a8ede90c2dca32dfcde52817fee3dc5",
+    "content-hash": "45d90052fe2b1cbe9bd83303ef0fc68f",
     "packages": [
         {
             "name": "muyomu/database",
@@ -45,16 +45,16 @@
         },
         {
             "name": "muyomu/dpara",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/dpara.git",
-                "reference": "87c2876b02fcedac78fb8c15d919566159c6ff71"
+                "reference": "44bac1d9c54356e532ab35cc26c30f3e31ad4caf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/dpara/zipball/87c2876b02fcedac78fb8c15d919566159c6ff71",
-                "reference": "87c2876b02fcedac78fb8c15d919566159c6ff71",
+                "url": "https://api.github.com/repos/muyomu/dpara/zipball/44bac1d9c54356e532ab35cc26c30f3e31ad4caf",
+                "reference": "44bac1d9c54356e532ab35cc26c30f3e31ad4caf",
                 "shasum": ""
             },
             "require": {
@@ -79,22 +79,22 @@
             "description": "The dynamic paramater resolver of muyomu framework",
             "support": {
                 "issues": "https://github.com/muyomu/dpara/issues",
-                "source": "https://github.com/muyomu/dpara/tree/v1.0.1"
+                "source": "https://github.com/muyomu/dpara/tree/v1.0.2"
             },
-            "time": "2022-10-16T02:58:09+00:00"
+            "time": "2022-10-16T05:24:48+00:00"
         },
         {
             "name": "muyomu/executor",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/executor.git",
-                "reference": "00384b8de11b604e312da0961714c070ea9a8b51"
+                "reference": "02f495a69edc61a536a889369fc555b51140d49a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/executor/zipball/00384b8de11b604e312da0961714c070ea9a8b51",
-                "reference": "00384b8de11b604e312da0961714c070ea9a8b51",
+                "url": "https://api.github.com/repos/muyomu/executor/zipball/02f495a69edc61a536a889369fc555b51140d49a",
+                "reference": "02f495a69edc61a536a889369fc555b51140d49a",
                 "shasum": ""
             },
             "require": {
@@ -119,9 +119,9 @@
             "description": "The executor of muyomu framework",
             "support": {
                 "issues": "https://github.com/muyomu/executor/issues",
-                "source": "https://github.com/muyomu/executor/tree/v1.0.2"
+                "source": "https://github.com/muyomu/executor/tree/v1.0.3"
             },
-            "time": "2022-10-16T02:56:36+00:00"
+            "time": "2022-10-16T05:23:52+00:00"
         },
         {
             "name": "muyomu/http",

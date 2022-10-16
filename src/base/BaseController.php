@@ -6,7 +6,7 @@ namespace muyomu\framework\base;
 use muyomu\http\Request;
 use muyomu\http\Response;
 
-abstract class Controller
+abstract class BaseController
 {
     protected Request $request;
 
