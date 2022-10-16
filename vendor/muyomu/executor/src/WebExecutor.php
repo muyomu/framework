@@ -39,7 +39,7 @@ class WebExecutor implements ExecutorClient
 
         /** @var TYPE_NAME $response_property */
         $response_property->setAccessible(true);
-        $response_property->setValue($instance,$request);
+        $response_property->setValue($instance,$response);
 
         /*
          * 获取控制器处理器
