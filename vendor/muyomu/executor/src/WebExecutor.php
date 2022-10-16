@@ -15,8 +15,23 @@ class WebExecutor implements ExecutorClient
     /**
      * @throws ReflectionException|KeyNotFond
      */
-    public function webExecutor(Request $request,Response $response,string $controllerClassName, string $method): void
+    public function webExecutor(object $application,Request $request,Response $response,string $controllerClassName, string $method): void
     {
+        /*
+         * 执行路由中间件
+         */
+        $middleware = $request->getDataBase()->select("rule")->getData()->getMiddleWare();
+        $middleware?->handle($application, $request, function (object $application, string $action, ...$values) {
+            switch ($action) {
+                case "redirect":
+                    echo "redirect";
+                    break;
+                case "forward":
+                    echo "forward";
+                    break;
+            }
+        });
+
         /*
          * 获取控制器反射类
          */

@@ -85,7 +85,7 @@ class CreateApp implements Serve
          */
         $controller = $this->request->getDataBase()->select("rule")->getData()->getController();
         $method = $this->request->getDataBase()->select("rule")->getData()->getHandle();
-        $this->webExecutor->webExecutor($this->request,$this->response,$controller,$method);
+        $this->webExecutor->webExecutor($this,$this->request,$this->response,$controller,$method);
     }
 
     /*

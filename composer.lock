@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae3d319b6e9df46b8f3c3c6ded3dacbb",
+    "content-hash": "dbcd4fcd71ef7468e6794b45aa31c0cc",
     "packages": [
         {
             "name": "muyomu/database",
@@ -45,16 +45,16 @@
         },
         {
             "name": "muyomu/executor",
-            "version": "v1.0.5",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/executor.git",
-                "reference": "3dc1fac06efd2a3cdc121a73e2854169bc466c21"
+                "reference": "73c2b5f0fd0eafca9a3cfb777ebf5bfd274a1435"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/executor/zipball/3dc1fac06efd2a3cdc121a73e2854169bc466c21",
-                "reference": "3dc1fac06efd2a3cdc121a73e2854169bc466c21",
+                "url": "https://api.github.com/repos/muyomu/executor/zipball/73c2b5f0fd0eafca9a3cfb777ebf5bfd274a1435",
+                "reference": "73c2b5f0fd0eafca9a3cfb777ebf5bfd274a1435",
                 "shasum": ""
             },
             "require": {
@@ -79,9 +79,9 @@
             "description": "The executor of muyomu framework",
             "support": {
                 "issues": "https://github.com/muyomu/executor/issues",
-                "source": "https://github.com/muyomu/executor/tree/v1.0.5"
+                "source": "https://github.com/muyomu/executor/tree/v1.0.6"
             },
-            "time": "2022-10-16T05:43:17+00:00"
+            "time": "2022-10-16T08:43:28+00:00"
         },
         {
             "name": "muyomu/http",
