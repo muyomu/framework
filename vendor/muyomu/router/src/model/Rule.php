@@ -72,9 +72,9 @@ class Rule
     }
 
     /**
-     * @return object
+     * @return string|null
      */
-    public function getMiddleware(): string
+    public function getMiddleware(): string|null
     {
         return $this->middleware;
     }
