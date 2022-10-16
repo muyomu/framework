@@ -20,17 +20,21 @@ class WebExecutor implements ExecutorClient
         /*
          * 执行路由中间件
          */
-        $middleware = $request->getDataBase()->select("rule")->getData()->getMiddleWare();
-        $middleware?->handle($application, $request, function (object $application, string $action, ...$values) {
-            switch ($action) {
-                case "redirect":
-                    echo "redirect";
-                    break;
-                case "forward":
-                    echo "forward";
-                    break;
-            }
-        });
+        $rule = $request->getDataBase()->select("rule")->getData();
+
+        $middleware = $rule->getMiddleWare();
+
+        if (isset($middleware)){
+            $middleware_class = new ReflectionClass($middleware);
+            $middleware_instance = $middleware->newInstance();
+            $middleware_method = $middleware_class->getMethod("handle");
+            $middleware_method->invoke($middleware_instance,$application,$request,function (object $application, string $action,...$values){
+                switch ($action){
+                    case "redirect":echo "redirect";break;
+                    case "forward": echo "forward";break;
+                }
+            });
+        }
 
         /*
          * 获取控制器反射类
