@@ -6,9 +6,10 @@ use muyomu\database\base\DataType;
 use muyomu\database\base\Document;
 use muyomu\database\exception\KeyNotFond;
 use muyomu\database\exception\RepeatDefinition;
-use muyomu\dpara\DparaClient;
 use muyomu\executor\WebExecutor;
+use muyomu\framework\base\BaseMiddleWare;
 use muyomu\framework\constraint\Serve;
+use muyomu\framework\exception\GlobalMiddleWareRepeatDefine;
 use muyomu\framework\plugin\Plugin;
 use muyomu\framework\plugin\PluginType;
 use muyomu\http\Request;
@@ -23,14 +24,13 @@ class CreateApp implements Serve
 
     private Response $response;
 
-    private DparaClient $dparaClient;
-
     private WebExecutor $webExecutor;
+
+    private BaseMiddleWare $middleWare;
 
     public function __construct(){
         $this->request = new Request();
         $this->response = new Response();
-        $this->dparaClient = new DparaClient();
         $this->webExecutor = new WebExecutor();
     }
 
@@ -49,9 +49,22 @@ class CreateApp implements Serve
         $request_db->insert("rule",$document);
 
         /*
-         * 动态参数解析
+         * 全局拦截器处理
          */
-        $this->dparaClient->dpara($this->request);
+        if(isset($this->middleWare)){
+            $this->middleWare->handle($this,$this->request,function (CreateApp $application, string $action,...$values){
+                switch ($action){
+                    case "redirect":echo "redirect";break;
+                    case "forward": echo "forward";break;
+                }
+            });
+        }
+
+        /*
+         * 插件处理
+         */
+        //TODO
+
 
         /*
          * 解析控制器
@@ -80,6 +93,20 @@ class CreateApp implements Serve
      */
     public function installPlugin(PluginType $pluginType,Plugin $plugin){
 
+    }
+
+    /*
+     * 安装全局中间件
+     */
+    /**
+     * @throws GlobalMiddleWareRepeatDefine
+     */
+    public function configApplicationMiddleWare(BaseMiddleWare $middleWare):void{
+        if (isset($this->middleWare)){
+            throw new GlobalMiddleWareRepeatDefine();
+        }else{
+            $this->middleWare = $middleWare;
+        }
     }
 
     public function __destruct()
