@@ -11,8 +11,11 @@
     },
     "authors": [
         {
-            "name": "mutian"
+            "name": "mutian",
+            "email": "mutian-xiangcai@outlook.com"
         }
     ],
-    "require": {}
+    "require": {
+        "muyomu/http": "1.1.2"
+    }
 }

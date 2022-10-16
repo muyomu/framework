@@ -2,8 +2,9 @@
 
 namespace muyomu\framework\base;
 
-use muyomu\framework\http\Request;
-use muyomu\framework\http\Response;
+
+use muyomu\http\Request;
+use muyomu\http\Response;
 
 abstract class Controller
 {

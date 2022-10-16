@@ -6,5 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Muyomu\\Executor\\' => array($baseDir . '/src'),
+    'muyomu\\http\\' => array($vendorDir . '/muyomu/http/src'),
+    'muyomu\\executor\\' => array($baseDir . '/src'),
+    'muyomu\\database\\' => array($vendorDir . '/muyomu/database/src'),
 );

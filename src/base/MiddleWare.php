@@ -2,7 +2,7 @@
 
 namespace muyomu\framework\base;
 
-use muyomu\framework\http\Request;
+use muyomu\http\Request;
 
 interface MiddleWare
 {
