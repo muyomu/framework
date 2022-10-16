@@ -56,6 +56,14 @@ class Rule
     }
 
     /**
+     * @param string $controller
+     */
+    public function setController(string $controller): void
+    {
+        $this->controller = $controller;
+    }
+
+    /**
      * @return string
      */
     public function getHandle(): string
