@@ -11,8 +11,13 @@
     },
     "authors": [
         {
-            "name": "mutian"
+            "name": "mutian",
+            "email": "mutian-xiangcai@outlook.com"
         }
     ],
-    "require": {}
+    "require": {
+        "muyomu/dpara": "1.0.0",
+        "muyomu/http": "1.1.0",
+        "muyomu/database": "1.1.0"
+    }
 }

@@ -3,16 +3,10 @@
 namespace muyomu\framework;
 
 use muyomu\framework\constraint\Serve;
-use muyomu\framework\http\Request;
-use muyomu\framework\http\Response;
-use Muyomu\Router\Router;
-
-/**
- * 导入资源文件
- */
-
-include "./helper/helper.php";
-
+use muyomu\http\Request;
+use muyomu\http\Response;
+use muyomu\router\exception\RuleNotMatch;
+use muyomu\router\RouterClient;
 
 class CreateApp implements Serve
 {
@@ -25,8 +19,16 @@ class CreateApp implements Serve
         $this->response = new Response();
     }
 
+    /**
+     * @throws RuleNotMatch
+     */
     public function run():void{
-        echo "hello";
+        $document = RouterClient::getRule($this->request->getURL());
+        $rule =$document->getData();
+
+        echo  $rule->getController();
+        echo $rule->getMethod();
+
     }
 
     public function __destruct()
