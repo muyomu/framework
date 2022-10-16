@@ -12,9 +12,9 @@ class Rule
 
     private string $handle;
 
-    private string $middleware;
+    private ?string $middleware = null;
 
-    private array $pathPara;
+    private array $pathPara = array();
 
     /**
      * @param string $route
