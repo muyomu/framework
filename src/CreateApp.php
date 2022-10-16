@@ -16,6 +16,7 @@ use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\router\exception\RuleNotMatch;
 use muyomu\router\RouterClient;
+use ReflectionClass;
 use ReflectionException;
 
 class CreateApp implements Serve
@@ -79,6 +80,22 @@ class CreateApp implements Serve
         $rule->setController($endpoint);
         $this->request->getDataBase()->select("rule")->setModifyTime(date("Y:M:D h:m:s"));
         $this->request->getDataBase()->select("rule")->setVersion($this->request->getDataBase()->select("rule")->getVersion()+1);
+
+
+        /*
+         * 路由中间件处理
+         */
+        if ($this->request->getDataBase()->select("rule")->getData()->getMiddleWare() !== null){
+            $rule_middleware_class = new ReflectionClass($this->request->getDataBase()->select("rule")->getData()->getMiddleWare());
+            $rule_middleware_instance = $rule_middleware_class->newInstance();
+            $rule_middleware_method = $rule_middleware_class->getMethod("handle");
+            $rule_middleware_method->invoke($rule_middleware_instance,$this,$this->request,function (CreateApp $application, string $action,...$values){
+                switch ($action){
+                    case "redirect":echo "redirect";break;
+                    case "forward": echo "forward";break;
+                }
+            });
+        }
 
         /*
          * web执行
