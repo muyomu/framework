@@ -120,23 +120,23 @@
         },
         {
             "name": "muyomu/http",
-            "version": "v1.1.0",
-            "version_normalized": "1.1.0.0",
+            "version": "v1.1.1",
+            "version_normalized": "1.1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/http.git",
-                "reference": "bbb74540abeb921cf00d1c3221dabc632d7d7059"
+                "reference": "a34c44203bb74d7d55a56a4aa0c034c5b6e02e8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/http/zipball/bbb74540abeb921cf00d1c3221dabc632d7d7059",
-                "reference": "bbb74540abeb921cf00d1c3221dabc632d7d7059",
+                "url": "https://api.github.com/repos/muyomu/http/zipball/a34c44203bb74d7d55a56a4aa0c034c5b6e02e8d",
+                "reference": "a34c44203bb74d7d55a56a4aa0c034c5b6e02e8d",
                 "shasum": ""
             },
             "require": {
                 "muyomu/database": "1.1.0"
             },
-            "time": "2022-10-16T00:59:21+00:00",
+            "time": "2022-10-16T01:25:42+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -157,31 +157,30 @@
             "description": "The http helper of muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/http/issues",
-                "source": "https://github.com/muyomu/http/tree/v1.1.0"
+                "source": "https://github.com/muyomu/http/tree/v1.1.1"
             },
             "install-path": "../muyomu/http"
         },
         {
             "name": "muyomu/router",
-            "version": "v1.1.1",
-            "version_normalized": "1.1.1.0",
+            "version": "v1.1.2",
+            "version_normalized": "1.1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/router.git",
-                "reference": "d23ef3091af0268e9d96535225187baf0ea0f623"
+                "reference": "4c5928d811b00a3e5a3011ec56d8a32ed0c49371"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/router/zipball/d23ef3091af0268e9d96535225187baf0ea0f623",
-                "reference": "d23ef3091af0268e9d96535225187baf0ea0f623",
+                "url": "https://api.github.com/repos/muyomu/router/zipball/4c5928d811b00a3e5a3011ec56d8a32ed0c49371",
+                "reference": "4c5928d811b00a3e5a3011ec56d8a32ed0c49371",
                 "shasum": ""
             },
             "require": {
                 "muyomu/database": "1.1.0",
-                "muyomu/dpara": "1.0.0",
-                "muyomu/http": "1.1.0"
+                "muyomu/dpara": "1.0.0"
             },
-            "time": "2022-10-16T01:04:21+00:00",
+            "time": "2022-10-16T01:27:46+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -202,7 +201,7 @@
             "description": "The router of muyomu framework",
             "support": {
                 "issues": "https://github.com/muyomu/router/issues",
-                "source": "https://github.com/muyomu/router/tree/v1.1.1"
+                "source": "https://github.com/muyomu/router/tree/v1.1.2"
             },
             "install-path": "../muyomu/router"
         }
