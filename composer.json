@@ -17,7 +17,7 @@
     ],
     "require": {
         "muyomu/router": "1.1.6",
-        "muyomu/executor": "1.0.7",
+        "muyomu/executor": "1.0.8",
         "muyomu/http": "1.1.2",
         "muyomu/database": "1.1.0"
     }
