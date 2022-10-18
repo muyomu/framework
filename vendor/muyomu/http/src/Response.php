@@ -4,22 +4,10 @@ namespace muyomu\http;
 
 use muyomu\http\client\ResponseClient;
 use muyomu\http\message\Message;
+use muyomu\http\message\MessageToArray;
 
 class Response implements ResponseClient
 {
-    /*
-     * 内部数据库
-     */
-    private Request $request;
-
-    /**
-     * @param Request $request
-     */
-    public function setRequest(Request $request): void
-    {
-        $this->request = $request;
-    }
-
     public function setHeader(string $header):void
     {
         header($header);
@@ -46,10 +34,7 @@ class Response implements ResponseClient
         $message->setDataStatus("Success");
         $message->setData(null);
 
-        $return = array();
-        $return['code'] = $message->getDataCode();
-        $return['status'] = $message->getDataStatus();
-        $return['dateType'] = $message->getDataType();
+        $return = MessageToArray::messageToArray($message);
 
         echo json_encode($return, JSON_UNESCAPED_UNICODE);
     }
@@ -62,11 +47,7 @@ class Response implements ResponseClient
         $message->setDataStatus("Success");
         $message->setData($data);
 
-        $return = array();
-        $return['code'] = $message->getDataCode();
-        $return['status'] = $message->getDataStatus();
-        $return['dateType'] = $message->getDataType();
-        $return['data'] = $message->getData();
+        $return = MessageToArray::messageToArray($message);
 
         echo json_encode($return, JSON_UNESCAPED_UNICODE);
     }
@@ -79,11 +60,7 @@ class Response implements ResponseClient
         $message->setDataStatus("Success");
         $message->setData($data);
 
-        $return = array();
-        $return['code'] = $message->getDataCode();
-        $return['status'] = $message->getDataStatus();
-        $return['dateType'] = $message->getDataType();
-        $return['data'] = $message->getData();
+        $return = MessageToArray::messageToArray($message);
 
         echo json_encode($return, JSON_UNESCAPED_UNICODE);
     }

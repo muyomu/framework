@@ -13,6 +13,7 @@ class ComposerStaticInit285847b743627f36d86dd5241b8b5228
             'muyomu\\http\\' => 12,
             'muyomu\\framework\\' => 17,
             'muyomu\\executor\\' => 16,
+            'muyomu\\dpara\\' => 13,
             'muyomu\\database\\' => 16,
         ),
     );
@@ -33,6 +34,10 @@ class ComposerStaticInit285847b743627f36d86dd5241b8b5228
         'muyomu\\executor\\' => 
         array (
             0 => __DIR__ . '/..' . '/muyomu/executor/src',
+        ),
+        'muyomu\\dpara\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/muyomu/dpara/src',
         ),
         'muyomu\\database\\' => 
         array (

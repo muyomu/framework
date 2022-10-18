@@ -10,5 +10,6 @@ return array(
     'muyomu\\http\\' => array($vendorDir . '/muyomu/http/src'),
     'muyomu\\framework\\' => array($baseDir . '/src'),
     'muyomu\\executor\\' => array($vendorDir . '/muyomu/executor/src'),
+    'muyomu\\dpara\\' => array($vendorDir . '/muyomu/dpara/src'),
     'muyomu\\database\\' => array($vendorDir . '/muyomu/database/src'),
 );

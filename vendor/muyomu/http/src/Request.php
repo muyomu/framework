@@ -3,13 +3,18 @@
 namespace muyomu\http;
 
 use muyomu\database\DbClient;
+use muyomu\http\client\GetClient;
+use muyomu\http\client\PostClient;
 use muyomu\http\client\RequestClient;
 use muyomu\http\exception\HeaderNotFound;
+use muyomu\http\exception\ParaNotExit;
+use muyomu\router\model\Rule;
 
-class Request implements RequestClient
+class Request implements RequestClient,GetClient,PostClient
 {
     private DbClient $dbClient;
 
+    private Rule $rule;
     /*
      * 固定信息
      */
@@ -66,5 +71,45 @@ class Request implements RequestClient
     {
         $data = explode("?",$_SERVER['REQUEST_URI']);
         return reset($data);
+    }
+
+    /**
+     * @throws ParaNotExit
+     */
+    public function getPara(string $varName): mixed
+    {
+        if (filter_has_var("INPUT_GET",$varName)){
+            return $_GET[$varName];
+        }else{
+            throw new ParaNotExit();
+        }
+    }
+
+    /**
+     * @throws ParaNotExit
+     */
+    public function postPara(string $varName): mixed
+    {
+        if (filter_has_var("INPUT_GET",$varName)){
+            return $_GET[$varName];
+        }else{
+            throw new ParaNotExit();
+        }
+    }
+
+    /**
+     * @return Rule
+     */
+    public function getRule(): Rule
+    {
+        return $this->rule;
+    }
+
+    /**
+     * @param Rule $rule
+     */
+    public function setRule(Rule $rule): void
+    {
+        $this->rule = $rule;
     }
 }

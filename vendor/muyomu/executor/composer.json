@@ -16,6 +16,6 @@
         }
     ],
     "require": {
-        "muyomu/http": "1.1.2"
+        "muyomu/http": "1.1.10"
     }
 }

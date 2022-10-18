@@ -6,6 +6,8 @@ use muyomu\database\base\DataType;
 use muyomu\database\base\Document;
 use muyomu\database\exception\KeyNotFond;
 use muyomu\database\exception\RepeatDefinition;
+use muyomu\dpara\DparaClient;
+use muyomu\dpara\exception\UrlNotMatch;
 use muyomu\executor\WebExecutor;
 use muyomu\framework\base\BaseMiddleWare;
 use muyomu\framework\constraint\Serve;
@@ -29,25 +31,26 @@ class CreateApp implements Serve
 
     private BaseMiddleWare $middleWare;
 
+    private DparaClient $dparaClient;
+
     public function __construct(){
         $this->request = new Request();
         $this->response = new Response();
         $this->webExecutor = new WebExecutor();
+        $this->dparaClient = new DparaClient();
     }
 
     /**
      * @throws RuleNotMatch|RepeatDefinition|ReflectionException
      * @throws KeyNotFond
+     * @throws UrlNotMatch
      */
     public function run():void{
         /*
-         * 获取路由信息注入到request数据库中
+         * dpara路由处理器
          */
-        $document = RouterClient::getRule($this->request->getURL());
-        $rule =$document->getData();
-        $request_db = $this->request->getDataBase();
-        $document = new Document(DataType::OBJECT,Date("Y:M:D h:m:s"),Date("Y:M:D h:m:s"),0,$rule);
-        $request_db->insert("rule",$document);
+        $this->dparaClient->dpara($this->request,RouterClient::getDatabase());
+
 
         /*
          * 全局拦截器处理
