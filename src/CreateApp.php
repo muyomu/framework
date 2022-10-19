@@ -51,6 +51,9 @@ class CreateApp implements Serve
          */
         $this->dparaClient->dpara($this->request,RouterClient::getDatabase());
 
+        /*
+         * 根路由处理
+         */
 
         /*
          * 全局拦截器处理
@@ -63,11 +66,6 @@ class CreateApp implements Serve
                 }
             });
         }
-
-        /*
-         * 插件处理
-         */
-        //TODO
 
 
         /*

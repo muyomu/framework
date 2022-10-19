@@ -16,6 +16,8 @@ class Rule
 
     private array $pathPara = array();
 
+    private array $pathKey = array();
+
     /**
      * @param string $route
      * @param string $method
@@ -105,5 +107,21 @@ class Rule
     {
         $this->pathPara = $pathPara;
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPathKey(): array
+    {
+        return $this->pathKey;
+    }
+
+    /**
+     * @param array $pathKey
+     */
+    public function setPathKey(array $pathKey): void
+    {
+        $this->pathKey = $pathKey;
     }
 }

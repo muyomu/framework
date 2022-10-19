@@ -15,8 +15,8 @@
         }
     ],
     "require": {
-        "muyomu/http": "1.1.10",
-        "muyomu/router": "1.1.9",
+        "muyomu/http": "1.1.13",
+        "muyomu/router": "1.1.10",
         "muyomu/database": "1.1.0"
     }
 }

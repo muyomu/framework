@@ -8,19 +8,21 @@ use muyomu\http\client\PostClient;
 use muyomu\http\client\RequestClient;
 use muyomu\http\exception\HeaderNotFound;
 use muyomu\http\exception\ParaNotExit;
-use muyomu\router\model\Rule;
 
 class Request implements RequestClient,GetClient,PostClient
 {
     private DbClient $dbClient;
 
-    private Rule $rule;
+    private array $database = array();
+
+    private Attribute $attribute;
     /*
      * 固定信息
      */
     public function __construct()
     {
         $this->dbClient = new DbClient();
+        $this->attribute = new Attribute();
     }
 
     public function getRequestMethod():string{
@@ -97,19 +99,13 @@ class Request implements RequestClient,GetClient,PostClient
         }
     }
 
-    /**
-     * @return Rule
-     */
-    public function getRule(): Rule
+    public function setAttribute(string $key, mixed $value): bool
     {
-        return $this->rule;
+        return $this->attribute->setAttribute($key,$value,$this->database);
     }
 
-    /**
-     * @param Rule $rule
-     */
-    public function setRule(Rule $rule): void
+    public function getAttribute(string $key): mixed
     {
-        $this->rule = $rule;
+        return $this->attribute->getAttribute($key,$this->database);
     }
 }

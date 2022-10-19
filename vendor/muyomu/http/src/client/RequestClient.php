@@ -17,4 +17,8 @@ interface RequestClient
     public function getRemoteHost():string;
 
     public function getRemotePort():int;
+
+    public function setAttribute(string $key,mixed $value):bool;
+
+    public function getAttribute(string $key):mixed;
 }
