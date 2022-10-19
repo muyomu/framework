@@ -51,10 +51,15 @@ class CreateApp implements Serve
          * 根路由处理
          */
         if ($this->request->getURL() == "/"){
-            $request_db = $this->request->getDataBase();
-            $document = new Document(DataType::OBJECT,Date("Y:M:D h:m:s"),Date("Y:M:D h:m:s"),0,RouterClient::getRule("/")->getData());
-            $request_db->insert("rule",$document);
+            if (array_key_exists("/",RouterClient::getDatabase()->database)){
+                $request_db = $this->request->getDataBase();
+                $document = new Document(DataType::OBJECT,Date("Y:M:D h:m:s"),Date("Y:M:D h:m:s"),0,RouterClient::getRule("/")->getData());
+                $request_db->insert("rule",$document);
+            }else{
+                throw new UrlNotMatch();
+            }
         }
+
         /*
          * dpara路由处理器
          */
