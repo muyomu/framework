@@ -55,6 +55,7 @@ class CreateApp implements Serve
                 $request_db = $this->request->getDataBase();
                 $document = new Document(DataType::OBJECT,Date("Y:M:D h:m:s"),Date("Y:M:D h:m:s"),0,RouterClient::getRule("/")->getData());
                 $request_db->insert("rule",$document);
+                goto root;
             }else{
                 throw new UrlNotMatch();
             }
@@ -65,6 +66,7 @@ class CreateApp implements Serve
          */
         $this->dparaClient->dpara($this->request,RouterClient::getDatabase());
 
+        root:
         /*
          * 全局拦截器处理
          */

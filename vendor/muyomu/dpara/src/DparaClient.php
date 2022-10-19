@@ -35,8 +35,6 @@ class DparaClient implements Dpara
         $static_routes = $match[0];
         $static_routes = array_unique($static_routes);
 
-        var_dump($static_routes);
-
         //获取到所有的静态路由对应的动态路由
         $list = array();
         foreach ($static_routes as $route){
@@ -46,7 +44,6 @@ class DparaClient implements Dpara
         }
         return $list;
     }
-
 
     /**
      * @throws UrlNotMatch|KeyNotFond

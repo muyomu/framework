@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc54d82dbdc61bab64671d9a195d4675",
+    "content-hash": "50cb9eb505bc764253d9247336fcb877",
     "packages": [
         {
             "name": "muyomu/database",
@@ -45,16 +45,16 @@
         },
         {
             "name": "muyomu/dpara",
-            "version": "v1.0.9",
+            "version": "v1.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/dpara.git",
-                "reference": "26e5403008bcd768a10a99484b00265fc2048881"
+                "reference": "355c9b071c1ae29f3c9451b7db261abd1c55467d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/dpara/zipball/26e5403008bcd768a10a99484b00265fc2048881",
-                "reference": "26e5403008bcd768a10a99484b00265fc2048881",
+                "url": "https://api.github.com/repos/muyomu/dpara/zipball/355c9b071c1ae29f3c9451b7db261abd1c55467d",
+                "reference": "355c9b071c1ae29f3c9451b7db261abd1c55467d",
                 "shasum": ""
             },
             "require": {
@@ -80,9 +80,9 @@
             "description": "The dynamic paramater resolver of muyomu framework",
             "support": {
                 "issues": "https://github.com/muyomu/dpara/issues",
-                "source": "https://github.com/muyomu/dpara/tree/v1.0.9"
+                "source": "https://github.com/muyomu/dpara/tree/v1.0.10"
             },
-            "time": "2022-10-19T13:06:03+00:00"
+            "time": "2022-10-19T13:21:01+00:00"
         },
         {
             "name": "muyomu/executor",
