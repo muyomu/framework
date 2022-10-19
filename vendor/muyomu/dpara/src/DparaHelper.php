@@ -29,7 +29,12 @@ class DparaHelper implements UrlValidate
                 $match = array();
                 preg_match_all("/\/:([a-zA-Z]+)/m",$route,$match);
                 array_shift($match);
-                if (count($match) == $paraLength){
+                if (empty($match[0])){
+                    $length = 0;
+                }else{
+                    $length = count($match);
+                }
+                if ($length == $paraLength){
                     foreach ($match as $value){
                         array_push($keyCollector,$value);
                     }
@@ -46,7 +51,7 @@ class DparaHelper implements UrlValidate
 
             //保存route到request
             $request_db = $request->getDataBase();
-            $document = new Document(DataType::OBJECT,Date("Y:M:D h:m:s"),Date("Y:M:D h:m:s"),0,$database[$key]->getData());
+            $document = new Document(DataType::OBJECT,Date("Y:M:D h:m:s"),Date("Y:M:D h:m:s"),0,$dbClient[$key]->getData());
             $request_db->insert("rule",$document);
             return true;
         }else{

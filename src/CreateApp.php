@@ -46,14 +46,19 @@ class CreateApp implements Serve
      * @throws UrlNotMatch
      */
     public function run():void{
-        /*
-         * dpara路由处理器
-         */
-        $this->dparaClient->dpara($this->request,RouterClient::getDatabase());
 
         /*
          * 根路由处理
          */
+        if ($this->request->getURL() == "/"){
+            $request_db = $this->request->getDataBase();
+            $document = new Document(DataType::OBJECT,Date("Y:M:D h:m:s"),Date("Y:M:D h:m:s"),0,RouterClient::getRule("/")->getData());
+            $request_db->insert("rule",$document);
+        }
+        /*
+         * dpara路由处理器
+         */
+        $this->dparaClient->dpara($this->request,RouterClient::getDatabase());
 
         /*
          * 全局拦截器处理
