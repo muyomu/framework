@@ -9,6 +9,7 @@ use muyomu\database\exception\RepeatDefinition;
 use muyomu\dpara\DparaClient;
 use muyomu\dpara\exception\UrlNotMatch;
 use muyomu\executor\WebExecutor;
+use muyomu\executor\exception\MethodNotMatch;
 use muyomu\framework\base\BaseMiddleWare;
 use muyomu\framework\constraint\Serve;
 use muyomu\framework\exception\GlobalMiddleWareRepeatDefine;
@@ -67,6 +68,16 @@ class CreateApp implements Serve
         $this->dparaClient->dpara($this->request,RouterClient::getDatabase());
 
         root:
+        /*
+         * 方法验证
+         */
+          $request_method = $this->request->getDatabase()->select("rule")->getData()->getMethod();
+          $route_method = $this->request->getMethod();
+          if( $request_method != $route_method){
+	throw new MethodNotMatch();
+          }
+
+
         /*
          * 全局拦截器处理
          */
