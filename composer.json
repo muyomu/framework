@@ -20,6 +20,6 @@
         "muyomu/executor": "1.0.11",
         "muyomu/http": "1.1.13",
         "muyomu/database": "1.1.0",
-        "muyomu/dpara": "1.0.10"
+        "muyomu/dpara": "1.1.0"
     }
 }

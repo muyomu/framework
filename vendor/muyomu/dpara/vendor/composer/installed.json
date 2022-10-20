@@ -1,14 +1,9 @@
 {
-    "_readme": [
-        "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-        "This file is @generated automatically"
-    ],
-    "content-hash": "59e0445836844f7d2cd8629b3363ef08",
     "packages": [
         {
             "name": "muyomu/database",
             "version": "v1.1.0",
+            "version_normalized": "1.1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/database.git",
@@ -20,7 +15,9 @@
                 "reference": "73eef94ffcd00a84c0df36237679bfbe074a94b1",
                 "shasum": ""
             },
+            "time": "2022-10-16T00:57:44+00:00",
             "type": "library",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "muyomu\\database\\": "src/"
@@ -41,92 +38,12 @@
                 "issues": "https://github.com/muyomu/database/issues",
                 "source": "https://github.com/muyomu/database/tree/v1.1.0"
             },
-            "time": "2022-10-16T00:57:44+00:00"
-        },
-        {
-            "name": "muyomu/dpara",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/muyomu/dpara.git",
-                "reference": "cd0f49b0222bda3ead408b0bbb8ec36ee2295ff1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/dpara/zipball/cd0f49b0222bda3ead408b0bbb8ec36ee2295ff1",
-                "reference": "cd0f49b0222bda3ead408b0bbb8ec36ee2295ff1",
-                "shasum": ""
-            },
-            "require": {
-                "muyomu/database": "1.1.0",
-                "muyomu/http": "1.1.13",
-                "muyomu/router": "1.1.10"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "muyomu\\dpara\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "mutian"
-                }
-            ],
-            "description": "The dynamic paramater resolver of muyomu framework",
-            "support": {
-                "issues": "https://github.com/muyomu/dpara/issues",
-                "source": "https://github.com/muyomu/dpara/tree/v1.1.0"
-            },
-            "time": "2022-10-20T03:18:52+00:00"
-        },
-        {
-            "name": "muyomu/executor",
-            "version": "v1.0.11",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/muyomu/executor.git",
-                "reference": "a5102320b1035fb69cd657a21fe7fc426e4346d2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/executor/zipball/a5102320b1035fb69cd657a21fe7fc426e4346d2",
-                "reference": "a5102320b1035fb69cd657a21fe7fc426e4346d2",
-                "shasum": ""
-            },
-            "require": {
-                "muyomu/http": "1.1.13"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "muyomu\\executor\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "mutian",
-                    "email": "mutian-xiangcai@outlook.com"
-                }
-            ],
-            "description": "The executor of muyomu framework",
-            "support": {
-                "issues": "https://github.com/muyomu/executor/issues",
-                "source": "https://github.com/muyomu/executor/tree/v1.0.11"
-            },
-            "time": "2022-10-19T12:22:28+00:00"
+            "install-path": "../muyomu/database"
         },
         {
             "name": "muyomu/http",
             "version": "v1.1.13",
+            "version_normalized": "1.1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/http.git",
@@ -142,7 +59,9 @@
                 "muyomu/database": "1.1.0",
                 "muyomu/router": "1.1.10"
             },
+            "time": "2022-10-19T12:15:27+00:00",
             "type": "library",
+            "installation-source": "source",
             "autoload": {
                 "psr-4": {
                     "muyomu\\http\\": "src/"
@@ -163,11 +82,12 @@
                 "issues": "https://github.com/muyomu/http/issues",
                 "source": "https://github.com/muyomu/http/tree/v1.1.13"
             },
-            "time": "2022-10-19T12:15:27+00:00"
+            "install-path": "../muyomu/http"
         },
         {
             "name": "muyomu/router",
             "version": "v1.1.10",
+            "version_normalized": "1.1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/router.git",
@@ -182,7 +102,9 @@
             "require": {
                 "muyomu/database": "1.1.0"
             },
+            "time": "2022-10-19T12:07:53+00:00",
             "type": "library",
+            "installation-source": "source",
             "autoload": {
                 "psr-4": {
                     "muyomu\\router\\": "src/"
@@ -203,16 +125,9 @@
                 "issues": "https://github.com/muyomu/router/issues",
                 "source": "https://github.com/muyomu/router/tree/v1.1.10"
             },
-            "time": "2022-10-19T12:07:53+00:00"
+            "install-path": "../muyomu/router"
         }
     ],
-    "packages-dev": [],
-    "aliases": [],
-    "minimum-stability": "dev",
-    "stability-flags": [],
-    "prefer-stable": false,
-    "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "dev": true,
+    "dev-package-names": []
 }

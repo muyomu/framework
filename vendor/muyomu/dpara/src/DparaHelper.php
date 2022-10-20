@@ -16,7 +16,7 @@ class DparaHelper implements UrlValidate
     /**
      * @throws UrlNotMatch|RepeatDefinition
      */
-    public function key_exits(string $key, array $database,Request $request,array $dataCollector, array $keyCollector,array $dbClient): bool
+    public function key_exits(string $key, array $database,Request $request,array $dataCollector, array $keyCollector,array $dbClient): array
     {
         here:
         if (array_key_exists($key,$database)){
@@ -28,14 +28,13 @@ class DparaHelper implements UrlValidate
             foreach ($dynamic_routes as $route){
                 $match = array();
                 preg_match_all("/\/:([a-zA-Z]+)/m",$route,$match);
-                array_shift($match);
-                if (empty($match[0])){
+                if (empty($match[1])){
                     $length = 0;
                 }else{
-                    $length = count($match);
+                    $length = count($match[1]);
                 }
                 if ($length == $paraLength){
-                    foreach ($match as $value){
+                    foreach ($match[1] as $value){
                         array_push($keyCollector,$value);
                     }
                     $point = $route;
@@ -51,11 +50,13 @@ class DparaHelper implements UrlValidate
 
             //保存route到request
             $request_db = $request->getDataBase();
-            $document = new Document(DataType::OBJECT,Date("Y:M:D h:m:s"),Date("Y:M:D h:m:s"),0,$dbClient[$key]->getData());
+            $document = new Document(DataType::OBJECT,Date("Y:M:D h:m:s"),Date("Y:M:D h:m:s"),0,$dbClient[$point]->getData());
             $request_db->insert("rule",$document);
-            return true;
+            return array("key"=>$keyCollector,"value"=>array_reverse($dataCollector));
         }else{
-            $key = $this->get_next_url($key,$dataCollector);
+            $next = $this->get_next_url($key,$dataCollector);
+            $key = $next['key'];
+            $dataCollector = $next['dataCollector'];
             goto here;
         }
     }
@@ -63,16 +64,18 @@ class DparaHelper implements UrlValidate
     /**
      * @throws UrlNotMatch
      */
-    public function get_next_url(string $url, array $dataCollector): string
+    public function get_next_url(string $url, array $dataCollector): array
     {
-        if (strcmp("/",$url)){
+        if (strcmp("/",$url) == 0){
             throw new UrlNotMatch();
         }else{
             $items = explode("/",$url);
             array_shift($items);
             $value = array_pop($items);
             array_push($dataCollector,$value);
-            return $this->get_combined_url($items);
+            $key = $this->get_combined_url($items);
+            $result = array("key"=>$key,"dataCollector"=>$dataCollector);
+            return $result;
         }
     }
 

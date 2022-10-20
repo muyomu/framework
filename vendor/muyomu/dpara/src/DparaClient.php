@@ -60,10 +60,10 @@ class DparaClient implements Dpara
         /*
          * 静态路由查询
          */
-        $this->dparaHelper->key_exits($request->getURL(),$static_routes_table,$request,$this->dataCollector,$this->keyCollector,$dbClient->database);
+        $result = $this->dparaHelper->key_exits($request->getURL(),$static_routes_table,$request,$this->dataCollector,$this->keyCollector,$dbClient->database);
         //将数据保存到request中的rule中
         $request_db = $request->getDataBase()->select("rule");
-        $request_db->getData()->setPathpara($this->dataCollector);
-        $request_db->getData()->setPathkey($this->keyCollector);
+        $request_db->getData()->setPathpara($result['value']);
+        $request_db->getData()->setPathkey($result['key']);
     }
 }

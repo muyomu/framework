@@ -42,17 +42,17 @@
         },
         {
             "name": "muyomu/dpara",
-            "version": "v1.0.10",
-            "version_normalized": "1.0.10.0",
+            "version": "v1.1.0",
+            "version_normalized": "1.1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/dpara.git",
-                "reference": "355c9b071c1ae29f3c9451b7db261abd1c55467d"
+                "reference": "cd0f49b0222bda3ead408b0bbb8ec36ee2295ff1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/dpara/zipball/355c9b071c1ae29f3c9451b7db261abd1c55467d",
-                "reference": "355c9b071c1ae29f3c9451b7db261abd1c55467d",
+                "url": "https://api.github.com/repos/muyomu/dpara/zipball/cd0f49b0222bda3ead408b0bbb8ec36ee2295ff1",
+                "reference": "cd0f49b0222bda3ead408b0bbb8ec36ee2295ff1",
                 "shasum": ""
             },
             "require": {
@@ -60,7 +60,7 @@
                 "muyomu/http": "1.1.13",
                 "muyomu/router": "1.1.10"
             },
-            "time": "2022-10-19T13:21:01+00:00",
+            "time": "2022-10-20T03:18:52+00:00",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -80,7 +80,7 @@
             "description": "The dynamic paramater resolver of muyomu framework",
             "support": {
                 "issues": "https://github.com/muyomu/dpara/issues",
-                "source": "https://github.com/muyomu/dpara/tree/v1.0.10"
+                "source": "https://github.com/muyomu/dpara/tree/v1.1.0"
             },
             "install-path": "../muyomu/dpara"
         },
