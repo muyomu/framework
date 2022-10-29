@@ -1,0 +1,19 @@
+{
+    "name": "muyomu/aop",
+    "description": "The aop framework for muyomu web framework",
+    "type": "library",
+    "license": "apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "muyomu\\aop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mutian",
+            "email": "bhfqlz@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
