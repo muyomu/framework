@@ -2,8 +2,7 @@
 
 namespace muyomu\framework;
 
-use muyomu\database\base\DataType;
-use muyomu\database\base\Document;
+use Exception;
 use muyomu\database\exception\KeyNotFond;
 use muyomu\database\exception\RepeatDefinition;
 use muyomu\dpara\DparaClient;
@@ -12,21 +11,14 @@ use muyomu\executor\WebExecutor;
 use muyomu\framework\base\BaseMiddleWare;
 use muyomu\framework\constraint\Serve;
 use muyomu\framework\exception\GlobalMiddleWareRepeatDefine;
-use muyomu\framework\plugin\Plugin;
-use muyomu\framework\plugin\PluginType;
 use muyomu\http\Request;
 use muyomu\http\Response;
-use muyomu\router\exception\RuleNotMatch;
 use muyomu\router\RouterClient;
 use ReflectionClass;
 use ReflectionException;
 
 class CreateApp implements Serve
 {
-    private Request $request;
-
-    private Response $response;
-
     private WebExecutor $webExecutor;
 
     private BaseMiddleWare $middleWare;
@@ -34,56 +26,30 @@ class CreateApp implements Serve
     private DparaClient $dparaClient;
 
     public function __construct(){
-        $this->request = new Request();
-        $this->response = new Response();
         $this->webExecutor = new WebExecutor();
         $this->dparaClient = new DparaClient();
     }
 
     /**
-     * @throws RuleNotMatch|RepeatDefinition|ReflectionException
-     * @throws KeyNotFond
      * @throws UrlNotMatch
+     * @throws KeyNotFond
+     * @throws RepeatDefinition
      */
-    public function run():void{
+    private function do_dynamic_parameter_resolve(Request $request, Response $response):void{
+        $this->dparaClient->dpara($request,RouterClient::getDatabase());
+    }
 
-        /*
-         * 根路由处理
-         */
-        if ($this->request->getURL() == "/"){
-            if (array_key_exists("/",RouterClient::getDatabase()->database)){
-                $request_db = $this->request->getDataBase();
-                $document = new Document(DataType::OBJECT,Date("Y:M:D h:m:s"),Date("Y:M:D h:m:s"),0,RouterClient::getRule("/")->getData());
-                $request_db->insert("rule",$document);
-                goto root;
-            }else{
-                throw new UrlNotMatch();
-            }
-        }
-
-        /*
-         * dpara路由处理器
-         */
-        $this->dparaClient->dpara($this->request,RouterClient::getDatabase());
-
-        root:
-        /*
-         * 全局拦截器处理
-         */
+    private function do_global_middleware_handle(Request $request, Response $response):void{
         if(isset($this->middleWare)){
-            $this->middleWare->handle($this,$this->request,function (CreateApp $application, string $action,...$values){
-                switch ($action){
-                    case "redirect":echo "redirect";break;
-                    case "forward": echo "forward";break;
-                }
-            });
+            $this->middleWare->handle($request,$response);
         }
+    }
 
-
-        /*
-         * 解析控制器
-         */
-        $rule = $this->request->getDataBase()->select("rule")->getData();
+    /**
+     * @throws KeyNotFond
+     */
+    private function do_resolve_controller(Request $request, Response $response):void{
+        $rule = $request->getDbClient()->select("rule")->getData();
         $rawController = $rule->getController();
         $rawController = explode(".",$rawController);
         $last = end($rawController);
@@ -91,38 +57,29 @@ class CreateApp implements Serve
         $rawController[sizeof($rawController)-1] = $upper;
         $endpoint = "app\\controller\\".implode("\\",$rawController);
         $rule->setController($endpoint);
-        $this->request->getDataBase()->select("rule")->setModifyTime(date("Y:M:D h:m:s"));
-        $this->request->getDataBase()->select("rule")->setVersion($this->request->getDataBase()->select("rule")->getVersion()+1);
-
-
-        /*
-         * 路由中间件处理
-         */
-        if ($this->request->getDataBase()->select("rule")->getData()->getMiddleWare() !== null){
-            $rule_middleware_class = new ReflectionClass($this->request->getDataBase()->select("rule")->getData()->getMiddleWare());
-            $rule_middleware_instance = $rule_middleware_class->newInstance();
-            $rule_middleware_method = $rule_middleware_class->getMethod("handle");
-            $rule_middleware_method->invoke($rule_middleware_instance,$this,$this->request,function (CreateApp $application, string $action,...$values){
-                switch ($action){
-                    case "redirect":echo "redirect";break;
-                    case "forward": echo "forward";break;
-                }
-            });
-        }
-
-        /*
-         * web执行
-         */
-        $controller = $this->request->getDataBase()->select("rule")->getData()->getController();
-        $method = $this->request->getDataBase()->select("rule")->getData()->getHandle();
-        $this->webExecutor->webExecutor($this->request,$this->response,$controller,$method);
     }
 
-    /*
-     * 安装插件
+    /**
+     * @throws ReflectionException
+     * @throws KeyNotFond
      */
-    public function installPlugin(PluginType $pluginType,Plugin $plugin){
+    private function do_route_middleware_handle(Request $request, Response $response):void{
+        if ($request->getDbClient()->select("rule")->getData()->getMiddleWare() !== null){
+            $rule_middleware_class = new ReflectionClass($request->getDbClient()->select("rule")->getData()->getMiddleWare());
+            $rule_middleware_instance = $rule_middleware_class->newInstance();
+            $rule_middleware_method = $rule_middleware_class->getMethod("handle");
+            $rule_middleware_method->invoke($rule_middleware_instance,$request,$response);
+        }
+    }
 
+    /**
+     * @throws ReflectionException
+     * @throws KeyNotFond
+     */
+    private function do_web_executor(Request $request, Response $response):void{
+        $controller = $request->getDbClient()->select("rule")->getData()->getController();
+        $handle = $request->getDbClient()->select("rule")->getData()->getHandle();
+        $this->webExecutor->webExecutor($request,$response,$controller,$handle);
     }
 
     /*
@@ -139,8 +96,54 @@ class CreateApp implements Serve
         }
     }
 
-    public function __destruct()
-    {
-        // TODO: Implement __destruct() method.
+    public function run(Request $request,Response $response):void{
+
+        /*
+         *
+         */
+        try {
+            $this->do_dynamic_parameter_resolve($request,$response);
+        }catch (Exception $exception){
+
+        }
+
+        /*
+         *
+         */
+        try {
+            $this->do_global_middleware_handle($request,$response);
+        }catch (Exception $exception){
+
+        }
+
+
+        /*
+         *
+         */
+        try {
+            $this->do_resolve_controller($request,$response);
+        }catch (Exception $exception){
+
+        }
+
+
+        /*
+         * 路由中间件处理
+         */
+        try {
+            $this->do_route_middleware_handle($request,$response);
+        }catch (Exception $exception){
+
+        }
+
+
+        /*
+         * web执行
+         */
+        try {
+            $this->do_web_executor($request,$response);
+        }catch (Exception $exception){
+
+        }
     }
 }

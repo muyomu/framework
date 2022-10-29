@@ -11,15 +11,38 @@ use muyomu\http\Request;
 
 class DparaClient implements Dpara
 {
-    private array $dataCollector = array();
-
-    private array $keyCollector = array();
 
     private DparaHelper $dparaHelper;
 
     public function __construct()
     {
         $this->dparaHelper = new DparaHelper();
+    }
+
+    /**
+     * @throws UrlNotMatch|KeyNotFond
+     * @throws RepeatDefinition
+     */
+    public function dpara(Request $request, DbClient $dbClient): void
+    {
+
+        /*
+         * 静态路由转换
+         */
+        $static_routes_table = $this->routeResolver($dbClient->database);
+
+        /*
+         * 静态路由查询
+         */
+        $this->dparaHelper->key_exits($request->getURL(),$static_routes_table,$request,$dbClient->database);
+
+
+        /*
+         * 将数据保存到request中的rule中
+         */
+        $request_db = $request->getDbClient()->select("rule");
+        $request_db->getData()->setPathpara($this->dataCollector);
+        $request_db->getData()->setPathkey($this->keyCollector);
     }
 
     /*
@@ -43,27 +66,5 @@ class DparaClient implements Dpara
             $list[$route] = $match[0];
         }
         return $list;
-    }
-
-    /**
-     * @throws UrlNotMatch|KeyNotFond
-     * @throws RepeatDefinition
-     */
-    public function dpara(Request $request, DbClient $dbClient): void
-    {
-
-        /*
-         * 静态路由转换
-         */
-        $static_routes_table = $this->routeResolver($dbClient->database);
-
-        /*
-         * 静态路由查询
-         */
-        $this->dparaHelper->key_exits($request->getURL(),$static_routes_table,$request,$this->dataCollector,$this->keyCollector,$dbClient->database);
-        //将数据保存到request中的rule中
-        $request_db = $request->getDataBase()->select("rule");
-        $request_db->getData()->setPathpara($this->dataCollector);
-        $request_db->getData()->setPathkey($this->keyCollector);
     }
 }

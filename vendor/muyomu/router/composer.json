@@ -16,6 +16,6 @@
         }
     ],
     "require": {
-        "muyomu/database": "1.1.0"
+        "muyomu/database": "2.0.0"
     }
 }

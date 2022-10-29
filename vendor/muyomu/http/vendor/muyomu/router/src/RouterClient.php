@@ -2,7 +2,6 @@
 
 namespace muyomu\router;
 
-use muyomu\database\base\DataType;
 use muyomu\database\base\Document;
 use muyomu\database\exception\KeyNotFond;
 use muyomu\database\exception\RepeatDefinition;
@@ -17,8 +16,8 @@ class RouterClient extends DataBase
      */
     public static function rule(string $method, string $uri, string $controller, string $handle):Rule{
         $db = self::getDatabase();
-        $rule=new Rule($uri,$method,$controller,$handle);
-        $data = new Document(DataType::OBJECT,date("Y:M:D h:m:s"),date("Y:M:D h:m:s"),0,$rule);
+        $rule=new Rule($method,$uri,$controller,$handle);
+        $data = new Document($rule);
         $db->insert($uri,$data);
         return $rule;
     }

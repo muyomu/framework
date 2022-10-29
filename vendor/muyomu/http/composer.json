@@ -16,7 +16,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "muyomu/database": "1.1.0",
-        "muyomu/router": "1.1.10"
+        "muyomu/database": "2.0.0",
+        "muyomu/router": "2.0.0"
     }
 }

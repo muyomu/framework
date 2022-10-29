@@ -24,7 +24,7 @@ class Rule
      * @param string $controller
      * @param string $handle
      */
-    public function __construct(string $route, string $method, string $controller, string $handle)
+    public function __construct(string $method, string $route, string $controller, string $handle)
     {
         $this->route = $route;
         $this->method = $method;

@@ -1,2 +1,2 @@
 # database
-The cache database of muyomu web framework
+The database of muyomu web framework

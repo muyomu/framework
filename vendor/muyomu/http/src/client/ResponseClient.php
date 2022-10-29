@@ -13,4 +13,6 @@ interface ResponseClient
     public function returnRaw(mixed $data):void;
 
     public function returnJson(array $data):void;
+
+    public function returnBadData():void;
 }

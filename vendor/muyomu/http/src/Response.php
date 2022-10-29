@@ -22,6 +22,7 @@ class Response implements ResponseClient
             case "string": $this->returnRaw($data);break;
             case "NULL": $this->returnWhite();break;
             case "array": $this->returnJson($data);break;
+            default: $this->returnBadData();break;
         }
 
     }
@@ -29,7 +30,6 @@ class Response implements ResponseClient
     public function returnWhite(): void
     {
         $message = new Message();
-        $message->setDataCode(200);
         $message->setDataType("empty");
         $message->setDataStatus("Success");
         $message->setData(null);
@@ -42,7 +42,6 @@ class Response implements ResponseClient
     public function returnRaw(mixed $data): void
     {
         $message = new Message();
-        $message->setDataCode(200);
         $message->setDataType(gettype($data));
         $message->setDataStatus("Success");
         $message->setData($data);
@@ -55,7 +54,6 @@ class Response implements ResponseClient
     public function returnJson(array $data): void
     {
         $message = new Message();
-        $message->setDataCode(200);
         $message->setDataType(gettype($data));
         $message->setDataStatus("Success");
         $message->setData($data);
@@ -63,5 +61,14 @@ class Response implements ResponseClient
         $return = MessageToArray::messageToArray($message);
 
         echo json_encode($return, JSON_UNESCAPED_UNICODE);
+    }
+
+
+    public function returnBadData(): void
+    {
+        $message = new Message();
+        $message->setDataType("NONE");
+        $message->setDataStatus("BadData");
+        $message->setData(null);
     }
 }

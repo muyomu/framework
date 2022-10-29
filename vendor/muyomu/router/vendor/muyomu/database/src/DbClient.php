@@ -55,8 +55,6 @@ class DbClient extends Database implements Client {
                 throw new TypeNOtMatch();
             }else{
                 $document->setData($updateData);
-                $document->setData(date("Y-m-d H:i:s"));
-                $document->setVersion($document->getVersion()+1);
                 return true;
             }
         }

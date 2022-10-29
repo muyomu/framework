@@ -3,29 +3,11 @@
 namespace muyomu\http\message;
 
 class Message{
-    private int $dataCode;
-
     private string $dataStatus;
 
     private string $dataType;
 
     private mixed $data;
-
-    /**
-     * @return int
-     */
-    public function getDataCode(): int
-    {
-        return $this->dataCode;
-    }
-
-    /**
-     * @param int $dataCode
-     */
-    public function setDataCode(int $dataCode): void
-    {
-        $this->dataCode = $dataCode;
-    }
 
     /**
      * @return string

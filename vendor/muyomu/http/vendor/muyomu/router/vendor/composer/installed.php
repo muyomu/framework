@@ -3,7 +3,7 @@
         'name' => 'muyomu/router',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '4c5928d811b00a3e5a3011ec56d8a32ed0c49371',
+        'reference' => 'd9923001224b54e94f1de24017bec2532c80c037',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'muyomu/database' => array(
-            'pretty_version' => 'v1.1.0',
-            'version' => '1.1.0.0',
-            'reference' => '73eef94ffcd00a84c0df36237679bfbe074a94b1',
+            'pretty_version' => 'v2.0.0',
+            'version' => '2.0.0.0',
+            'reference' => '30f77abf6b247106945a0b25a4a219368d496fcb',
             'type' => 'library',
             'install_path' => __DIR__ . '/../muyomu/database',
             'aliases' => array(),
@@ -22,7 +22,7 @@
         'muyomu/router' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '4c5928d811b00a3e5a3011ec56d8a32ed0c49371',
+            'reference' => 'd9923001224b54e94f1de24017bec2532c80c037',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
