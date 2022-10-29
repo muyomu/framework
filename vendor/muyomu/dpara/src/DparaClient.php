@@ -20,7 +20,7 @@ class DparaClient implements Dpara
     }
 
     /**
-     * @throws UrlNotMatch|KeyNotFond
+     * @throws UrlNotMatch
      * @throws RepeatDefinition
      */
     public function dpara(Request $request, DbClient $dbClient): void
@@ -34,15 +34,20 @@ class DparaClient implements Dpara
         /*
          * 静态路由查询
          */
-        $this->dparaHelper->key_exits($request->getURL(),$static_routes_table,$request,$dbClient->database);
+        $key_value = $this->dparaHelper->key_exits($request->getURL(),$static_routes_table,$request,$dbClient->database);
 
 
         /*
          * 将数据保存到request中的rule中
          */
-        $request_db = $request->getDbClient()->select("rule");
-        $request_db->getData()->setPathpara($this->dataCollector);
-        $request_db->getData()->setPathkey($this->keyCollector);
+        $request_db = null;
+        try {
+            $request_db = $request->getDbClient()->select("rule");
+        }catch (KeyNotFond $e) {
+
+        }
+        $request_db->getData()->setPathpara($key_value['value']);
+        $request_db->getData()->setPathkey($key_value['key']);
     }
 
     /*

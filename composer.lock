@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "813e8856f9b0506cea6bffecd46a58e8",
+    "content-hash": "33fedb1b7ea645090c8f81171f6c7ea4",
     "packages": [
         {
             "name": "muyomu/aop",
@@ -16,7 +16,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/aop/zipball/30c6e7cca36382c8e485ef223a2bb4035795654c",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/aop/v1.0.2/muyomu-aop-v1.0.2.zip",
                 "reference": "30c6e7cca36382c8e485ef223a2bb4035795654c",
                 "shasum": ""
             },
@@ -26,7 +26,6 @@
                     "muyomu\\aop\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -37,24 +36,20 @@
                 }
             ],
             "description": "The aop framework for muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/aop/issues",
-                "source": "https://github.com/muyomu/aop/tree/v1.0.2"
-            },
             "time": "2022-10-18T00:42:15+00:00"
         },
         {
             "name": "muyomu/database",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/database.git",
-                "reference": "30f77abf6b247106945a0b25a4a219368d496fcb"
+                "reference": "e9608b80fc326ad76b49af0cd60dc4ed64b50059"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/database/zipball/30f77abf6b247106945a0b25a4a219368d496fcb",
-                "reference": "30f77abf6b247106945a0b25a4a219368d496fcb",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/database/v2.0.1/muyomu-database-v2.0.1.zip",
+                "reference": "e9608b80fc326ad76b49af0cd60dc4ed64b50059",
                 "shasum": ""
             },
             "type": "library",
@@ -63,7 +58,6 @@
                     "muyomu\\database\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -74,30 +68,26 @@
                 }
             ],
             "description": "The database of muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/database/issues",
-                "source": "https://github.com/muyomu/database/tree/v2.0.0"
-            },
-            "time": "2022-10-28T12:30:08+00:00"
+            "time": "2022-10-29T05:16:16+00:00"
         },
         {
             "name": "muyomu/dpara",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/dpara.git",
-                "reference": "1fba08fe8c2000e6b0ccb85c3a7e596700d1242a"
+                "reference": "8178a16b6132d05643be6c4e8bdf7d3d88ef2f24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/dpara/zipball/1fba08fe8c2000e6b0ccb85c3a7e596700d1242a",
-                "reference": "1fba08fe8c2000e6b0ccb85c3a7e596700d1242a",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/dpara/v2.0.1/muyomu-dpara-v2.0.1.zip",
+                "reference": "8178a16b6132d05643be6c4e8bdf7d3d88ef2f24",
                 "shasum": ""
             },
             "require": {
-                "muyomu/database": "2.0.0",
-                "muyomu/http": "2.0.0",
-                "muyomu/router": "2.0.0"
+                "muyomu/database": "2.0.1",
+                "muyomu/http": "2.0.1",
+                "muyomu/router": "2.0.1"
             },
             "type": "library",
             "autoload": {
@@ -105,7 +95,6 @@
                     "muyomu\\dpara\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -115,29 +104,25 @@
                 }
             ],
             "description": "The dynamic paramater resolver of muyomu framework",
-            "support": {
-                "issues": "https://github.com/muyomu/dpara/issues",
-                "source": "https://github.com/muyomu/dpara/tree/v2.0.0"
-            },
-            "time": "2022-10-29T02:51:53+00:00"
+            "time": "2022-10-29T05:44:20+00:00"
         },
         {
             "name": "muyomu/executor",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/executor.git",
-                "reference": "24af1ef16cf4e5167274cc9a41aa233966c7afe1"
+                "reference": "1bba2754612c6698419de24eb6ba3c72c967625c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/executor/zipball/24af1ef16cf4e5167274cc9a41aa233966c7afe1",
-                "reference": "24af1ef16cf4e5167274cc9a41aa233966c7afe1",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/executor/v2.0.1/muyomu-executor-v2.0.1.zip",
+                "reference": "1bba2754612c6698419de24eb6ba3c72c967625c",
                 "shasum": ""
             },
             "require": {
                 "muyomu/aop": "1.0.2",
-                "muyomu/http": "2.0.0"
+                "muyomu/http": "2.0.1"
             },
             "type": "library",
             "autoload": {
@@ -145,7 +130,6 @@
                     "muyomu\\executor\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -156,29 +140,25 @@
                 }
             ],
             "description": "The executor of muyomu framework",
-            "support": {
-                "issues": "https://github.com/muyomu/executor/issues",
-                "source": "https://github.com/muyomu/executor/tree/v2.0.0"
-            },
-            "time": "2022-10-29T02:28:41+00:00"
+            "time": "2022-10-29T05:43:14+00:00"
         },
         {
             "name": "muyomu/http",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/http.git",
-                "reference": "5ccef7e4d6afe3463fda03b2ba57a6e66b046441"
+                "reference": "7a794c008454da20ec25182f50f74af2affc45ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/http/zipball/5ccef7e4d6afe3463fda03b2ba57a6e66b046441",
-                "reference": "5ccef7e4d6afe3463fda03b2ba57a6e66b046441",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/http/v2.0.1/muyomu-http-v2.0.1.zip",
+                "reference": "7a794c008454da20ec25182f50f74af2affc45ba",
                 "shasum": ""
             },
             "require": {
-                "muyomu/database": "2.0.0",
-                "muyomu/router": "2.0.0"
+                "muyomu/database": "2.0.1",
+                "muyomu/router": "2.0.1"
             },
             "type": "library",
             "autoload": {
@@ -186,7 +166,6 @@
                     "muyomu\\http\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -197,28 +176,24 @@
                 }
             ],
             "description": "The http helper of muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/http/issues",
-                "source": "https://github.com/muyomu/http/tree/v2.0.0"
-            },
-            "time": "2022-10-28T13:02:34+00:00"
+            "time": "2022-10-29T05:22:21+00:00"
         },
         {
             "name": "muyomu/router",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/router.git",
-                "reference": "d0b249451109f7ad30a4973cea9e025f432828ae"
+                "reference": "b35e08f3d59a8a4620c8e47f3683c47a8fb52b6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/router/zipball/d0b249451109f7ad30a4973cea9e025f432828ae",
-                "reference": "d0b249451109f7ad30a4973cea9e025f432828ae",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/router/v2.0.1/muyomu-router-v2.0.1.zip",
+                "reference": "b35e08f3d59a8a4620c8e47f3683c47a8fb52b6d",
                 "shasum": ""
             },
             "require": {
-                "muyomu/database": "2.0.0"
+                "muyomu/database": "2.0.1"
             },
             "type": "library",
             "autoload": {
@@ -226,7 +201,6 @@
                     "muyomu\\router\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -237,11 +211,7 @@
                 }
             ],
             "description": "The router of muyomu framework",
-            "support": {
-                "issues": "https://github.com/muyomu/router/issues",
-                "source": "https://github.com/muyomu/router/tree/v2.0.0"
-            },
-            "time": "2022-10-28T12:48:20+00:00"
+            "time": "2022-10-29T05:19:56+00:00"
         }
     ],
     "packages-dev": [],
