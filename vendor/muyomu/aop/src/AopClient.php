@@ -17,7 +17,7 @@ class AopClient implements Client
     /**
      * @throws ReflectionException
      */
-    public function aopExecutor(string $targetClassName, string $targetHandleName,mixed $argsForAop, array $args): mixed
+    public function aopExecutor(string $targetClassName, string $targetHandleName, ...$args): mixed
     {
         $class = new ReflectionClass($targetClassName);
 
@@ -35,8 +35,8 @@ class AopClient implements Client
             $adviceClass = $advice->getAdviceClassName();
             $adviceClass_class = new ReflectionClass($adviceClass);
             $adviceClass_instance = $adviceClass_class->newInstance();
-            $adviceClass_handle = $adviceClass_class->getMethod("beforeAdviceHandle");
-            $adviceClass_handle->invoke($adviceClass_instance,$argsForAop);
+            $adviceClass_handle = $adviceClass_class->getMethod("adviceHandle");
+            $adviceClass_handle->invoke($adviceClass_instance);
         }
 
         try {
@@ -47,8 +47,8 @@ class AopClient implements Client
                 $adviceClass = $advice->getAdviceClassName();
                 $adviceClass_class = new ReflectionClass($adviceClass);
                 $adviceClass_instance = $adviceClass_class->newInstance();
-                $adviceClass_handle = $adviceClass_class->getMethod("beforeCatchAdviceHandle");
-                $adviceClass_handle->invoke($adviceClass_instance,$argsForAop);
+                $adviceClass_handle = $adviceClass_class->getMethod("adviceHandle");
+                $adviceClass_handle->invoke($adviceClass_instance);
             }
             throw $exception;
         }
@@ -58,8 +58,8 @@ class AopClient implements Client
             $adviceClass = $advice->getAdviceClassName();
             $adviceClass_class = new ReflectionClass($adviceClass);
             $adviceClass_instance = $adviceClass_class->newInstance();
-            $adviceClass_handle = $adviceClass_class->getMethod("afterAdviceHandle");
-            $adviceClass_handle->invoke($adviceClass_instance,$argsForAop);
+            $adviceClass_handle = $adviceClass_class->getMethod("adviceHandle");
+            $adviceClass_handle->invoke($adviceClass_instance);
         }
 
         if (!empty($returnedAdvice)){
@@ -67,8 +67,8 @@ class AopClient implements Client
             $adviceClass = $advice->getAdviceClassName();
             $adviceClass_class = new ReflectionClass($adviceClass);
             $adviceClass_instance = $adviceClass_class->newInstance();
-            $adviceClass_handle = $adviceClass_class->getMethod("returnedAdviceHandle");
-            $adviceClass_handle->invoke($adviceClass_instance,$argsForAop);
+            $adviceClass_handle = $adviceClass_class->getMethod("adviceHandle");
+            $adviceClass_handle->invoke($adviceClass_instance);
         }
 
         return $data;

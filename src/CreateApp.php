@@ -32,7 +32,6 @@ class CreateApp implements Serve
 
     /**
      * @throws UrlNotMatch
-     * @throws KeyNotFond
      * @throws RepeatDefinition
      */
     private function do_dynamic_parameter_resolve(Request $request, Response $response):void{
@@ -103,8 +102,11 @@ class CreateApp implements Serve
          */
         try {
             $this->do_dynamic_parameter_resolve($request,$response);
-        }catch (Exception $exception){
-
+        }catch (UrlNotMatch|RepeatDefinition $exception){
+            muix_log_warning($exception::class,$exception->getMessage());
+            http_header_template();
+            $response->setHeader($GLOBALS['http_code'][503]);
+            die();
         }
 
         /*
@@ -113,7 +115,10 @@ class CreateApp implements Serve
         try {
             $this->do_global_middleware_handle($request,$response);
         }catch (Exception $exception){
-
+            muix_log_warning($exception::class,$exception->getMessage());
+            http_header_template();
+            $response->setHeader($GLOBALS['http_code'][505]);
+            die();
         }
 
 
@@ -123,7 +128,10 @@ class CreateApp implements Serve
         try {
             $this->do_resolve_controller($request,$response);
         }catch (Exception $exception){
-
+            muix_log_warning($exception::class,$exception->getMessage());
+            http_header_template();
+            $response->setHeader($GLOBALS['http_code'][503]);
+            die();
         }
 
 
@@ -133,7 +141,9 @@ class CreateApp implements Serve
         try {
             $this->do_route_middleware_handle($request,$response);
         }catch (Exception $exception){
-
+            muix_log_warning($exception::class,$exception->getMessage());
+            $response->setHeader($GLOBALS['http_code'][503]);
+            die();
         }
 
 
@@ -142,8 +152,10 @@ class CreateApp implements Serve
          */
         try {
             $this->do_web_executor($request,$response);
-        }catch (Exception $exception){
-
+        }catch (ReflectionException|KeyNotFond $exception){
+            muix_log_warning($exception::class,$exception->getMessage());
+            $response->setHeader($GLOBALS['http_code'][503]);
+            die();
         }
     }
 }

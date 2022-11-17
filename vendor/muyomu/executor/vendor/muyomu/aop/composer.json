@@ -15,5 +15,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "muyomu/log4p": "1.0.1"
+    }
 }

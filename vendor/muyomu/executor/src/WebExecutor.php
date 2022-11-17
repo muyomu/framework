@@ -2,61 +2,74 @@
 
 namespace muyomu\executor;
 
-use muyomu\database\exception\KeyNotFond;
+use muyomu\aop\FrameWorkClient;
 use muyomu\executor\client\ExecutorClient;
 use muyomu\http\Request;
 use muyomu\http\Response;
+use muyomu\log4p\Log4p;
 use ReflectionClass;
 use ReflectionException;
 
 class WebExecutor implements ExecutorClient
 {
+    private FrameWorkClient $frameWorkClient;
+
+    public function __construct(){
+        $this->frameWorkClient = new FrameWorkClient();
+    }
+
     public function webExecutor(Request $request,Response $response,string $controllerClassName, string $handle): void
     {
         /*
          * 获取控制器反射类
          */
-        $class = null;
         try {
             $class = new ReflectionClass($controllerClassName);
         }catch (ReflectionException $exception){
-
+            Log4p::muix_log_warn($exception->getMessage(),__CLASS__,__METHOD__);
+            http_header_template();
+            $response->setHeader($GLOBALS['http_code'][504]);
+            die();
         }
 
         /*
          * 获取控制器实例并注入依赖
          */
-        $instance = null;
         try {
             $instance = $class->newInstance();
         }catch (ReflectionException $exception){
-
+            Log4p::muix_log_warn($exception->getMessage(),__CLASS__,__METHOD__);
+            http_header_template();
+            $response->setHeader($GLOBALS['http_code'][504]);
+            die();
         }
 
         //注入request
-        $request_property = null;
         try {
             $request_property = $class->getProperty("request");
+            $request_property->setAccessible(true);
+            $request_property->setValue($instance,$request);
         }
-        catch (ReflectionException $e) {
-
+        catch (ReflectionException $exception) {
+            Log4p::muix_log_warn($exception->getMessage(),__CLASS__,__METHOD__);
+            http_header_template();
+            $response->setHeader($GLOBALS['http_code'][504]);
+            die();
         }
-        /** @var TYPE_NAME $request_property */
-        $request_property->setAccessible(true);
-        $request_property->setValue($instance,$request);
 
 
 
         //注入response
-        $response_property = null;
         try {
             $response_property = $class->getProperty("response");
-        }catch (ReflectionException $e) {
-
+            $response_property->setAccessible(true);
+            $response_property->setValue($instance,$response);
+        }catch (ReflectionException $exception) {
+            Log4p::muix_log_warn($exception->getMessage(),__CLASS__,__METHOD__);
+            http_header_template();
+            $response->setHeader($GLOBALS['http_code'][504]);
+            die();
         }
-        /** @var TYPE_NAME $response_property */
-        $response_property->setAccessible(true);
-        $response_property->setValue($instance,$response);
 
 
         /*
@@ -64,29 +77,29 @@ class WebExecutor implements ExecutorClient
          */
         try {
             $method = $class->getMethod($handle);
-        }catch (ReflectionException $e) {
-
+        }catch (ReflectionException $exception) {
+            Log4p::muix_log_warn($exception->getMessage(),__CLASS__,__METHOD__);
+            http_header_template();
+            $response->setHeader($GLOBALS['http_code'][504]);
+            die();
         }
 
         /*
          * prepare data
          */
-        $rule = null;
-        try {
-            $rule = $request->getDbClient()->select("rule")->getData();
-        }catch (KeyNotFond $e) {
-
-        }
+        $rule = $request->getDbClient()->select("rule")->getData();
 
 
         /*
          * 执行控制器处理器
          */
-        $returnData = null;
         try {
-            $returnData = $method->invoke($instance,$rule->getPathPara());
-        }catch (ReflectionException $e) {
-
+            $returnData = $this->frameWorkClient->aopExecutor($instance,$method,$rule->getPathPara());
+        }catch (ReflectionException $exception) {
+            Log4p::muix_log_warn($exception->getMessage(),__CLASS__,__METHOD__);
+            http_header_template();
+            $response->setHeader($GLOBALS['http_code'][505]);
+            die();
         }
 
         /*
