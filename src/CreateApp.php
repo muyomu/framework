@@ -13,6 +13,7 @@ use muyomu\framework\constraint\Serve;
 use muyomu\framework\exception\GlobalMiddleWareRepeatDefine;
 use muyomu\http\Request;
 use muyomu\http\Response;
+use muyomu\log4p\Log4p;
 use muyomu\router\RouterClient;
 use ReflectionClass;
 use ReflectionException;
@@ -103,7 +104,7 @@ class CreateApp implements Serve
         try {
             $this->do_dynamic_parameter_resolve($request,$response);
         }catch (UrlNotMatch|RepeatDefinition $exception){
-            muix_log_warning($exception::class,$exception->getMessage());
+            Log4p::muix_log_warn($exception::class,__CLASS__,__METHOD__);
             http_header_template();
             $response->setHeader($GLOBALS['http_code'][503]);
             die();
@@ -115,7 +116,7 @@ class CreateApp implements Serve
         try {
             $this->do_global_middleware_handle($request,$response);
         }catch (Exception $exception){
-            muix_log_warning($exception::class,$exception->getMessage());
+            Log4p::muix_log_warn($exception::class,__CLASS__,__METHOD__);
             http_header_template();
             $response->setHeader($GLOBALS['http_code'][505]);
             die();
@@ -128,7 +129,7 @@ class CreateApp implements Serve
         try {
             $this->do_resolve_controller($request,$response);
         }catch (Exception $exception){
-            muix_log_warning($exception::class,$exception->getMessage());
+            Log4p::muix_log_warn($exception::class,__CLASS__,__METHOD__);
             http_header_template();
             $response->setHeader($GLOBALS['http_code'][503]);
             die();
@@ -141,7 +142,7 @@ class CreateApp implements Serve
         try {
             $this->do_route_middleware_handle($request,$response);
         }catch (Exception $exception){
-            muix_log_warning($exception::class,$exception->getMessage());
+            Log4p::muix_log_warn($exception::class,__CLASS__,__METHOD__);
             $response->setHeader($GLOBALS['http_code'][503]);
             die();
         }
@@ -153,7 +154,7 @@ class CreateApp implements Serve
         try {
             $this->do_web_executor($request,$response);
         }catch (ReflectionException|KeyNotFond $exception){
-            muix_log_warning($exception::class,$exception->getMessage());
+            Log4p::muix_log_warn($exception::class,__CLASS__,__METHOD__);
             $response->setHeader($GLOBALS['http_code'][503]);
             die();
         }

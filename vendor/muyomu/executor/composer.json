@@ -17,7 +17,7 @@
     ],
     "require": {
         "muyomu/http": "2.0.1",
-        "muyomu/aop": "^1.0.4",
+        "muyomu/aop": "^1.0.6",
         "muyomu/log4p": "1.0.1"
     }
 }

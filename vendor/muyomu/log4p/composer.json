@@ -1,11 +1,11 @@
 {
-    "name": "muyomu/aop",
-    "description": "The aop framework for muyomu web framework",
+    "name": "muyomu/log4p",
+    "description": "The log framework for muyomu web framework",
     "type": "library",
     "license": "apache-2.0",
     "autoload": {
         "psr-4": {
-            "muyomu\\aop\\": "src/"
+            "muyomu\\log4p\\": "src/"
         }
     },
     "authors": [
@@ -14,5 +14,6 @@
             "email": "bhfqlz@qq.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "require": {}
 }

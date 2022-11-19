@@ -2,29 +2,20 @@
     "packages": [
         {
             "name": "muyomu/aop",
-            "version": "v1.0.4",
-            "version_normalized": "1.0.4.0",
+            "version": "v1.0.6",
+            "version_normalized": "1.0.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/aop.git",
-                "reference": "159566b0b29d7ee411362d0c573a872fc17f1a8e"
+                "reference": "ed9e394251d7436f52df639395ba3b5feff7aa8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/aop/zipball/159566b0b29d7ee411362d0c573a872fc17f1a8e",
-                "reference": "159566b0b29d7ee411362d0c573a872fc17f1a8e",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "url": "https://api.github.com/repos/muyomu/aop/zipball/ed9e394251d7436f52df639395ba3b5feff7aa8d",
+                "reference": "ed9e394251d7436f52df639395ba3b5feff7aa8d",
+                "shasum": ""
             },
-            "require": {
-                "muyomu/log4p": "1.0.1"
-            },
-            "time": "2022-11-17T11:14:45+00:00",
+            "time": "2022-11-19T00:31:50+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -45,7 +36,7 @@
             "description": "The aop framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/aop/issues",
-                "source": "https://github.com/muyomu/aop/tree/v1.0.4"
+                "source": "https://github.com/muyomu/aop/tree/v1.0.6"
             },
             "install-path": "../muyomu/aop"
         },
