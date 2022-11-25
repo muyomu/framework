@@ -18,6 +18,10 @@ class ComposerStaticInit285847b743627f36d86dd5241b8b5228
             'muyomu\\database\\' => 16,
             'muyomu\\aop\\' => 11,
         ),
+        'M' => 
+        array (
+            'Muyomu\\Filter\\' => 14,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -52,6 +56,10 @@ class ComposerStaticInit285847b743627f36d86dd5241b8b5228
         'muyomu\\aop\\' => 
         array (
             0 => __DIR__ . '/..' . '/muyomu/aop/src',
+        ),
+        'Muyomu\\Filter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/muyomu/filter/src',
         ),
     );
 
