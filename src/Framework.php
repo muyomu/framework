@@ -37,7 +37,7 @@ class Framework
         $filterChain->addFilter(new RequestMethodFilter());
 
         //执行过滤器链
-        $filterChain->doFilterChain();
+        $filterChain->doFilterChain($framework->getRequest(),$framework->getResponse());
 
         try {
             $application->configApplicationMiddleWare($middleWare);
