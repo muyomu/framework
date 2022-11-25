@@ -1,0 +1,22 @@
+{
+    "name": "muyomu/http",
+    "description": "The http helper of muyomu web framework",
+    "type": "library",
+    "license": "apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "muyomu\\http\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mutian",
+            "email": "mutian-xiangcai@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "muyomu/database": "2.0.1",
+        "muyomu/router": "2.0.1"
+    }
+}

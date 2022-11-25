@@ -1,0 +1,96 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "5dff0cffb5cd248ba838193cceff2c1b",
+    "packages": [
+        {
+            "name": "muyomu/database",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/database.git",
+                "reference": "e9608b80fc326ad76b49af0cd60dc4ed64b50059"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/database/zipball/e9608b80fc326ad76b49af0cd60dc4ed64b50059",
+                "reference": "e9608b80fc326ad76b49af0cd60dc4ed64b50059",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\database\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian",
+                    "email": "mutian-xiangcai@outlook.com"
+                }
+            ],
+            "description": "The database of muyomu web framework",
+            "support": {
+                "issues": "https://github.com/muyomu/database/issues",
+                "source": "https://github.com/muyomu/database/tree/v2.0.1"
+            },
+            "time": "2022-10-29T05:16:16+00:00"
+        },
+        {
+            "name": "muyomu/router",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/router.git",
+                "reference": "b35e08f3d59a8a4620c8e47f3683c47a8fb52b6d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/router/zipball/b35e08f3d59a8a4620c8e47f3683c47a8fb52b6d",
+                "reference": "b35e08f3d59a8a4620c8e47f3683c47a8fb52b6d",
+                "shasum": ""
+            },
+            "require": {
+                "muyomu/database": "2.0.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\router\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian",
+                    "email": "mutian-xiangcai@outlook.com"
+                }
+            ],
+            "description": "The router of muyomu framework",
+            "support": {
+                "issues": "https://github.com/muyomu/router/issues",
+                "source": "https://github.com/muyomu/router/tree/v2.0.1"
+            },
+            "time": "2022-10-29T05:19:56+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

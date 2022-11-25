@@ -1,0 +1,133 @@
+{
+    "packages": [
+        {
+            "name": "muyomu/database",
+            "version": "v2.0.1",
+            "version_normalized": "2.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/database.git",
+                "reference": "e9608b80fc326ad76b49af0cd60dc4ed64b50059"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/database/zipball/e9608b80fc326ad76b49af0cd60dc4ed64b50059",
+                "reference": "e9608b80fc326ad76b49af0cd60dc4ed64b50059",
+                "shasum": ""
+            },
+            "time": "2022-10-29T05:16:16+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\database\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian",
+                    "email": "mutian-xiangcai@outlook.com"
+                }
+            ],
+            "description": "The database of muyomu web framework",
+            "support": {
+                "issues": "https://github.com/muyomu/database/issues",
+                "source": "https://github.com/muyomu/database/tree/v2.0.1"
+            },
+            "install-path": "../muyomu/database"
+        },
+        {
+            "name": "muyomu/http",
+            "version": "v2.0.1",
+            "version_normalized": "2.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/http.git",
+                "reference": "7a794c008454da20ec25182f50f74af2affc45ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/http/zipball/7a794c008454da20ec25182f50f74af2affc45ba",
+                "reference": "7a794c008454da20ec25182f50f74af2affc45ba",
+                "shasum": ""
+            },
+            "require": {
+                "muyomu/database": "2.0.1",
+                "muyomu/router": "2.0.1"
+            },
+            "time": "2022-10-29T05:22:21+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\http\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian",
+                    "email": "mutian-xiangcai@outlook.com"
+                }
+            ],
+            "description": "The http helper of muyomu web framework",
+            "support": {
+                "issues": "https://github.com/muyomu/http/issues",
+                "source": "https://github.com/muyomu/http/tree/v2.0.1"
+            },
+            "install-path": "../muyomu/http"
+        },
+        {
+            "name": "muyomu/router",
+            "version": "v2.0.1",
+            "version_normalized": "2.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/router.git",
+                "reference": "b35e08f3d59a8a4620c8e47f3683c47a8fb52b6d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/router/zipball/b35e08f3d59a8a4620c8e47f3683c47a8fb52b6d",
+                "reference": "b35e08f3d59a8a4620c8e47f3683c47a8fb52b6d",
+                "shasum": ""
+            },
+            "require": {
+                "muyomu/database": "2.0.1"
+            },
+            "time": "2022-10-29T05:19:56+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\router\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian",
+                    "email": "mutian-xiangcai@outlook.com"
+                }
+            ],
+            "description": "The router of muyomu framework",
+            "support": {
+                "issues": "https://github.com/muyomu/router/issues",
+                "source": "https://github.com/muyomu/router/tree/v2.0.1"
+            },
+            "install-path": "../muyomu/router"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

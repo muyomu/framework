@@ -1,0 +1,21 @@
+{
+    "name": "muyomu/filter",
+    "description": "The filter framework for muyomu web framework",
+    "type": "library",
+    "license": "apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "Muyomu\\Filter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mutian",
+            "email": "bhfqlz@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "muyomu/http": "2.0.1"
+    }
+}

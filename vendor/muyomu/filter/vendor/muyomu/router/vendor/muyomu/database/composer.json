@@ -1,0 +1,19 @@
+{
+    "name": "muyomu/database",
+    "description": "The database of muyomu web framework",
+    "license": "apache-2.0",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "muyomu\\database\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mutian",
+            "email": "mutian-xiangcai@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
