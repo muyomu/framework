@@ -28,11 +28,16 @@ class Framework
     public static function main(BaseMiddleWare $middleWare):void{
 
         $framework = new Framework();
+
         $application = new CreateApp();
 
         $filterChain = $framework->getFilterExecutor();
 
+        //添加过滤器
         $filterChain->addFilter(new RequestMethodFilter());
+
+        //执行过滤器链
+        $filterChain->doFilterChain();
 
         try {
             $application->configApplicationMiddleWare($middleWare);
