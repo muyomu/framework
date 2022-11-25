@@ -3,7 +3,7 @@
         'name' => 'muyomu/framework',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '29d036a85c5bedaecd1856652ae0bffe24ea8684',
+        'reference' => '158fb3040cbaf74b2f4a787c155b9936abb4ea78',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -58,7 +58,7 @@
         'muyomu/framework' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '29d036a85c5bedaecd1856652ae0bffe24ea8684',
+            'reference' => '158fb3040cbaf74b2f4a787c155b9936abb4ea78',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
