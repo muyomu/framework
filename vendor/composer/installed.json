@@ -161,28 +161,28 @@
         },
         {
             "name": "muyomu/filter",
-            "version": "v1.0.2",
-            "version_normalized": "1.0.2.0",
+            "version": "v1.0.3",
+            "version_normalized": "1.0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/filter.git",
-                "reference": "45071e9916b76fddb382cf80f2119a229b32dcd9"
+                "reference": "1ec2315997dd8483d5d460bbaea036b336a995ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/filter/zipball/45071e9916b76fddb382cf80f2119a229b32dcd9",
-                "reference": "45071e9916b76fddb382cf80f2119a229b32dcd9",
+                "url": "https://api.github.com/repos/muyomu/filter/zipball/1ec2315997dd8483d5d460bbaea036b336a995ca",
+                "reference": "1ec2315997dd8483d5d460bbaea036b336a995ca",
                 "shasum": ""
             },
             "require": {
                 "muyomu/http": "2.0.1"
             },
-            "time": "2022-11-25T11:13:29+00:00",
+            "time": "2022-11-25T11:51:00+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "Muyomu\\Filter\\": "src/"
+                    "muyomu\\filter\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -198,7 +198,7 @@
             "description": "The filter framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/filter/issues",
-                "source": "https://github.com/muyomu/filter/tree/v1.0.2"
+                "source": "https://github.com/muyomu/filter/tree/v1.0.3"
             },
             "install-path": "../muyomu/filter"
         },
