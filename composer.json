@@ -23,6 +23,6 @@
         "muyomu/database": "2.0.1",
         "muyomu/dpara": "2.0.5",
         "muyomu/log4p": "1.0.3",
-        "muyomu/filter": "1.0.8"
+        "muyomu/filter": "1.0.9"
     }
 }

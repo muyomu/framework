@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b64bb1cebe6a2029869e3801ba931a27",
+    "content-hash": "19e5112bf9408b1e9cc95dc49864b035",
     "packages": [
         {
             "name": "muyomu/aop",
@@ -203,16 +203,16 @@
         },
         {
             "name": "muyomu/filter",
-            "version": "v1.0.8",
+            "version": "v1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/filter.git",
-                "reference": "4db211cd17e339667a3bb98099d27fea7e7d76fa"
+                "reference": "8813f4cab78f9e7ef86f57f128a7b57e50ed6c60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/filter/zipball/4db211cd17e339667a3bb98099d27fea7e7d76fa",
-                "reference": "4db211cd17e339667a3bb98099d27fea7e7d76fa",
+                "url": "https://api.github.com/repos/muyomu/filter/zipball/8813f4cab78f9e7ef86f57f128a7b57e50ed6c60",
+                "reference": "8813f4cab78f9e7ef86f57f128a7b57e50ed6c60",
                 "shasum": ""
             },
             "require": {
@@ -237,9 +237,9 @@
             "description": "The filter framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/filter/issues",
-                "source": "https://github.com/muyomu/filter/tree/v1.0.8"
+                "source": "https://github.com/muyomu/filter/tree/v1.0.9"
             },
-            "time": "2022-11-26T09:40:04+00:00"
+            "time": "2022-11-26T09:56:26+00:00"
         },
         {
             "name": "muyomu/http",

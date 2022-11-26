@@ -13,9 +13,11 @@ class FilterExecutor
     public function doFilterChain(Request $request,Response $response):void{
         if (!empty($this->filterObjects)){
             $objects = array_reverse($this->filterObjects);
-            $filter = array_pop($objects);
-            if (!is_null($filter)){
-                $filter->filter($request,$response);
+            foreach ($objects as $object){
+                $filter = array_pop($objects);
+                if (!is_null($filter)){
+                    $filter->filter($request,$response);
+                }
             }
         }
     }
