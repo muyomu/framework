@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55508f41d6a7d850937807323e464cc6",
+    "content-hash": "feb8b68d34978700e3359a628fd77220",
     "packages": [
         {
             "name": "muyomu/config",
@@ -82,16 +82,16 @@
         },
         {
             "name": "muyomu/log4p",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/logger.git",
-                "reference": "aabae1a9844acbdab438ea66b993bdd74009fcee"
+                "reference": "f69297da578314756f3c653fff6a67fb11ce7e10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/logger/zipball/aabae1a9844acbdab438ea66b993bdd74009fcee",
-                "reference": "aabae1a9844acbdab438ea66b993bdd74009fcee",
+                "url": "https://api.github.com/repos/muyomu/logger/zipball/f69297da578314756f3c653fff6a67fb11ce7e10",
+                "reference": "f69297da578314756f3c653fff6a67fb11ce7e10",
                 "shasum": ""
             },
             "require": {
@@ -116,9 +116,9 @@
             "description": "The log framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/logger/issues",
-                "source": "https://github.com/muyomu/logger/tree/v1.0.2"
+                "source": "https://github.com/muyomu/logger/tree/v1.0.3"
             },
-            "time": "2022-11-26T01:01:20+00:00"
+            "time": "2022-11-26T06:53:35+00:00"
         }
     ],
     "packages-dev": [],

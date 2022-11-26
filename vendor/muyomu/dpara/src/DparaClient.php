@@ -7,6 +7,7 @@ use muyomu\database\exception\KeyNotFond;
 use muyomu\database\exception\RepeatDefinition;
 use muyomu\dpara\client\Dpara;
 use muyomu\dpara\exception\UrlNotMatch;
+use muyomu\dpara\utility\DparaHelper;
 use muyomu\http\Request;
 
 class DparaClient implements Dpara
@@ -35,7 +36,6 @@ class DparaClient implements Dpara
          * 静态路由查询
          */
         $key_value = $this->dparaHelper->key_exits($request->getURL(),$static_routes_table,$request,$dbClient->database);
-
 
         /*
          * 将数据保存到request中的rule中

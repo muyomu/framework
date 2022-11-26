@@ -47,7 +47,7 @@ class Log4p implements LogClient
         $date = $this->utility->getData();
         $log = fopen($this->configData['log_location'].date("Ymd").".log","a+");
         if ($log){
-            fputs($log,"[$date] [ERROR]:    ".$className.":".$method.":"."   $message"."\r\n");
+            fputs($log,"[$date] [WARN]:    ".$className.":".$method.":"."   $message"."\r\n");
         }
         else{
             throw new LogFileOpenFailedException(realpath($this->configData['log_location']));

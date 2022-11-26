@@ -7,6 +7,7 @@ use muyomu\http\client\GetClient;
 use muyomu\http\client\HeaderClient;
 use muyomu\http\client\PostClient;
 use muyomu\http\client\RequestClient;
+use muyomu\http\utility\Attribute;
 
 class Request implements RequestClient,GetClient,PostClient,HeaderClient
 {
@@ -68,11 +69,7 @@ class Request implements RequestClient,GetClient,PostClient,HeaderClient
 
     public function getHeader(string $key):string |null{
         $headers = apache_request_headers();
-        if (isset($headers[$key])){
-            return $headers[$key];
-        }else{
-            return null;
-        }
+        return $headers[$key] ?? null;
     }
 
     /*

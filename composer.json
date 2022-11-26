@@ -17,12 +17,12 @@
     ],
     "require": {
         "php": ">=8.1",
-        "muyomu/router": "2.0.2",
-        "muyomu/executor": "2.0.5",
-        "muyomu/http": "2.0.2",
+        "muyomu/router": "2.0.4",
+        "muyomu/executor": "2.0.6",
+        "muyomu/http": "2.0.6",
         "muyomu/database": "2.0.1",
-        "muyomu/dpara": "2.0.2",
-        "muyomu/log4p": "1.0.2",
-        "muyomu/filter": "1.0.5"
+        "muyomu/dpara": "2.0.4",
+        "muyomu/log4p": "1.0.3",
+        "muyomu/filter": "1.0.7"
     }
 }

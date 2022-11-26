@@ -7,6 +7,7 @@ use JetBrains\PhpStorm\NoReturn;
 use muyomu\config\ConfigParser;
 use muyomu\config\exception\FieldConfigException;
 use muyomu\http\client\ResponseClient;
+use muyomu\http\config\DefaultFileConfig;
 use muyomu\http\config\DefaultHttpConfig;
 use muyomu\http\exception\FileNotFoundException;
 use muyomu\http\message\Message;
@@ -14,7 +15,9 @@ use muyomu\http\message\MessageToArray;
 
 class Response implements ResponseClient
 {
-    private array $configData = array();
+    private array $configData;
+
+    private array $fileConfig;
 
     /**
      * @throws FieldConfigException
@@ -23,6 +26,7 @@ class Response implements ResponseClient
     {
         $config = new ConfigParser();
         $this->configData = $config->getConfigData(DefaultHttpConfig::class);
+        $this->fileConfig = $config->getConfigData(DefaultFileConfig::class);
     }
 
 
@@ -31,17 +35,19 @@ class Response implements ResponseClient
         $this->configData[$field] = $content;
     }
 
-    private function addAllHeaders():void{
-        $keys = array_keys($this->configData['response_header']);
+    private function addAllHeaders(array $config):void{
+        $keys = array_keys($config['response_headers']);
         foreach ($keys as $key){
-            header("${$key}:${$this->configData['response_header']}");
+            $value = $config['response_headers'][$key];
+            $header = "$key: $value";
+            header("$header");
         }
     }
 
     #[NoReturn] public function doDataResponse(mixed $data,int $code): void
     {
         http_response_code($code);
-        $this->addAllHeaders();
+        $this->addAllHeaders($this->configData);
 
         $message = new Message();
         $message->setDataStatus("Success");
@@ -56,7 +62,7 @@ class Response implements ResponseClient
     #[NoReturn] public function doExceptionResponse(Exception $exception, int $code,): void
     {
         http_response_code($code);
-        $this->addAllHeaders();
+        $this->addAllHeaders($this->configData);
 
         $message = new Message();
         $message->setDataStatus("Success");
@@ -68,13 +74,43 @@ class Response implements ResponseClient
         die(json_encode($data));
     }
 
-    public function doFileResponse(string $file): void
+    #[NoReturn] public function doFileResponse(string $file): void
     {
-        $file = fopen($file,"r");
-        if ($file){
-            http_send_stream($file);
+        $file_location = $this->fileConfig['location'].$file;
+        $resource = fopen($file_location,"r");
+        if ($resource){
+            $this->addAllHeaders($this->fileConfig);
+            Header ( "Accept-Length: " . filesize ($file_location) );
+            Header ( "Content-Disposition: attachment; filename=" . $file );
+            $content = fread($resource,filesize($file));
+            die($content);
         }else{
             $this->doExceptionResponse(new FileNotFoundException(),400);
+        }
+    }
+
+
+    #[NoReturn] public function doCustomizeResponse(mixed $data, int $code, array $headerConfig = array()):void
+    {
+        http_response_code($code);
+        $this->customizeHeaders($headerConfig);
+
+        $message = new Message();
+        $message->setDataStatus("Success");
+        $message->setDataType(gettype("string"));
+        $message->setData($data);
+
+        $data = MessageToArray::messageToArray($message);
+
+        die(json_encode($data));
+    }
+
+    private function customizeHeaders(array $config):void{
+        $keys = array_keys($config);
+        foreach ($keys as $key){
+            $value = $config[$key];
+            $header = "$key: $value";
+            header("$header");
         }
     }
 }

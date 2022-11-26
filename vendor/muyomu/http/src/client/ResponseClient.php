@@ -13,4 +13,6 @@ interface ResponseClient
     public function doExceptionResponse(Exception $exception, int $code,):void;
 
     public function doFileResponse(string $file):void;
+
+    public function doCustomizeResponse(mixed $data,int $code, array $headerConfig = array()):void;
 }
