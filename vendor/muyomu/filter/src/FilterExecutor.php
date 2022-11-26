@@ -3,7 +3,6 @@
 namespace muyomu\filter;
 
 use muyomu\filter\client\GenericFilter;
-use muyomu\http\client\GetClient;
 use muyomu\http\Request;
 use muyomu\http\Response;
 

@@ -65,7 +65,7 @@ class Response implements ResponseClient
         $this->addAllHeaders($this->configData);
 
         $message = new Message();
-        $message->setDataStatus("Success");
+        $message->setDataStatus("Failure");
         $message->setDataType(gettype("string"));
         $message->setData($exception->getMessage());
 
@@ -82,10 +82,10 @@ class Response implements ResponseClient
             $this->addAllHeaders($this->fileConfig);
             Header ( "Accept-Length: " . filesize ($file_location) );
             Header ( "Content-Disposition: attachment; filename=" . $file );
-            $content = fread($resource,filesize($file));
+            $content = fread($resource,filesize($file_location));
             die($content);
         }else{
-            $this->doExceptionResponse(new FileNotFoundException(),400);
+            $this->doExceptionResponse(new FileNotFoundException(),404);
         }
     }
 

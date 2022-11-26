@@ -7,6 +7,7 @@ use muyomu\executor\exception\ServerException;
 use muyomu\filter\FilterExecutor;
 use muyomu\framework\base\BaseMiddleWare;
 use muyomu\framework\filter\RequestMethodFilter;
+use muyomu\framework\filter\RequestRootRuteFilter;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\log4p\Log4p;
@@ -38,6 +39,7 @@ class Framework
 
         //添加过滤器
         $filterChain->addFilter(new RequestMethodFilter());
+        $filterChain->addFilter(new RequestRootRuteFilter());
 
         //执行过滤器链
         $filterChain->doFilterChain($framework->getRequest(),$framework->getResponse());
