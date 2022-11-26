@@ -4,7 +4,7 @@ namespace muyomu\database\base;
 
 class Document
 {
-    private int $dataType;
+    private mixed $dataType;
 
     private mixed $data;
 

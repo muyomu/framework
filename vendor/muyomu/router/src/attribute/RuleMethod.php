@@ -2,8 +2,8 @@
 
 namespace muyomu\router\attribute;
 
-enum RuleMethod
+enum RuleMethod: string
 {
-    const RULE_GET = 'GET';
-    const RULE_POST = 'POST';
+    case RULE_GET = 'GET';
+    case RULE_POST = 'POST';
 }

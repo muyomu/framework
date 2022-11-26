@@ -3,6 +3,7 @@
 namespace muyomu\framework;
 
 use Exception;
+use muyomu\executor\exception\ServerException;
 use muyomu\filter\FilterExecutor;
 use muyomu\framework\base\BaseMiddleWare;
 use muyomu\framework\filter\RequestMethodFilter;
@@ -33,6 +34,8 @@ class Framework
 
         $filterChain = $framework->getFilterExecutor();
 
+        $logger = new Log4p();
+
         //添加过滤器
         $filterChain->addFilter(new RequestMethodFilter());
 
@@ -43,8 +46,8 @@ class Framework
             $application->configApplicationMiddleWare($middleWare);
             $application->run($framework->getRequest(),$framework->getResponse());
         }catch (Exception $e){
-            Log4p::muix_log_warn($e::class,__CLASS__,__METHOD__);
-            die();
+            $logger->muix_log_warn(__CLASS__,__METHOD__,$e->getMessage());
+            $framework->getResponse()->doExceptionResponse(new ServerException(),503);
         }
     }
 

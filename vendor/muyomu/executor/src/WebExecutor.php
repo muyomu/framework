@@ -2,6 +2,7 @@
 
 namespace muyomu\executor;
 
+use JetBrains\PhpStorm\NoReturn;
 use muyomu\executor\client\ExecutorClient;
 use muyomu\http\Request;
 use muyomu\http\Response;
@@ -14,7 +15,7 @@ class WebExecutor implements ExecutorClient
         $this->utility = new Utility();
     }
 
-    public function webExecutor(Request $request,Response $response,string $controllerClassName, string $handle): void
+    #[NoReturn] public function webExecutor(Request $request, Response $response, string $controllerClassName, string $handle): void
     {
         /*
          * 获取控制器反射类
@@ -50,6 +51,6 @@ class WebExecutor implements ExecutorClient
         /*
          * 处理返回数据
          */
-        $response->doResponse($returnData);
+        $response->doDataResponse($returnData,200);
     }
 }

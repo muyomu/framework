@@ -4,6 +4,7 @@ namespace muyomu\executor;
 
 use muyomu\aop\FrameWorkClient;
 use muyomu\executor\client\ExecutorHelper;
+use muyomu\executor\exception\ServerException;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\log4p\Log4p;
@@ -15,9 +16,12 @@ class Utility implements ExecutorHelper
 {
     private FrameWorkClient $frameWorkClient;
 
+    private Log4p $log4p;
+
     public function __construct()
     {
         $this->frameWorkClient = new FrameWorkClient();
+        $this->log4p = new Log4p();
     }
 
     public function getReflectionClass(Response $response, string $class): ReflectionClass
@@ -25,10 +29,8 @@ class Utility implements ExecutorHelper
         try {
             $class = new ReflectionClass($class);
         }catch (ReflectionException $exception){
-            Log4p::muix_log_warn($exception->getMessage(),__CLASS__,__METHOD__);
-            http_header_template();
-            $response->setHeader($GLOBALS['http_code'][504]);
-            die();
+            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
+            $response->doExceptionResponse(new ServerException(),500);
         }
         return $class;
     }
@@ -38,10 +40,8 @@ class Utility implements ExecutorHelper
         try {
             $instance = $reflectionClass->newInstance();
         }catch (ReflectionException $exception){
-            Log4p::muix_log_warn($exception->getMessage(),__CLASS__,__METHOD__);
-            http_header_template();
-            $response->setHeader($GLOBALS['http_code'][504]);
-            die();
+            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
+            $response->doExceptionResponse(new ServerException(),500);
         }
         return $instance;
     }
@@ -60,7 +60,7 @@ class Utility implements ExecutorHelper
             $response_property->setValue($instance,$response);
         }
         catch (ReflectionException $exception) {
-            Log4p::muix_log_warn($exception->getMessage(),__CLASS__,__METHOD__);
+            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
         }
     }
 
@@ -69,10 +69,8 @@ class Utility implements ExecutorHelper
         try {
             $method = $reflectionClass->getMethod($handle);
         }catch (ReflectionException $exception) {
-            Log4p::muix_log_warn($exception->getMessage(),__CLASS__,__METHOD__);
-            http_header_template();
-            $response->setHeader($GLOBALS['http_code'][504]);
-            die();
+            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
+            $response->doExceptionResponse(new ServerException(),500);
         }
         return $method;
     }
@@ -82,10 +80,8 @@ class Utility implements ExecutorHelper
         try {
             $returnData = $this->frameWorkClient->aopExecutor($instance,$method,$argv);
         }catch (ReflectionException $exception) {
-            Log4p::muix_log_warn($exception->getMessage(),__CLASS__,__METHOD__);
-            http_header_template();
-            $response->setHeader($GLOBALS['http_code'][504]);
-            die();
+            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
+            $response->doExceptionResponse(new ServerException(),500);
         }
         return $returnData;
     }

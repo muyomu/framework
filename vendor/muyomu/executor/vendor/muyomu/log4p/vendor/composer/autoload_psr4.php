@@ -6,5 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Muyomu\\Log4p\\' => array($baseDir . '/src'),
+    'muyomu\\log4p\\' => array($baseDir . '/src'),
+    'muyomu\\config\\' => array($vendorDir . '/muyomu/config/src'),
 );

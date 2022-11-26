@@ -4,28 +4,37 @@ namespace muyomu\router;
 
 use Exception;
 use muyomu\database\base\Document;
+use muyomu\log4p\Log4p;
 use muyomu\router\model\Rule;
 
-class RouteApi extends RouterClient
+class RouteApi
 {
+
     public static function rule(string $method, string $uri, string $controller, string $handle): Rule
     {
+        $logger = new Log4p();
+
         $rule = null;
         try {
-            $rule = parent::rule($method, $uri, $controller, $handle);
+            $rule = RouterClient::rule($method, $uri, $controller, $handle);
         }catch (Exception $exception){
-            echo $exception->getMessage();
+            $logger->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
+            http_response_code(500);
+            die();
         }
         return $rule;
     }
 
     public static function getRule(string $key): Document
     {
-        $document = null;
+        $logger = new Log4p();
+
         try {
-            $document = parent::getRule($key);
+            $document = RouterClient::getRule($key);
         }catch (Exception $exception){
-            echo $exception->getMessage();
+            $logger->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
+            http_response_code(500);
+            die();
         }
         return  $document;
     }

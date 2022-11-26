@@ -2,73 +2,79 @@
 
 namespace muyomu\http;
 
+use Exception;
+use JetBrains\PhpStorm\NoReturn;
+use muyomu\config\ConfigParser;
+use muyomu\config\exception\FieldConfigException;
 use muyomu\http\client\ResponseClient;
+use muyomu\http\config\DefaultHttpConfig;
+use muyomu\http\exception\FileNotFoundException;
 use muyomu\http\message\Message;
 use muyomu\http\message\MessageToArray;
 
 class Response implements ResponseClient
 {
-    public function setHeader(string $header):void
+    private array $configData = array();
+
+    /**
+     * @throws FieldConfigException
+     */
+    public function __construct()
     {
-        header($header);
+        $config = new ConfigParser();
+        $this->configData = $config->getConfigData(DefaultHttpConfig::class);
     }
 
-    public function doResponse(mixed $data): void
+
+    public function setHeader(string $field, string $content): void
     {
-        switch (gettype($data)){
-            case "integer":
-            case "boolean":
-            case "double":
-            case "string": $this->returnRaw($data);break;
-            case "NULL": $this->returnWhite();break;
-            case "array": $this->returnJson($data);break;
-            default: $this->returnBadData();break;
+        $this->configData[$field] = $content;
+    }
+
+    private function addAllHeaders():void{
+        $keys = array_keys($this->configData['response_header']);
+        foreach ($keys as $key){
+            header("${$key}:${$this->configData['response_header']}");
         }
-
     }
 
-    public function returnWhite(): void
+    #[NoReturn] public function doDataResponse(mixed $data,int $code): void
     {
+        http_response_code($code);
+        $this->addAllHeaders();
+
         $message = new Message();
-        $message->setDataType("empty");
         $message->setDataStatus("Success");
-        $message->setData(null);
-
-        $return = MessageToArray::messageToArray($message);
-
-        echo json_encode($return, JSON_UNESCAPED_UNICODE);
-    }
-
-    public function returnRaw(mixed $data): void
-    {
-        $message = new Message();
         $message->setDataType(gettype($data));
-        $message->setDataStatus("Success");
         $message->setData($data);
 
-        $return = MessageToArray::messageToArray($message);
+        $data = MessageToArray::messageToArray($message);
 
-        echo json_encode($return, JSON_UNESCAPED_UNICODE);
+        die(json_encode($data));
     }
 
-    public function returnJson(array $data): void
+    #[NoReturn] public function doExceptionResponse(Exception $exception, int $code,): void
     {
+        http_response_code($code);
+        $this->addAllHeaders();
+
         $message = new Message();
-        $message->setDataType(gettype($data));
         $message->setDataStatus("Success");
-        $message->setData($data);
+        $message->setDataType(gettype("string"));
+        $message->setData($exception->getMessage());
 
-        $return = MessageToArray::messageToArray($message);
+        $data = MessageToArray::messageToArray($message);
 
-        echo json_encode($return, JSON_UNESCAPED_UNICODE);
+        die(json_encode($data));
     }
 
-
-    public function returnBadData(): void
+    public function doFileResponse(string $file): void
     {
-        $message = new Message();
-        $message->setDataType("NONE");
-        $message->setDataStatus("BadData");
-        $message->setData(null);
+        $file = fopen($file,"r");
+        if ($file){
+            http_send_stream($file);
+        }else{
+            $this->doExceptionResponse(new FileNotFoundException(),400);
+        }
     }
 }

@@ -4,5 +4,5 @@ namespace muyomu\http\client;
 
 interface HeaderClient
 {
-    public function getHeader(string $key):string;
+    public function getHeader(string $key):string | null;
 }

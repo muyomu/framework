@@ -2,46 +2,87 @@
 
 namespace muyomu\log4p;
 
+use muyomu\config\ConfigParser;
+use muyomu\config\exception\FieldConfigException;
 use muyomu\log4p\client\LogClient;
+use muyomu\log4p\config\Log4pDefaultConfig;
+use muyomu\log4p\exception\LogFileOpenFailedException;
+use muyomu\log4p\utility\LogUtility;
 
 class Log4p implements LogClient
 {
-    public static function muix_log_error(string $item, mixed $message):void{
-        $date = date("Y-m-d H:i:s",time());
-        $log = fopen("../resource/log/".date("Ymd").".log","a+");
-        fputs($log,"\r\n"."[$date] [ERROR]:    ".$item." : ".$message);
-    }
+    private array $configData;
 
-    public static function muix_log_warn(string $exception,string $classname,string $method):void{
-        $date = date("Y-m-d H:i:s",time());
-        $log = fopen("../resource/log/".date("Ymd").".log","a+");
-        fputs($log,"\r\n"."[$date] [WARN]:    ".$exception.":    ".$classname.":    ".$method);
-    }
+    private LogUtility $utility;
 
-    public static function muix_log_info(string $item, mixed $message):void{
-        $date = date("Y-m-d H:i:s",time());
-        $log = fopen("../resource/log/".date("Ymd").".log","a+");
-        fputs($log,"\r\n"."[$date] [INFO]:     ".$item." : ".$message);
-    }
-
-    public static function muix_log_debug(string $item, mixed $message): void
+    /**
+     * @throws FieldConfigException
+     */
+    public function __construct()
     {
-        $date = date("Y-m-d H:i:s",time());
-        $log = fopen("../resource/log/".date("Ymd").".log","a+");
-        fputs($log,"\r\n"."[$date] [INFO]:    ".$item." : ".$message);
+        $parser = new ConfigParser();
+        $this->configData = $parser->getConfigData(Log4pDefaultConfig::class);
+        $this->utility = new LogUtility();
     }
 
-    public static function muix_log_fatal(string $item, mixed $message): void
-    {
-        $date = date("Y-m-d H:i:s",time());
-        $log = fopen("../resource/log/".date("Ymd").".log","a+");
-        fputs($log,"\r\n"."[$date] [INFO]:    ".$item." : ".$message);
+    /**
+     * @throws LogFileOpenFailedException
+     */
+    public function muix_log_error(string $className,string $method,int $line,string $message):void{
+        $date = $this->utility->getData();
+        $log = fopen($this->configData['log_location'].date("Ymd").".log","a+");
+        if ($log){
+            fputs($log,"[$date] [ERROR]:    ".$className.":".$method.":"."$line". "   $message"."\r\n");
+        }
+        else{
+            throw new LogFileOpenFailedException(realpath($this->configData['log_location']));
+        }
+        fclose($log);
     }
 
-    public static function muix_log_trace(string $item, mixed $message): void
+    /**
+     * @throws LogFileOpenFailedException
+     */
+    public function muix_log_warn(string $className, string $method, string $message):void{
+        $date = $this->utility->getData();
+        $log = fopen($this->configData['log_location'].date("Ymd").".log","a+");
+        if ($log){
+            fputs($log,"[$date] [ERROR]:    ".$className.":".$method.":"."   $message"."\r\n");
+        }
+        else{
+            throw new LogFileOpenFailedException(realpath($this->configData['log_location']));
+        }
+        fclose($log);
+    }
+
+    /**
+     * @throws LogFileOpenFailedException
+     */
+    public function muix_log_info(string $item, mixed $message):void{
+        $date = $this->utility->getData();
+        $log = fopen($this->configData['log_location'].date("Ymd").".log","a+");
+        if ($log){
+            fputs($log,"[$date] [INFO]:    ".$item." : ".$message);
+        }
+        else{
+            throw new LogFileOpenFailedException(realpath($this->configData['log_location']));
+        }
+        fclose($log);
+    }
+
+    /**
+     * @throws LogFileOpenFailedException
+     */
+    public function muix_log_debug(string $varName, mixed $value): void
     {
-        $date = date("Y-m-d H:i:s",time());
-        $log = fopen("../resource/log/".date("Ymd").".log","a+");
-        fputs($log,"\r\n"."[$date] [INFO]:    ".$item." : ".$message);
+        $date = $this->utility->getData();
+        $log = fopen($this->configData['log_location'].date("Ymd").".log","a+");
+        if ($log){
+            fputs($log,"[$date] [DEBUG]:    ".$varName." : ".$value);
+        }
+        else{
+            throw new LogFileOpenFailedException(realpath($this->configData['log_location']));
+        }
+        fclose($log);
     }
 }

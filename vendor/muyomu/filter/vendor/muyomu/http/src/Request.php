@@ -7,8 +7,6 @@ use muyomu\http\client\GetClient;
 use muyomu\http\client\HeaderClient;
 use muyomu\http\client\PostClient;
 use muyomu\http\client\RequestClient;
-use muyomu\http\exception\HeaderNotFound;
-use muyomu\http\exception\ParaNotExit;
 
 class Request implements RequestClient,GetClient,PostClient,HeaderClient
 {
@@ -50,38 +48,30 @@ class Request implements RequestClient,GetClient,PostClient,HeaderClient
      * parameter---------------------------------------------------------
      */
 
-    /**
-     * @throws ParaNotExit
-     */
     public function getPara(string $varName): mixed
     {
         if (filter_has_var(INPUT_GET,$varName)){
             return $_GET[$varName];
         }else{
-            throw new ParaNotExit();
+            return null;
         }
     }
 
-    /**
-     * @throws ParaNotExit
-     */
     public function postPara(string $varName): mixed
     {
         if (filter_has_var(INPUT_GET,$varName)){
             return $_GET[$varName];
         }else{
-            throw new ParaNotExit();
+            return null;
         }
     }
 
-    /**
-     * @throws HeaderNotFound
-     */
-    public function getHeader(string $key):string{
-        if(array_key_exists($key,$_SERVER)){
-            throw new HeaderNotFound();
+    public function getHeader(string $key):string |null{
+        $headers = apache_request_headers();
+        if (isset($headers[$key])){
+            return $headers[$key];
         }else{
-            return $_SERVER[$key];
+            return null;
         }
     }
 
