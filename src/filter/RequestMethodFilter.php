@@ -14,7 +14,7 @@ class RequestMethodFilter implements GenericFilter
     public function filter(Request $request, Response $response): void
     {
         $method = $request->getRequestMethod();
-        if (!($method != RuleMethod::RULE_GET->value || $method == RuleMethod::RULE_POST->value)){
+        if (!($method == RuleMethod::RULE_GET->value || $method == RuleMethod::RULE_POST->value)){
             $response->doExceptionResponse(new MethodNotMatch(),405);
         }
     }
