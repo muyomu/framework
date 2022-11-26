@@ -3,12 +3,10 @@
 namespace muyomu\dpara;
 
 use muyomu\database\DbClient;
-use muyomu\database\exception\KeyNotFond;
-use muyomu\database\exception\RepeatDefinition;
 use muyomu\dpara\client\Dpara;
-use muyomu\dpara\exception\UrlNotMatch;
 use muyomu\dpara\utility\DparaHelper;
 use muyomu\http\Request;
+use muyomu\http\Response;
 
 class DparaClient implements Dpara
 {
@@ -20,11 +18,14 @@ class DparaClient implements Dpara
         $this->dparaHelper = new DparaHelper();
     }
 
+
     /**
-     * @throws UrlNotMatch
-     * @throws RepeatDefinition
+     * @param Request $request
+     * @param Response $response
+     * @param DbClient $dbClient
+     * @return void
      */
-    public function dpara(Request $request, DbClient $dbClient): void
+    public function dpara(Request $request,Response $response, DbClient $dbClient): void
     {
 
         /*
@@ -35,19 +36,27 @@ class DparaClient implements Dpara
         /*
          * 静态路由查询
          */
-        $key_value = $this->dparaHelper->key_exits($request->getURL(),$static_routes_table,$request,$dbClient->database);
+        $request_uri = $request->getURL();
+
+        //数据收集器
+        $dataCollector = array();
+        //键值收集器
+        $keyCollector = array();
+        while (1){
+            $document = $this->dparaHelper->key_exits($request_uri,$static_routes_table,$request,$response,$dbClient->database,$keyCollector,$dataCollector);
+            if (is_null($document)){
+                $request_uri = $this->dparaHelper->get_next_url($request_uri,$dataCollector,$response);
+            }else{
+                break;
+            }
+        }
 
         /*
          * 将数据保存到request中的rule中
          */
-        $request_db = null;
-        try {
-            $request_db = $request->getDbClient()->select("rule");
-        }catch (KeyNotFond $e) {
-
-        }
-        $request_db->getData()->setPathpara($key_value['value']);
-        $request_db->getData()->setPathkey($key_value['key']);
+        $document->getData()->setPathpara($dataCollector);
+        $document->getData()->setPathkey($keyCollector);
+        $request->getDbClient()->insert("rule",$document);
     }
 
     /*

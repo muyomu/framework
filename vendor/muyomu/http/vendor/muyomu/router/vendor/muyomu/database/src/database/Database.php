@@ -2,7 +2,7 @@
 
 namespace muyomu\database\database;
 
-class Database
+abstract class Database
 {
     public array $database = array();
 

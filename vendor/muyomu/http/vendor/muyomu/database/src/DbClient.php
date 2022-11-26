@@ -5,35 +5,27 @@ namespace muyomu\database;
 use muyomu\database\base\Document;
 use muyomu\database\client\Client;
 use muyomu\database\database\Database;
-use muyomu\database\exception\KeyNotFond;
-use muyomu\database\exception\RepeatDefinition;
-use muyomu\database\exception\TypeNOtMatch;
 
 class DbClient extends Database implements Client {
 
     /**
-     * @throws RepeatDefinition
+     * @param string $key
+     * @param Document $document
+     * @return void
      */
-    public function insert(string $key, Document $document): bool
+    public function insert(string $key, Document $document): void
     {
-        if (array_key_exists($key,$this->database)){
-            throw new RepeatDefinition();
-        }else{
-            if($this->database[$key] = $document){
-                return true;
-            }else{
-                return false;
-            }
-        }
+        $this->database[$key] = $document;
     }
 
     /**
-     * @throws KeyNotFond
+     * @param string $key
+     * @return bool
      */
     public function delete(string $key): bool
     {
         if (!array_key_exists($key,$this->database)){
-            throw new KeyNotFond();
+            return false;
         }else{
             unset($this->database[$key]);
             return true;
@@ -41,18 +33,19 @@ class DbClient extends Database implements Client {
     }
 
     /**
-     * @throws KeyNotFond
-     * @throws TypeNOtMatch
+     * @param string $key
+     * @param mixed $updateData
+     * @return bool
      */
     public function update(string $key, mixed $updateData): bool
     {
         if (!array_key_exists($key,$this->database)){
-            throw new KeyNotFond();
+            return false;
         }else{
             $document = $this->select($key);
             $dataType = $document->getDataType();
             if (!$dataType == gettype($updateData)){
-                throw new TypeNOtMatch();
+                return false;
             }else{
                 $document->setData($updateData);
                 return true;
@@ -61,12 +54,13 @@ class DbClient extends Database implements Client {
     }
 
     /**
-     * @throws KeyNotFond
+     * @param string $key
+     * @return Document|null
      */
-    public function select(string $key): Document
+    public function select(string $key): Document | null
     {
         if (!array_key_exists($key,$this->database)){
-            throw new KeyNotFond();
+            return null;
         }else{
             return $this->database[$key];
         }

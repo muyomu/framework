@@ -5,7 +5,6 @@ namespace muyomu\http;
 use Exception;
 use JetBrains\PhpStorm\NoReturn;
 use muyomu\config\ConfigParser;
-use muyomu\config\exception\FieldConfigException;
 use muyomu\http\client\ResponseClient;
 use muyomu\http\config\DefaultFileConfig;
 use muyomu\http\config\DefaultHttpConfig;
@@ -19,9 +18,6 @@ class Response implements ResponseClient
 
     private array $fileConfig;
 
-    /**
-     * @throws FieldConfigException
-     */
     public function __construct()
     {
         $config = new ConfigParser();

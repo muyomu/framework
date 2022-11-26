@@ -11,6 +11,11 @@ use muyomu\router\attribute\RuleMethod;
 class RequestMethodFilter implements GenericFilter
 {
 
+    /**
+     * @param Request $request
+     * @param Response $response
+     * @return void
+     */
     public function filter(Request $request, Response $response): void
     {
         $method = $request->getRequestMethod();

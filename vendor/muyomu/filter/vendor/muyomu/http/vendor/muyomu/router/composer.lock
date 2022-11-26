@@ -4,57 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e83c5d2c30e1c5d144ab7cd0a8ee52b6",
+    "content-hash": "ff891b761bfe02ceeda1d13e6af25d16",
     "packages": [
         {
-            "name": "muyomu/config",
-            "version": "v1.0.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/muyomu/config.git",
-                "reference": "526ec61c34e98b23fc90b90fc49852394ecb4626"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/config/zipball/526ec61c34e98b23fc90b90fc49852394ecb4626",
-                "reference": "526ec61c34e98b23fc90b90fc49852394ecb4626",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "muyomu\\config\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "mutian",
-                    "email": "bhfqlz@outlook.com"
-                }
-            ],
-            "description": "The config framework for muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/config/issues",
-                "source": "https://github.com/muyomu/config/tree/v1.0.7"
-            },
-            "time": "2022-11-26T11:41:54+00:00"
-        },
-        {
             "name": "muyomu/database",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/database.git",
-                "reference": "e9608b80fc326ad76b49af0cd60dc4ed64b50059"
+                "reference": "5ce80913b931cedd6ffb9d1559e2919f9db85d8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/database/zipball/e9608b80fc326ad76b49af0cd60dc4ed64b50059",
-                "reference": "e9608b80fc326ad76b49af0cd60dc4ed64b50059",
+                "url": "https://api.github.com/repos/muyomu/database/zipball/5ce80913b931cedd6ffb9d1559e2919f9db85d8a",
+                "reference": "5ce80913b931cedd6ffb9d1559e2919f9db85d8a",
                 "shasum": ""
             },
             "type": "library",
@@ -76,49 +39,9 @@
             "description": "The database of muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/database/issues",
-                "source": "https://github.com/muyomu/database/tree/v2.0.1"
+                "source": "https://github.com/muyomu/database/tree/v2.0.2"
             },
-            "time": "2022-10-29T05:16:16+00:00"
-        },
-        {
-            "name": "muyomu/log4p",
-            "version": "v1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/muyomu/logger.git",
-                "reference": "f175f1e7707d33de2b6b4add987b552240ff31b1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/logger/zipball/f175f1e7707d33de2b6b4add987b552240ff31b1",
-                "reference": "f175f1e7707d33de2b6b4add987b552240ff31b1",
-                "shasum": ""
-            },
-            "require": {
-                "muyomu/config": "1.0.7"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "muyomu\\log4p\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "mutian",
-                    "email": "bhfqlz@qq.com"
-                }
-            ],
-            "description": "The log framework for muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/logger/issues",
-                "source": "https://github.com/muyomu/logger/tree/v1.0.4"
-            },
-            "time": "2022-11-26T11:48:02+00:00"
+            "time": "2022-11-26T13:00:09+00:00"
         }
     ],
     "packages-dev": [],

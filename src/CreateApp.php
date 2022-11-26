@@ -3,10 +3,8 @@
 namespace muyomu\framework;
 
 use Exception;
-use muyomu\database\exception\KeyNotFond;
-use muyomu\database\exception\RepeatDefinition;
+use JetBrains\PhpStorm\NoReturn;
 use muyomu\dpara\DparaClient;
-use muyomu\dpara\exception\UrlNotMatch;
 use muyomu\executor\exception\ServerException;
 use muyomu\executor\WebExecutor;
 use muyomu\framework\base\BaseMiddleWare;
@@ -36,13 +34,19 @@ class CreateApp implements Serve
     }
 
     /**
-     * @throws UrlNotMatch
-     * @throws RepeatDefinition
+     * @param Request $request
+     * @param Response $response
+     * @return void
      */
     private function do_dynamic_parameter_resolve(Request $request, Response $response):void{
-        $this->dparaClient->dpara($request,RouterClient::getDatabase());
+        $this->dparaClient->dpara($request,$response,RouterClient::getDatabase());
     }
 
+    /**
+     * @param Request $request
+     * @param Response $response
+     * @return void
+     */
     private function do_global_middleware_handle(Request $request, Response $response):void{
         if(isset($this->middleWare)){
             $this->middleWare->handle($request,$response);
@@ -50,7 +54,9 @@ class CreateApp implements Serve
     }
 
     /**
-     * @throws KeyNotFond
+     * @param Request $request
+     * @param Response $response
+     * @return void
      */
     private function do_resolve_controller(Request $request, Response $response):void{
         $rule = $request->getDbClient()->select("rule")->getData();
@@ -64,8 +70,10 @@ class CreateApp implements Serve
     }
 
     /**
+     * @param Request $request
+     * @param Response $response
+     * @return void
      * @throws ReflectionException
-     * @throws KeyNotFond
      */
     private function do_route_middleware_handle(Request $request, Response $response):void{
         if ($request->getDbClient()->select("rule")->getData()->getMiddleWare() !== null){
@@ -78,9 +86,8 @@ class CreateApp implements Serve
 
     /**
      * @throws ReflectionException
-     * @throws KeyNotFond
      */
-    private function do_web_executor(Request $request, Response $response):void{
+    #[NoReturn] private function do_web_executor(Request $request, Response $response):void{
         $controller = $request->getDbClient()->select("rule")->getData()->getController();
         $handle = $request->getDbClient()->select("rule")->getData()->getHandle();
         $this->webExecutor->webExecutor($request,$response,$controller,$handle);
@@ -102,34 +109,19 @@ class CreateApp implements Serve
 
     public function run(Request $request,Response $response):void{
 
-        /*
-         *
-         */
-        try {
-            $this->do_dynamic_parameter_resolve($request,$response);
-        }catch (UrlNotMatch|RepeatDefinition $exception){
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
-            $response->doExceptionResponse(new ServerException(),503);
-        }
+        $this->do_dynamic_parameter_resolve($request,$response);
 
-        /*
-         *
-         */
         try {
             $this->do_global_middleware_handle($request,$response);
         }catch (Exception $exception){
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
+            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
             $response->doExceptionResponse(new ServerException(),503);
         }
 
-
-        /*
-         *
-         */
         try {
             $this->do_resolve_controller($request,$response);
         }catch (Exception $exception){
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
+            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
             $response->doExceptionResponse(new ServerException(),503);
         }
 
@@ -140,7 +132,7 @@ class CreateApp implements Serve
         try {
             $this->do_route_middleware_handle($request,$response);
         }catch (Exception $exception){
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
+            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
             $response->doExceptionResponse(new ServerException(),503);
         }
 
@@ -151,7 +143,7 @@ class CreateApp implements Serve
         try {
             $this->do_web_executor($request,$response);
         }catch (ReflectionException|KeyNotFond $exception){
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
+            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
             $response->doExceptionResponse(new ServerException(),503);
         }
     }

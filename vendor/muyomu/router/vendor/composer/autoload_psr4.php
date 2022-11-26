@@ -7,7 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'muyomu\\router\\' => array($baseDir . '/src'),
-    'muyomu\\log4p\\' => array($vendorDir . '/muyomu/log4p/src'),
     'muyomu\\database\\' => array($vendorDir . '/muyomu/database/src'),
-    'muyomu\\config\\' => array($vendorDir . '/muyomu/config/src'),
 );

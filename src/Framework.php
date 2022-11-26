@@ -48,7 +48,7 @@ class Framework
             $application->configApplicationMiddleWare($middleWare);
             $application->run($framework->getRequest(),$framework->getResponse());
         }catch (Exception $e){
-            $logger->muix_log_warn(__CLASS__,__METHOD__,$e->getMessage());
+            $logger->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$e->getMessage());
             $framework->getResponse()->doExceptionResponse(new ServerException(),503);
         }
     }

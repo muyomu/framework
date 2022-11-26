@@ -3,7 +3,6 @@
 namespace muyomu\framework\filter;
 
 use muyomu\config\ConfigParser;
-use muyomu\config\exception\FieldConfigException;
 use muyomu\filter\client\GenericFilter;
 use muyomu\framework\config\DefaultFrameworkConfig;
 use muyomu\http\Request;
@@ -13,7 +12,9 @@ class RequestRootRuteFilter implements GenericFilter
 {
 
     /**
-     * @throws FieldConfigException
+     * @param Request $request
+     * @param Response $response
+     * @return void
      */
     public function filter(Request $request, Response $response): void
     {

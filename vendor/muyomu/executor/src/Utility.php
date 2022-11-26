@@ -29,7 +29,7 @@ class Utility implements ExecutorHelper
         try {
             $class = new ReflectionClass($class);
         }catch (ReflectionException $exception){
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
+            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
             $response->doExceptionResponse(new ServerException(),500);
         }
         return $class;
@@ -40,7 +40,7 @@ class Utility implements ExecutorHelper
         try {
             $instance = $reflectionClass->newInstance();
         }catch (ReflectionException $exception){
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
+            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
             $response->doExceptionResponse(new ServerException(),500);
         }
         return $instance;
@@ -60,7 +60,7 @@ class Utility implements ExecutorHelper
             $response_property->setValue($instance,$response);
         }
         catch (ReflectionException $exception) {
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
+            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
         }
     }
 
@@ -69,7 +69,7 @@ class Utility implements ExecutorHelper
         try {
             $method = $reflectionClass->getMethod($handle);
         }catch (ReflectionException $exception) {
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
+            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
             $response->doExceptionResponse(new ServerException(),500);
         }
         return $method;
@@ -80,7 +80,7 @@ class Utility implements ExecutorHelper
         try {
             $returnData = $this->frameWorkClient->aopExecutor($instance,$method,$argv);
         }catch (ReflectionException $exception) {
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,$exception->getMessage());
+            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
             $response->doExceptionResponse(new ServerException(),500);
         }
         return $returnData;
