@@ -17,6 +17,6 @@
     ],
     "require": {
         "muyomu/database": "2.0.1",
-        "muyomu/log4p": "1.0.3"
+        "muyomu/log4p": "1.0.4"
     }
 }

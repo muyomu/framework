@@ -16,9 +16,9 @@
         }
     ],
     "require": {
-        "muyomu/http": "2.0.7",
+        "muyomu/http": "2.0.8",
         "muyomu/aop": "^1.0.6",
-        "muyomu/log4p": "1.0.3",
-        "muyomu/router": "v2.0.4"
+        "muyomu/log4p": "1.0.4",
+        "muyomu/router": "2.0.5"
     }
 }

@@ -17,7 +17,8 @@
     "minimum-stability": "dev",
     "require": {
         "muyomu/database": "2.0.1",
-        "muyomu/router": "2.0.4",
-        "muyomu/config": "1.0.6"
+        "muyomu/router": "2.0.5",
+        "muyomu/config": "1.0.7",
+        "muyomu/log4p": "1.0.4"
     }
 }

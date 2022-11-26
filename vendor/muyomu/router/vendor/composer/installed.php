@@ -3,7 +3,7 @@
         'name' => 'muyomu/router',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '3df91afef4aea4e58b08e79996b260c01412aeeb',
+        'reference' => '41ccff53e62a87a187278b912e1d9cc7cdbc6e21',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'muyomu/config' => array(
-            'pretty_version' => 'v1.0.6',
-            'version' => '1.0.6.0',
-            'reference' => '5355f5d903ba8f0b9e6ab70a486d8c258bc9d0c0',
+            'pretty_version' => 'v1.0.7',
+            'version' => '1.0.7.0',
+            'reference' => '526ec61c34e98b23fc90b90fc49852394ecb4626',
             'type' => 'library',
             'install_path' => __DIR__ . '/../muyomu/config',
             'aliases' => array(),
@@ -29,9 +29,9 @@
             'dev_requirement' => false,
         ),
         'muyomu/log4p' => array(
-            'pretty_version' => 'v1.0.3',
-            'version' => '1.0.3.0',
-            'reference' => 'f69297da578314756f3c653fff6a67fb11ce7e10',
+            'pretty_version' => 'v1.0.4',
+            'version' => '1.0.4.0',
+            'reference' => 'f175f1e7707d33de2b6b4add987b552240ff31b1',
             'type' => 'library',
             'install_path' => __DIR__ . '/../muyomu/log4p',
             'aliases' => array(),
@@ -40,7 +40,7 @@
         'muyomu/router' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '3df91afef4aea4e58b08e79996b260c01412aeeb',
+            'reference' => '41ccff53e62a87a187278b912e1d9cc7cdbc6e21',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
