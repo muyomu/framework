@@ -21,7 +21,7 @@
         "muyomu/executor": "2.0.12",
         "muyomu/http": "2.1.2",
         "muyomu/database": "2.0.2",
-        "muyomu/dynamic": "2.0.14",
+        "muyomu/dynamic": "2.0.15",
         "muyomu/log4p": "1.1.3",
         "muyomu/filter": "1.0.14",
         "muyomu/middleware": "1.0.3"
