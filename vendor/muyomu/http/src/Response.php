@@ -33,7 +33,7 @@ class Response implements ResponseClient
     private function addAllHeaders(array $config):void{
         $keys = array_keys($config);
         foreach ($keys as $key){
-            $value = $config['response_headers'][$key];
+            $value = $config[$key];
             $header = "$key: $value";
             header("$header");
         }
