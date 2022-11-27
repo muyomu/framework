@@ -50,13 +50,9 @@ class Utility implements ExecutorHelper
     {
         try {
             $request_property = $reflectionClass->getProperty("request");
-            /** @var TYPE_NAME $request_property */
-            $request_property->setAccessible(true);
             $request_property->setValue($instance,$request);
 
             $response_property = $reflectionClass->getProperty("response");
-            /** @var TYPE_NAME $response_property */
-            $response_property->setAccessible(true);
             $response_property->setValue($instance,$response);
         }
         catch (ReflectionException $exception) {

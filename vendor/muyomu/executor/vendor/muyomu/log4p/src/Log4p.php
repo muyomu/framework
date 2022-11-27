@@ -2,14 +2,13 @@
 
 namespace muyomu\log4p;
 
-use muyomu\config\ConfigParser;
 use muyomu\log4p\client\LogClient;
 use muyomu\log4p\config\Log4pDefaultConfig;
 use muyomu\log4p\utility\LogUtility;
 
 class Log4p implements LogClient
 {
-    private array $configData;
+    private Log4pDefaultConfig $config;
 
     private LogUtility $utility;
 
@@ -18,8 +17,7 @@ class Log4p implements LogClient
      */
     public function __construct()
     {
-        $parser = new ConfigParser();
-        $this->configData = $parser->getConfigData(Log4pDefaultConfig::class);
+        $this->config = new Log4pDefaultConfig();
         $this->utility = new LogUtility();
     }
 
@@ -32,11 +30,11 @@ class Log4p implements LogClient
      */
     public function muix_log_error(string $className,string $method,int $line,string $message):void{
         $date = $this->utility->getData();
-        $log = fopen($this->configData['log_location'].date("Ymd").".log","a+");
+        $log = fopen($this->config->getOptions("log_location").date("Ymd").".log","a+");
         if (!$log) {
             $log = fopen("../log/" . date("Ymd") . ".log", "a+");
         }
-        fputs($log,"[$date] [ERROR]:    ".$className.":".$method.":"."$line". "   $message"."\r\n");
+        fputs($log,"[$date] [ERROR]:    ".$className.":".$method.":  "."<$line>". "   $message"."\r\n");
         fclose($log);
     }
 
@@ -49,11 +47,11 @@ class Log4p implements LogClient
      */
     public function muix_log_warn(string $className, string $method,int $line, string $message):void{
         $date = $this->utility->getData();
-        $log = fopen($this->configData['log_location'].date("Ymd").".log","a+");
+        $log = fopen($this->config->getOptions("log_location").date("Ymd").".log","a+");
         if (!$log) {
             $log = fopen("../log/" . date("Ymd") . ".log", "a+");
         }
-        fputs($log,"[$date] [WARN]:    ".$className.":".$method.":"."$line". "   $message"."\r\n");
+        fputs($log,"[$date] [WARN]:    ".$className.":".$method.": "."<$line>". "   $message"."\r\n");
         fclose($log);
     }
 
@@ -64,7 +62,7 @@ class Log4p implements LogClient
      */
     public function muix_log_info(string $item, mixed $message):void{
         $date = $this->utility->getData();
-        $log = fopen($this->configData['log_location'].date("Ymd").".log","a+");
+        $log = fopen($this->config->getOptions("log_location").date("Ymd").".log","a+");
         if (!$log) {
             $log = fopen("../log/" . date("Ymd") . ".log", "a+");
         }
@@ -80,7 +78,7 @@ class Log4p implements LogClient
     public function muix_log_debug(string $varName, mixed $value): void
     {
         $date = $this->utility->getData();
-        $log = fopen($this->configData['log_location'].date("Ymd").".log","a+");
+        $log = fopen($this->config->getOptions("log_location").date("Ymd").".log","a+");
         if (!$log) {
             $log = fopen("../log/" . date("Ymd") . ".log", "a+");
         }

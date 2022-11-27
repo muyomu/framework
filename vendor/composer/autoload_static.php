@@ -10,6 +10,7 @@ class ComposerStaticInit285847b743627f36d86dd5241b8b5228
         'm' => 
         array (
             'muyomu\\router\\' => 14,
+            'muyomu\\middleware\\' => 18,
             'muyomu\\log4p\\' => 13,
             'muyomu\\http\\' => 12,
             'muyomu\\framework\\' => 17,
@@ -26,6 +27,10 @@ class ComposerStaticInit285847b743627f36d86dd5241b8b5228
         'muyomu\\router\\' => 
         array (
             0 => __DIR__ . '/..' . '/muyomu/router/src',
+        ),
+        'muyomu\\middleware\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/muyomu/middleware/src',
         ),
         'muyomu\\log4p\\' => 
         array (
@@ -49,7 +54,7 @@ class ComposerStaticInit285847b743627f36d86dd5241b8b5228
         ),
         'muyomu\\dpara\\' => 
         array (
-            0 => __DIR__ . '/..' . '/muyomu/dpara/src',
+            0 => __DIR__ . '/..' . '/muyomu/dynamic/src',
         ),
         'muyomu\\database\\' => 
         array (

@@ -18,11 +18,12 @@
     "require": {
         "php": ">=8.1",
         "muyomu/router": "2.0.6",
-        "muyomu/executor": "2.0.9",
-        "muyomu/http": "2.0.9",
+        "muyomu/executor": "2.0.10",
+        "muyomu/http": "2.1.0",
         "muyomu/database": "2.0.2",
-        "muyomu/dpara": "2.0.7",
-        "muyomu/log4p": "1.0.5",
-        "muyomu/filter": "1.0.11"
+        "muyomu/dynamic": "2.0.10",
+        "muyomu/log4p": "1.1.0",
+        "muyomu/filter": "1.0.12",
+        "muyomu/middleware": "dev-main"
     }
 }

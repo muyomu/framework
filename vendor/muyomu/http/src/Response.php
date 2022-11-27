@@ -4,7 +4,6 @@ namespace muyomu\http;
 
 use Exception;
 use JetBrains\PhpStorm\NoReturn;
-use muyomu\config\ConfigParser;
 use muyomu\http\client\ResponseClient;
 use muyomu\http\config\DefaultFileConfig;
 use muyomu\http\config\DefaultHttpConfig;
@@ -14,25 +13,25 @@ use muyomu\http\message\MessageToArray;
 
 class Response implements ResponseClient
 {
-    private array $configData;
+    private DefaultFileConfig $defaultFileConfig;
 
-    private array $fileConfig;
+    private DefaultHttpConfig $defaultHttpConfig;
 
     public function __construct()
     {
-        $config = new ConfigParser();
-        $this->configData = $config->getConfigData(DefaultHttpConfig::class);
-        $this->fileConfig = $config->getConfigData(DefaultFileConfig::class);
+        $this->defaultFileConfig = new DefaultFileConfig();
+        $this->defaultHttpConfig = new DefaultHttpConfig();
     }
 
 
     public function setHeader(string $field, string $content): void
     {
-        $this->configData[$field] = $content;
+        $header = "$field: $content";
+        header($header);
     }
 
     private function addAllHeaders(array $config):void{
-        $keys = array_keys($config['response_headers']);
+        $keys = array_keys($config);
         foreach ($keys as $key){
             $value = $config['response_headers'][$key];
             $header = "$key: $value";
@@ -43,7 +42,7 @@ class Response implements ResponseClient
     #[NoReturn] public function doDataResponse(mixed $data,int $code): void
     {
         http_response_code($code);
-        $this->addAllHeaders($this->configData);
+        $this->addAllHeaders($this->defaultHttpConfig->getOptions("response_headers"));
 
         $message = new Message();
         $message->setDataStatus("Success");
@@ -58,7 +57,7 @@ class Response implements ResponseClient
     #[NoReturn] public function doExceptionResponse(Exception $exception, int $code,): void
     {
         http_response_code($code);
-        $this->addAllHeaders($this->configData);
+        $this->addAllHeaders($this->defaultHttpConfig->getOptions("response_headers"));
 
         $message = new Message();
         $message->setDataStatus("Failure");
@@ -72,10 +71,10 @@ class Response implements ResponseClient
 
     #[NoReturn] public function doFileResponse(string $file): void
     {
-        $file_location = $this->fileConfig['location'].$file;
+        $file_location = $this->defaultFileConfig->getOptions("location").$file;
         $resource = fopen($file_location,"r");
         if ($resource){
-            $this->addAllHeaders($this->fileConfig);
+            $this->addAllHeaders($this->defaultFileConfig->getOptions("response_headers"));
             Header ( "Accept-Length: " . filesize ($file_location) );
             Header ( "Content-Disposition: attachment; filename=" . $file );
             $content = fread($resource,filesize($file_location));

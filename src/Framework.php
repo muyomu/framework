@@ -5,12 +5,12 @@ namespace muyomu\framework;
 use Exception;
 use muyomu\executor\exception\ServerException;
 use muyomu\filter\FilterExecutor;
-use muyomu\framework\base\BaseMiddleWare;
 use muyomu\framework\filter\RequestMethodFilter;
 use muyomu\framework\filter\RequestRootRuteFilter;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\log4p\Log4p;
+use muyomu\middleware\BaseMiddleWare;
 
 class Framework
 {

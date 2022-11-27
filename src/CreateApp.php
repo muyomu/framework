@@ -7,12 +7,12 @@ use JetBrains\PhpStorm\NoReturn;
 use muyomu\dpara\DparaClient;
 use muyomu\executor\exception\ServerException;
 use muyomu\executor\WebExecutor;
-use muyomu\framework\base\BaseMiddleWare;
 use muyomu\framework\constraint\Serve;
 use muyomu\framework\exception\GlobalMiddleWareRepeatDefine;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\log4p\Log4p;
+use muyomu\middleware\BaseMiddleWare;
 use muyomu\router\RouterClient;
 use ReflectionClass;
 use ReflectionException;
@@ -142,7 +142,7 @@ class CreateApp implements Serve
          */
         try {
             $this->do_web_executor($request,$response);
-        }catch (ReflectionException|KeyNotFond $exception){
+        }catch (ReflectionException $exception){
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
             $response->doExceptionResponse(new ServerException(),503);
         }
