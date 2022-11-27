@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e5f8a6f6b1ef30748bbb153344180a0b",
+    "content-hash": "fdf2cca1175dcdb9b0ea946a58c12e02",
     "packages": [
         {
             "name": "muyomu/aop",
@@ -326,22 +326,21 @@
         },
         {
             "name": "muyomu/middleware",
-            "version": "dev-main",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/middleware.git",
-                "reference": "173a7f6e178e6564188ba8a640256782d4a30e46"
+                "reference": "5e482546260761c997c2888063e4a0afa029138e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/middleware/zipball/173a7f6e178e6564188ba8a640256782d4a30e46",
-                "reference": "173a7f6e178e6564188ba8a640256782d4a30e46",
+                "url": "https://api.github.com/repos/muyomu/middleware/zipball/5e482546260761c997c2888063e4a0afa029138e",
+                "reference": "5e482546260761c997c2888063e4a0afa029138e",
                 "shasum": ""
             },
             "require": {
                 "muyomu/http": "2.1.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -361,9 +360,9 @@
             "description": "The plugin framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/middleware/issues",
-                "source": "https://github.com/muyomu/middleware/tree/main"
+                "source": "https://github.com/muyomu/middleware/tree/v1.0.1"
             },
-            "time": "2022-11-27T03:05:53+00:00"
+            "time": "2022-11-27T03:22:17+00:00"
         },
         {
             "name": "muyomu/router",
@@ -409,9 +408,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "muyomu/middleware": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

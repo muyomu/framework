@@ -344,24 +344,23 @@
         },
         {
             "name": "muyomu/middleware",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
+            "version": "v1.0.1",
+            "version_normalized": "1.0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/middleware.git",
-                "reference": "173a7f6e178e6564188ba8a640256782d4a30e46"
+                "reference": "5e482546260761c997c2888063e4a0afa029138e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/middleware/zipball/173a7f6e178e6564188ba8a640256782d4a30e46",
-                "reference": "173a7f6e178e6564188ba8a640256782d4a30e46",
+                "url": "https://api.github.com/repos/muyomu/middleware/zipball/5e482546260761c997c2888063e4a0afa029138e",
+                "reference": "5e482546260761c997c2888063e4a0afa029138e",
                 "shasum": ""
             },
             "require": {
                 "muyomu/http": "2.1.0"
             },
-            "time": "2022-11-27T03:05:53+00:00",
-            "default-branch": true,
+            "time": "2022-11-27T03:22:17+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -382,7 +381,7 @@
             "description": "The plugin framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/middleware/issues",
-                "source": "https://github.com/muyomu/middleware/tree/main"
+                "source": "https://github.com/muyomu/middleware/tree/v1.0.1"
             },
             "install-path": "../muyomu/middleware"
         },
