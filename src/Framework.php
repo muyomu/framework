@@ -5,6 +5,7 @@ namespace muyomu\framework;
 use Exception;
 use muyomu\executor\exception\ServerException;
 use muyomu\filter\FilterExecutor;
+use muyomu\framework\config\DefaultApplicationConfig;
 use muyomu\framework\config\DefaultFrameworkConfig;
 use muyomu\framework\filter\RequestMethodFilter;
 use muyomu\framework\filter\RequestRootRuteFilter;
@@ -32,7 +33,7 @@ class Framework
 
     public static function main():void{
 
-        $config = new DefaultFrameworkConfig();
+        $config = new DefaultApplicationConfig();
 
         try {
             $middleWare = new ReflectionClass($config->getOptions("globalMiddleWare"));
