@@ -5,12 +5,15 @@ namespace muyomu\framework;
 use Exception;
 use muyomu\executor\exception\ServerException;
 use muyomu\filter\FilterExecutor;
+use muyomu\framework\config\DefaultFrameworkConfig;
 use muyomu\framework\filter\RequestMethodFilter;
 use muyomu\framework\filter\RequestRootRuteFilter;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\log4p\Log4p;
 use muyomu\middleware\BaseMiddleWare;
+use ReflectionClass;
+use ReflectionException;
 
 class Framework
 {
@@ -27,7 +30,14 @@ class Framework
         $this->filterExecutor = new FilterExecutor();
     }
 
-    public static function main(BaseMiddleWare $middleWare):void{
+    public static function main():void{
+
+        $config = new DefaultFrameworkConfig();
+
+        try {
+            $middleWare = new ReflectionClass($config->getOptions("globalMiddleWare"));
+        }catch (ReflectionException $exception){
+        }
 
         $framework = new Framework();
 
@@ -45,7 +55,7 @@ class Framework
         $filterChain->doFilterChain($framework->getRequest(),$framework->getResponse());
 
         try {
-            $application->configApplicationMiddleWare($middleWare);
+            $application->configApplicationMiddleWare($middleWare->newInstance());
             $application->run($framework->getRequest(),$framework->getResponse());
         }catch (Exception $e){
             $logger->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$e->getMessage());

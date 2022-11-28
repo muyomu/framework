@@ -24,6 +24,7 @@
         "muyomu/dynamic": "2.0.16",
         "muyomu/log4p": "1.1.4",
         "muyomu/filter": "1.0.15",
-        "muyomu/middleware": "1.0.4"
+        "muyomu/middleware": "1.0.4",
+        "muyomu/security": "1.1.7"
     }
 }
