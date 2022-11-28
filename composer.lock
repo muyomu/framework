@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f3944a25591d6dda81585485325d7f4",
+    "content-hash": "633413995c6ca15487a188d32c226796",
     "packages": [
         {
             "name": "muyomu/aop",
@@ -406,16 +406,16 @@
         },
         {
             "name": "muyomu/security",
-            "version": "v1.1.7",
+            "version": "v1.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/security.git",
-                "reference": "29cc0d6d3c7889f040819812f7c93c59fb846cde"
+                "reference": "2acfbad6d0a08e4b687a23ad2db32aed29f9fbbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/security/zipball/29cc0d6d3c7889f040819812f7c93c59fb846cde",
-                "reference": "29cc0d6d3c7889f040819812f7c93c59fb846cde",
+                "url": "https://api.github.com/repos/muyomu/security/zipball/2acfbad6d0a08e4b687a23ad2db32aed29f9fbbd",
+                "reference": "2acfbad6d0a08e4b687a23ad2db32aed29f9fbbd",
                 "shasum": ""
             },
             "require": {
@@ -443,9 +443,9 @@
             "description": "The auth framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/security/issues",
-                "source": "https://github.com/muyomu/security/tree/v1.1.7"
+                "source": "https://github.com/muyomu/security/tree/v1.1.8"
             },
-            "time": "2022-11-28T10:14:22+00:00"
+            "time": "2022-11-28T11:31:49+00:00"
         }
     ],
     "packages-dev": [],
