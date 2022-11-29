@@ -430,17 +430,17 @@
         },
         {
             "name": "muyomu/security",
-            "version": "v1.1.9",
-            "version_normalized": "1.1.9.0",
+            "version": "v1.1.10",
+            "version_normalized": "1.1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/security.git",
-                "reference": "3bdcca7161e8f91dd97537379a1cec5ee4f6a9c5"
+                "reference": "0ef1f8bbfc892894c5af1778696a03c2f5f3b770"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/security/zipball/3bdcca7161e8f91dd97537379a1cec5ee4f6a9c5",
-                "reference": "3bdcca7161e8f91dd97537379a1cec5ee4f6a9c5",
+                "url": "https://api.github.com/repos/muyomu/security/zipball/0ef1f8bbfc892894c5af1778696a03c2f5f3b770",
+                "reference": "0ef1f8bbfc892894c5af1778696a03c2f5f3b770",
                 "shasum": ""
             },
             "require": {
@@ -449,7 +449,7 @@
                 "muyomu/log4p": "1.1.4",
                 "muyomu/middleware": "1.0.4"
             },
-            "time": "2022-11-29T11:30:27+00:00",
+            "time": "2022-11-29T11:40:19+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -470,7 +470,7 @@
             "description": "The auth framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/security/issues",
-                "source": "https://github.com/muyomu/security/tree/v1.1.9"
+                "source": "https://github.com/muyomu/security/tree/v1.1.10"
             },
             "install-path": "../muyomu/security"
         }

@@ -25,6 +25,6 @@
         "muyomu/log4p": "1.1.4",
         "muyomu/filter": "1.0.15",
         "muyomu/middleware": "1.0.4",
-        "muyomu/security": "1.1.9"
+        "muyomu/security": "1.1.10"
     }
 }
