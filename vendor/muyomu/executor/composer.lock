@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef899e961f4247a2470e9380daa52180",
+    "content-hash": "37adc4f3e74ad3710c4ab60a707e649f",
     "packages": [
         {
             "name": "muyomu/aop",
@@ -159,6 +159,46 @@
                 "source": "https://github.com/muyomu/http/tree/v2.1.3"
             },
             "time": "2022-11-28T09:40:12+00:00"
+        },
+        {
+            "name": "muyomu/inject",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/inject.git",
+                "reference": "9000caef19cfce72ae90068794c296a6d526f956"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/inject/zipball/9000caef19cfce72ae90068794c296a6d526f956",
+                "reference": "9000caef19cfce72ae90068794c296a6d526f956",
+                "shasum": ""
+            },
+            "require": {
+                "muyomu/log4p": "v1.1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\inject\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian",
+                    "email": "bhfqlz@outlook.com"
+                }
+            ],
+            "description": "The auto-wired framework to muyomu web framework",
+            "support": {
+                "issues": "https://github.com/muyomu/inject/issues",
+                "source": "https://github.com/muyomu/inject/tree/v1.0.3"
+            },
+            "time": "2022-12-20T10:59:19+00:00"
         },
         {
             "name": "muyomu/log4p",

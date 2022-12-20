@@ -9,6 +9,7 @@ return array(
     'muyomu\\router\\' => array($vendorDir . '/muyomu/router/src'),
     'muyomu\\middleware\\' => array($vendorDir . '/muyomu/middleware/src'),
     'muyomu\\log4p\\' => array($vendorDir . '/muyomu/log4p/src'),
+    'muyomu\\inject\\' => array($vendorDir . '/muyomu/inject/src'),
     'muyomu\\http\\' => array($vendorDir . '/muyomu/http/src'),
     'muyomu\\framework\\' => array($baseDir . '/src'),
     'muyomu\\filter\\' => array($vendorDir . '/muyomu/filter/src'),

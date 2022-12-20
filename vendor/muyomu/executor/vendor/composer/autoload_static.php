@@ -11,6 +11,7 @@ class ComposerStaticInit6f458cf6d0953782887f098b0bda9528
         array (
             'muyomu\\router\\' => 14,
             'muyomu\\log4p\\' => 13,
+            'muyomu\\inject\\' => 14,
             'muyomu\\http\\' => 12,
             'muyomu\\executor\\' => 16,
             'muyomu\\database\\' => 16,
@@ -27,6 +28,10 @@ class ComposerStaticInit6f458cf6d0953782887f098b0bda9528
         'muyomu\\log4p\\' => 
         array (
             0 => __DIR__ . '/..' . '/muyomu/log4p/src',
+        ),
+        'muyomu\\inject\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/muyomu/inject/src',
         ),
         'muyomu\\http\\' => 
         array (

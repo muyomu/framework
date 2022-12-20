@@ -167,6 +167,49 @@
             "install-path": "../muyomu/http"
         },
         {
+            "name": "muyomu/inject",
+            "version": "v1.0.3",
+            "version_normalized": "1.0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/inject.git",
+                "reference": "9000caef19cfce72ae90068794c296a6d526f956"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/inject/zipball/9000caef19cfce72ae90068794c296a6d526f956",
+                "reference": "9000caef19cfce72ae90068794c296a6d526f956",
+                "shasum": ""
+            },
+            "require": {
+                "muyomu/log4p": "v1.1.4"
+            },
+            "time": "2022-12-20T10:59:19+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\inject\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian",
+                    "email": "bhfqlz@outlook.com"
+                }
+            ],
+            "description": "The auto-wired framework to muyomu web framework",
+            "support": {
+                "issues": "https://github.com/muyomu/inject/issues",
+                "source": "https://github.com/muyomu/inject/tree/v1.0.3"
+            },
+            "install-path": "../muyomu/inject"
+        },
+        {
             "name": "muyomu/log4p",
             "version": "v1.1.4",
             "version_normalized": "1.1.4.0",
