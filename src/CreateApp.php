@@ -8,7 +8,6 @@ use muyomu\dpara\DparaClient;
 use muyomu\executor\exception\ServerException;
 use muyomu\executor\WebExecutor;
 use muyomu\framework\constraint\Serve;
-use muyomu\framework\exception\GlobalMiddleWareRepeatDefine;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\log4p\Log4p;
@@ -19,17 +18,17 @@ use ReflectionException;
 
 class CreateApp implements Serve
 {
-    private WebExecutor $webExecutor;
-
     private BaseMiddleWare $middleWare;
 
     private DparaClient $dparaClient;
 
+    private WebExecutor $webExecutor;
+
     private Log4p $log4p;
 
     public function __construct(){
-        $this->webExecutor = new WebExecutor();
         $this->dparaClient = new DparaClient();
+        $this->webExecutor = new WebExecutor();
         $this->log4p = new Log4p();
     }
 
@@ -96,15 +95,8 @@ class CreateApp implements Serve
     /*
      * 安装全局中间件
      */
-    /**
-     * @throws GlobalMiddleWareRepeatDefine
-     */
     public function configApplicationMiddleWare(BaseMiddleWare $middleWare):void{
-        if (isset($this->middleWare)){
-            throw new GlobalMiddleWareRepeatDefine();
-        }else{
-            $this->middleWare = $middleWare;
-        }
+        $this->middleWare = $middleWare;
     }
 
     public function run(Request $request,Response $response):void{

@@ -19,6 +19,7 @@ class DefaultApplicationConfig extends GenericConfig
         "configFiles"=>[
             "vendor/autoload.php",
             "application.php"
-        ]
+        ],
+        "filters"=>[]
     ];
 }

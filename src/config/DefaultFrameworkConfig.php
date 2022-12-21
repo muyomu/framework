@@ -13,7 +13,7 @@ class DefaultFrameworkConfig extends GenericConfig
     protected array $configData = [
         "message"=>[
             "Application"=>"Muix",
-            "Describe"=>"Muix ",
+            "Description"=>"Muix is a simple web framework based on php8.*",
             "Version"=>"2.0.0",
             "Notices"=>[
                 "Request"=>"This Framework just support Get and Post Methods.",
