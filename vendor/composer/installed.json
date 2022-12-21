@@ -57,7 +57,7 @@
             },
             "time": "2022-11-28T09:34:31+00:00",
             "type": "library",
-            "installation-source": "dist",
+            "installation-source": "source",
             "autoload": {
                 "psr-4": {
                     "muyomu\\config\\": "src/"
@@ -142,7 +142,7 @@
             },
             "time": "2022-11-28T09:41:10+00:00",
             "type": "library",
-            "installation-source": "dist",
+            "installation-source": "source",
             "autoload": {
                 "psr-4": {
                     "muyomu\\dpara\\": "src/"
@@ -321,7 +321,7 @@
             },
             "time": "2022-12-20T10:59:19+00:00",
             "type": "library",
-            "installation-source": "dist",
+            "installation-source": "source",
             "autoload": {
                 "psr-4": {
                     "muyomu\\inject\\": "src/"
@@ -407,7 +407,7 @@
             },
             "time": "2022-11-28T09:44:07+00:00",
             "type": "library",
-            "installation-source": "dist",
+            "installation-source": "source",
             "autoload": {
                 "psr-4": {
                     "muyomu\\middleware\\": "src/"
@@ -496,7 +496,7 @@
             },
             "time": "2022-11-29T11:40:19+00:00",
             "type": "library",
-            "installation-source": "dist",
+            "installation-source": "source",
             "autoload": {
                 "psr-4": {
                     "muyomu\\auth\\": "src/"

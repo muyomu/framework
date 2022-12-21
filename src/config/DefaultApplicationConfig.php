@@ -13,6 +13,12 @@ class DefaultApplicationConfig extends GenericConfig
 
     protected array $configData = [
         "application"=>"muix",
-        "globalMiddleWare"=>MuixAuthMiddleWare::class
+        "globalMiddleWare"=>MuixAuthMiddleWare::class,
+        "organization"=>"default",
+        "applicationRootPath"=>"../",
+        "configFiles"=>[
+            "vendor/autoload.php",
+            "application.php"
+        ]
     ];
 }

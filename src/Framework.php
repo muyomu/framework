@@ -6,7 +6,6 @@ use Exception;
 use muyomu\executor\exception\ServerException;
 use muyomu\filter\FilterExecutor;
 use muyomu\framework\config\DefaultApplicationConfig;
-use muyomu\framework\config\DefaultFrameworkConfig;
 use muyomu\framework\filter\RequestMethodFilter;
 use muyomu\framework\filter\RequestRootRuteFilter;
 use muyomu\http\Request;
@@ -31,18 +30,23 @@ class Framework
         $this->filterExecutor = new FilterExecutor();
     }
 
+    /**
+     * @return void
+     */
     public static function main():void{
 
+        $framework = new Framework();
+
+        $application = new CreateApp();
+
         $config = new DefaultApplicationConfig();
+
+        $framework->loadConfigFiles($config->getOptions("applicationRootPath"),$config->getOptions("configFiles"));
 
         try {
             $middleWare = new ReflectionClass($config->getOptions("globalMiddleWare"));
         }catch (ReflectionException $exception){
         }
-
-        $framework = new Framework();
-
-        $application = new CreateApp();
 
         $filterChain = $framework->getFilterExecutor();
 
@@ -86,5 +90,16 @@ class Framework
     public function getFilterExecutor(): FilterExecutor
     {
         return $this->filterExecutor;
+    }
+
+    /**
+     * @param string $applicationRootPath
+     * @param array $applicationConfigFiles
+     * @return void
+     */
+    public function loadConfigFiles(string $applicationRootPath,array $applicationConfigFiles):void{
+        foreach ($applicationConfigFiles as $file){
+            require_once $applicationRootPath.$file;
+        }
     }
 }
