@@ -107,14 +107,14 @@ class CreateApp implements Serve
             $this->do_global_middleware_handle($request,$response);
         }catch (Exception $exception){
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            $response->doExceptionResponse(new ServerException(),503);
+            $response->doExceptionResponse(new ServerException(),500);
         }
 
         try {
             $this->do_resolve_controller($request,$response);
         }catch (Exception $exception){
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            $response->doExceptionResponse(new ServerException(),503);
+            $response->doExceptionResponse(new ServerException(),500);
         }
 
 
@@ -125,7 +125,7 @@ class CreateApp implements Serve
             $this->do_route_middleware_handle($request,$response);
         }catch (Exception $exception){
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            $response->doExceptionResponse(new ServerException(),503);
+            $response->doExceptionResponse(new ServerException(),500);
         }
 
 
@@ -136,7 +136,7 @@ class CreateApp implements Serve
             $this->do_web_executor($request,$response);
         }catch (ReflectionException $exception){
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            $response->doExceptionResponse(new ServerException(),503);
+            $response->doExceptionResponse(new ServerException(),500);
         }
     }
 }
