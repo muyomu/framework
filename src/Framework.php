@@ -45,9 +45,6 @@ class Framework
 
         $config = new DefaultApplicationConfig();
 
-        //加载配置文件
-        $framework->loadConfigFiles($config->getOptions("applicationRootPath"),$config->getOptions("configFiles"));
-
         //获取中间件实例
         try {
             $middleWare = new ReflectionClass($config->getOptions("globalMiddleWare"));
@@ -109,17 +106,6 @@ class Framework
     public function getFilterExecutor(): FilterExecutor
     {
         return $this->filterExecutor;
-    }
-
-    /**
-     * @param string $applicationRootPath
-     * @param array $applicationConfigFiles
-     * @return void
-     */
-    public function loadConfigFiles(string $applicationRootPath,array $applicationConfigFiles):void{
-        foreach ($applicationConfigFiles as $file){
-            require_once $applicationRootPath.$file;
-        }
     }
 
     /**
