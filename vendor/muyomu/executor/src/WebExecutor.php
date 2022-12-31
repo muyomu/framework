@@ -2,12 +2,13 @@
 
 namespace muyomu\executor;
 
-use JetBrains\PhpStorm\NoReturn;
 use muyomu\executor\client\ExecutorClient;
 use muyomu\executor\config\ExecutorDefaultConfig;
+use muyomu\executor\exception\ServerException;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\inject\Proxy;
+use ReflectionException;
 
 class WebExecutor implements ExecutorClient
 {
@@ -23,7 +24,10 @@ class WebExecutor implements ExecutorClient
         $this->proxy = new Proxy();
     }
 
-    #[NoReturn] public function webExecutor(Request $request, Response $response, string $controllerClassName, string $handle): void
+    /**
+     * @throws ServerException
+     */
+    public function webExecutor(Request $request, Response $response, string $controllerClassName, string $handle): void
     {
         /*
          * 获取控制器反射类
@@ -40,6 +44,9 @@ class WebExecutor implements ExecutorClient
          */
         $this->utility->injectRR($request,$response,$class,$instance);
 
+        /*
+         * 自动注入依赖
+         */
         if ($this->executorDefaultConfig->getOptions("autoInject")){
             $this->proxy->getProxyInstance($instance);
         }
@@ -53,7 +60,6 @@ class WebExecutor implements ExecutorClient
          * prepare data
          */
         $rule = $request->getDbClient()->select("rule")->getData();
-
 
         /*
          * 执行控制器处理器

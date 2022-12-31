@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "37adc4f3e74ad3710c4ab60a707e649f",
+    "content-hash": "a07fe66397d78bdd73b6b4a66033bed2",
     "packages": [
         {
             "name": "muyomu/aop",

@@ -34,15 +34,16 @@ class Framework
      * @return void
      */
     public static function main():void{
-        /*
-         * logger
-         */
+        //logger
         $logger = new Log4p();
 
+        //framework
         $framework = new Framework();
 
+        //application
         $application = new CreateApp();
 
+        //config
         $config = new DefaultApplicationConfig();
 
         //获取中间件实例
@@ -60,7 +61,6 @@ class Framework
             $logger->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
             $framework->getResponse()->doExceptionResponse(new ServerException(),503);
         }
-
 
         //获取过滤器处理器
         $filterChain = $framework->getFilterExecutor();

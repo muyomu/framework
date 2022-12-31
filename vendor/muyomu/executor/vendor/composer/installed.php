@@ -3,7 +3,7 @@
         'name' => 'muyomu/executor',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '87602c563984043f87a588cd3e9070f5d5b857b0',
+        'reference' => '99de6312aa94c73488b4775f5607beb5b2ce1f96',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -40,7 +40,7 @@
         'muyomu/executor' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '87602c563984043f87a588cd3e9070f5d5b857b0',
+            'reference' => '99de6312aa94c73488b4775f5607beb5b2ce1f96',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

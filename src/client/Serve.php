@@ -1,6 +1,6 @@
 <?php
 
-namespace muyomu\framework\constraint;
+namespace muyomu\framework\client;
 
 use muyomu\http\Request;
 use muyomu\http\Response;

@@ -3,11 +3,11 @@
 namespace muyomu\framework;
 
 use Exception;
-use JetBrains\PhpStorm\NoReturn;
 use muyomu\dpara\DparaClient;
 use muyomu\executor\exception\ServerException;
 use muyomu\executor\WebExecutor;
-use muyomu\framework\constraint\Serve;
+use muyomu\framework\config\DefaultApplicationConfig;
+use muyomu\framework\client\Serve;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\log4p\Log4p;
@@ -26,10 +26,13 @@ class CreateApp implements Serve
 
     private Log4p $log4p;
 
+    private DefaultApplicationConfig $defaultApplicationConfig;
+
     public function __construct(){
         $this->dparaClient = new DparaClient();
         $this->webExecutor = new WebExecutor();
         $this->log4p = new Log4p();
+        $this->defaultApplicationConfig = new DefaultApplicationConfig();
     }
 
     /**
@@ -84,9 +87,9 @@ class CreateApp implements Serve
     }
 
     /**
-     * @throws ReflectionException
+     * @throws ReflectionException|ServerException
      */
-    #[NoReturn] private function do_web_executor(Request $request, Response $response):void{
+    private function do_web_executor(Request $request, Response $response):void{
         $controller = $request->getDbClient()->select("rule")->getData()->getController();
         $handle = $request->getDbClient()->select("rule")->getData()->getHandle();
         $this->webExecutor->webExecutor($request,$response,$controller,$handle);
@@ -101,8 +104,14 @@ class CreateApp implements Serve
 
     public function run(Request $request,Response $response):void{
 
+        /*
+         * 解析动态参数
+         */
         $this->do_dynamic_parameter_resolve($request,$response);
 
+        /*
+         * 解析处理全局中间件
+         */
         try {
             $this->do_global_middleware_handle($request,$response);
         }catch (Exception $exception){
@@ -110,13 +119,17 @@ class CreateApp implements Serve
             $response->doExceptionResponse(new ServerException(),500);
         }
 
+        /*
+         * 解析控制器
+         */
         try {
-            $this->do_resolve_controller($request,$response);
+            if ($this->defaultApplicationConfig->getOptions("organization")){
+                $this->do_resolve_controller($request,$response);
+            }
         }catch (Exception $exception){
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
             $response->doExceptionResponse(new ServerException(),500);
         }
-
 
         /*
          * 路由中间件处理
@@ -128,13 +141,12 @@ class CreateApp implements Serve
             $response->doExceptionResponse(new ServerException(),500);
         }
 
-
         /*
          * web执行
          */
         try {
             $this->do_web_executor($request,$response);
-        }catch (ReflectionException $exception){
+        }catch (Exception $exception){
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
             $response->doExceptionResponse(new ServerException(),500);
         }

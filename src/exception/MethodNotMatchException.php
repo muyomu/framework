@@ -4,10 +4,10 @@ namespace muyomu\framework\exception;
 
 use Exception;
 
-class HeaderNotFound extends Exception
+class MethodNotMatchException extends Exception
 {
         public function __construct()
         {
-             parent::__construct("HeaderNotFound");
+             parent::__construct("MethodNotMatchException");
         }
 }

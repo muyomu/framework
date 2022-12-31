@@ -24,29 +24,38 @@ class Utility implements ExecutorHelper
         $this->log4p = new Log4p();
     }
 
+    /**
+     * @throws ServerException
+     */
     public function getReflectionClass(Response $response, string $class): ReflectionClass
     {
         try {
             $class = new ReflectionClass($class);
         }catch (ReflectionException $exception){
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            $response->doExceptionResponse(new ServerException(),500);
+            throw new ServerException();
         }
         return $class;
     }
 
+    /**
+     * @throws ServerException
+     */
     public function getControllerInstance(Response $response, ReflectionClass $reflectionClass): mixed
     {
         try {
             $instance = $reflectionClass->newInstance();
         }catch (ReflectionException $exception){
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            $response->doExceptionResponse(new ServerException(),500);
+            throw new ServerException();
         }
         return $instance;
     }
 
-    public function injectRR(Request $request, Response $response, ReflectionClass $reflectionClass,mixed $instance): void
+    /**
+     * @throws ServerException
+     */
+    public function injectRR(Request $request, Response $response, ReflectionClass $reflectionClass, mixed $instance): void
     {
         try {
             $request_property = $reflectionClass->getProperty("request");
@@ -57,27 +66,34 @@ class Utility implements ExecutorHelper
         }
         catch (ReflectionException $exception) {
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+            throw new ServerException();
         }
     }
 
-    public function getControllerHandle(Response $response,ReflectionClass $reflectionClass, string $handle): ReflectionMethod
+    /**
+     * @throws ServerException
+     */
+    public function getControllerHandle(Response $response, ReflectionClass $reflectionClass, string $handle): ReflectionMethod
     {
         try {
             $method = $reflectionClass->getMethod($handle);
         }catch (ReflectionException $exception) {
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            $response->doExceptionResponse(new ServerException(),500);
+            throw new ServerException();
         }
         return $method;
     }
 
-    public function handleExecutor(Response $response,mixed $instance, ReflectionMethod $method, array $argv): mixed
+    /**
+     * @throws ServerException
+     */
+    public function handleExecutor(Response $response, mixed $instance, ReflectionMethod $method, array $argv): mixed
     {
         try {
             $returnData = $this->frameWorkClient->aopExecutor($instance,$method,$argv);
         }catch (ReflectionException $exception) {
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            $response->doExceptionResponse(new ServerException(),500);
+            throw new ServerException();
         }
         return $returnData;
     }
