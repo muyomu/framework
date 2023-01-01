@@ -15,8 +15,6 @@ use muyomu\log4p\Log4p;
 use ReflectionClass;
 use ReflectionException;
 
-include "./system/global_handle.php";
-
 class Framework
 {
     private Request $request;
@@ -27,6 +25,7 @@ class Framework
 
     public function __construct()
     {
+        include "./system/global_handle.php";
         $this->request = new Request();
         $this->response = new Response();
         $this->filterExecutor = new FilterExecutor();
