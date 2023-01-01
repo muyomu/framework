@@ -35,10 +35,6 @@ class Framework
      * @return void
      */
     public static function main():void{
-
-        //加载系统配置
-        require "./system/global_handle.php";
-
         //logger
         $logger = new Log4p();
 
