@@ -9,6 +9,7 @@ use muyomu\filter\FilterExecutor;
 use muyomu\framework\config\DefaultApplicationConfig;
 use muyomu\framework\filter\RequestMethodFilter;
 use muyomu\framework\filter\RequestRootRuteFilter;
+use muyomu\framework\system\System;
 use muyomu\http\message\Message;
 use muyomu\http\Request;
 use muyomu\http\Response;
@@ -35,6 +36,9 @@ class Framework
      * @return void
      */
     public static function main():void{
+        //加载系统配置
+        System::system();
+
         //logger
         $logger = new Log4p();
 
@@ -122,45 +126,3 @@ class Framework
         }
     }
 }
-
-//global exception handle
-/**
- * @return void
- */
-function globalExceptionHandle(): void
-{
-    set_exception_handler(function ($exception) {
-        $message = new Message();
-        $message->setDataStatus("ServerError");
-        $message->setDataType("Describe Message");
-        $message->setData($exception->getMessage());
-
-        header("Content-Type: text/json;charset=UTF-8");
-
-        $return = array();
-        $return['status'] = $message->getDataStatus();
-        $return['dateType'] = $message->getDataType();
-        $return['data'] = $message->getData();
-
-        echo json_encode($return, JSON_UNESCAPED_UNICODE);
-    });
-
-//global error handle
-    set_error_handler(function ($error, $message) {
-        $message = new Message();
-        $message->setDataStatus("ServerError");
-        $message->setDataType("Describe Message");
-        $message->setData($message);
-
-        header("Content-Type: text/json;charset=UTF-8");
-
-        $return = array();
-        $return['status'] = $message->getDataStatus();
-        $return['dateType'] = $message->getDataType();
-        $return['data'] = $message->getData();
-
-        echo json_encode($return, JSON_UNESCAPED_UNICODE);
-    });
-}
-
-globalExceptionHandle();
