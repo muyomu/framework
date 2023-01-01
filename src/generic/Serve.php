@@ -1,6 +1,6 @@
 <?php
 
-namespace muyomu\framework\client;
+namespace muyomu\framework\generic;
 
 use muyomu\http\Request;
 use muyomu\http\Response;

@@ -1,6 +1,6 @@
 <?php
 
-namespace muyomu\framework\base;
+namespace muyomu\framework\foundation;
 
 
 use muyomu\http\Request;

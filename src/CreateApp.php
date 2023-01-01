@@ -7,7 +7,7 @@ use muyomu\dpara\DparaClient;
 use muyomu\executor\exception\ServerException;
 use muyomu\executor\WebExecutor;
 use muyomu\framework\config\DefaultApplicationConfig;
-use muyomu\framework\client\Serve;
+use muyomu\framework\generic\Serve;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\log4p\Log4p;
@@ -102,7 +102,10 @@ class CreateApp implements Serve
         $this->middleWare = $middleWare;
     }
 
-    public function run(Request $request,Response $response):void{
+    /**
+     * @throws ServerException
+     */
+    public function run(Request $request, Response $response):void{
 
         /*
          * 解析动态参数
@@ -116,7 +119,7 @@ class CreateApp implements Serve
             $this->do_global_middleware_handle($request,$response);
         }catch (Exception $exception){
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            $response->doExceptionResponse(new ServerException(),500);
+            throw new ServerException();
         }
 
         /*
@@ -128,7 +131,7 @@ class CreateApp implements Serve
             }
         }catch (Exception $exception){
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            $response->doExceptionResponse(new ServerException(),500);
+            throw new ServerException();
         }
 
         /*
@@ -138,7 +141,7 @@ class CreateApp implements Serve
             $this->do_route_middleware_handle($request,$response);
         }catch (Exception $exception){
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            $response->doExceptionResponse(new ServerException(),500);
+            throw new ServerException();
         }
 
         /*
@@ -148,7 +151,7 @@ class CreateApp implements Serve
             $this->do_web_executor($request,$response);
         }catch (Exception $exception){
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            $response->doExceptionResponse(new ServerException(),500);
+            throw new ServerException();
         }
     }
 }

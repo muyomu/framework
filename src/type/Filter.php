@@ -1,11 +1,11 @@
 <?php
 
-namespace muyomu\framework\component;
+namespace muyomu\framework\type;
 
 use Attribute;
 
 #[Attribute(Attribute::TARGET_CLASS)]
-class Controller
+class Filter
 {
 
 }
