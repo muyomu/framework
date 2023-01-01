@@ -25,7 +25,6 @@ class Framework
 
     public function __construct()
     {
-        include "./system/global_handle.php";
         $this->request = new Request();
         $this->response = new Response();
         $this->filterExecutor = new FilterExecutor();
@@ -35,6 +34,8 @@ class Framework
      * @return void
      */
     public static function main():void{
+
+        include "./system/global_handle.php";
         //logger
         $logger = new Log4p();
 
