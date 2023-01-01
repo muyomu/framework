@@ -35,7 +35,9 @@ class Framework
      */
     public static function main():void{
 
-        include "./system/global_handle.php";
+        //加载系统配置
+        require "./system/global_handle.php";
+
         //logger
         $logger = new Log4p();
 
