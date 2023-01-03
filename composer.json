@@ -18,13 +18,15 @@
     "require": {
         "php": ">=8.1",
         "muyomu/router": "2.0.6",
-        "muyomu/executor": "2.0.15",
-        "muyomu/http": "2.1.3",
+        "muyomu/executor": "2.0.16",
+        "muyomu/http": "2.1.4",
         "muyomu/database": "2.0.2",
-        "muyomu/dynamic": "2.0.16",
-        "muyomu/log4p": "1.1.4",
-        "muyomu/filter": "1.0.15",
-        "muyomu/middleware": "1.0.4",
-        "muyomu/security": "1.1.13"
+        "muyomu/dynamic": "2.1.18",
+        "muyomu/log4p": "1.1.5",
+        "muyomu/filter": "1.0.16",
+        "muyomu/middleware": "1.0.5",
+        "muyomu/security": "1.1.14",
+        "muyomu/dashboard": "v1.0.2",
+        "muyomu/config": "1.1.5"
     }
 }

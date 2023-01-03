@@ -1,0 +1,56 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "ff891b761bfe02ceeda1d13e6af25d16",
+    "packages": [
+        {
+            "name": "muyomu/database",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/database.git",
+                "reference": "5ce80913b931cedd6ffb9d1559e2919f9db85d8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/database/zipball/5ce80913b931cedd6ffb9d1559e2919f9db85d8a",
+                "reference": "5ce80913b931cedd6ffb9d1559e2919f9db85d8a",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\database\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian",
+                    "email": "mutian-xiangcai@outlook.com"
+                }
+            ],
+            "description": "The database of muyomu web framework",
+            "support": {
+                "issues": "https://github.com/muyomu/database/issues",
+                "source": "https://github.com/muyomu/database/tree/v2.0.2"
+            },
+            "time": "2022-11-26T13:00:09+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

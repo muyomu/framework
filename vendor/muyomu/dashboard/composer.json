@@ -1,0 +1,22 @@
+{
+    "name": "muyomu/dashboard",
+    "description": "The config center framework for muyomu web framework",
+    "type": "library",
+    "license": "apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "muyomu\\dashboard\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mutian",
+            "email": "bhfqlz@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "muyomu/config": "1.1.5",
+        "muyomu/middleware": "1.0.5"
+    }
+}
