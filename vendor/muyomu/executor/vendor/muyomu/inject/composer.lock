@@ -1,0 +1,96 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "2d1fc344e12dfb139dac7a21b57536e0",
+    "packages": [
+        {
+            "name": "muyomu/config",
+            "version": "v1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/config.git",
+                "reference": "6f9045d5c9db392e23f4f31cfde63dff0b9966a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/config/zipball/6f9045d5c9db392e23f4f31cfde63dff0b9966a3",
+                "reference": "6f9045d5c9db392e23f4f31cfde63dff0b9966a3",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\config\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian",
+                    "email": "mutian-xiangcai@outlook.com"
+                }
+            ],
+            "description": "The config framework for muyomu web framework",
+            "support": {
+                "issues": "https://github.com/muyomu/config/issues",
+                "source": "https://github.com/muyomu/config/tree/v1.1.5"
+            },
+            "time": "2023-01-03T10:25:07+00:00"
+        },
+        {
+            "name": "muyomu/log4p",
+            "version": "v1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/logger.git",
+                "reference": "a3de2b6d9c31839d18e34cbc59b210a3f877b524"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/logger/zipball/a3de2b6d9c31839d18e34cbc59b210a3f877b524",
+                "reference": "a3de2b6d9c31839d18e34cbc59b210a3f877b524",
+                "shasum": ""
+            },
+            "require": {
+                "muyomu/config": "1.1.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\log4p\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian",
+                    "email": "bhfqlz@qq.com"
+                }
+            ],
+            "description": "The log framework for muyomu web framework",
+            "support": {
+                "issues": "https://github.com/muyomu/logger/issues",
+                "source": "https://github.com/muyomu/logger/tree/v1.1.5"
+            },
+            "time": "2023-01-03T11:31:27+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

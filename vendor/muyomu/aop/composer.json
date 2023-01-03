@@ -11,8 +11,11 @@
     "authors": [
         {
             "name": "mutian",
-            "email": "bhfqlz@qq.com"
+            "email": "mutian-xiangcai@outlook.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "require": {
+        "muyomu/log4p": "v1.1.5"
+    }
 }

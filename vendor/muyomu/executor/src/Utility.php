@@ -2,6 +2,7 @@
 
 namespace muyomu\executor;
 
+use Exception;
 use muyomu\aop\FrameWorkClient;
 use muyomu\executor\client\ExecutorHelper;
 use muyomu\executor\exception\ServerException;
@@ -91,7 +92,7 @@ class Utility implements ExecutorHelper
     {
         try {
             $returnData = $this->frameWorkClient->aopExecutor($instance,$method,$argv);
-        }catch (ReflectionException $exception) {
+        }catch (Exception $exception) {
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
             throw new ServerException();
         }

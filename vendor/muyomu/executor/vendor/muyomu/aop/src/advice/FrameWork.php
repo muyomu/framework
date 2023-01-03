@@ -6,5 +6,5 @@ use ReflectionMethod;
 
 interface FrameWork
 {
-    public function aopExecutor(mixed $instance, ReflectionMethod $method,mixed $args):mixed;
+    public function aopExecutor(object $instance, ReflectionMethod $method,mixed $args):mixed;
 }

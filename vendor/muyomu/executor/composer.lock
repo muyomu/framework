@@ -4,21 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4ddd52671ef3990f031198cacb2e4efa",
+    "content-hash": "f5b719a0debeb1e35b627e729a6617a2",
     "packages": [
         {
             "name": "muyomu/aop",
-            "version": "v1.0.6",
+            "version": "v1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/aop.git",
-                "reference": "ed9e394251d7436f52df639395ba3b5feff7aa8d"
+                "reference": "7cd9e1058026718645c39659deafa80df7669baf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/aop/zipball/ed9e394251d7436f52df639395ba3b5feff7aa8d",
-                "reference": "ed9e394251d7436f52df639395ba3b5feff7aa8d",
+                "url": "https://api.github.com/repos/muyomu/aop/zipball/7cd9e1058026718645c39659deafa80df7669baf",
+                "reference": "7cd9e1058026718645c39659deafa80df7669baf",
                 "shasum": ""
+            },
+            "require": {
+                "muyomu/log4p": "v1.1.5"
             },
             "type": "library",
             "autoload": {
@@ -33,15 +36,15 @@
             "authors": [
                 {
                     "name": "mutian",
-                    "email": "bhfqlz@qq.com"
+                    "email": "mutian-xiangcai@outlook.com"
                 }
             ],
             "description": "The aop framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/aop/issues",
-                "source": "https://github.com/muyomu/aop/tree/v1.0.6"
+                "source": "https://github.com/muyomu/aop/tree/v1.0.9"
             },
-            "time": "2022-11-19T00:31:50+00:00"
+            "time": "2023-01-03T13:37:26+00:00"
         },
         {
             "name": "muyomu/config",

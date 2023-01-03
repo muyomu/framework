@@ -25,7 +25,7 @@ class WebExecutor implements ExecutorClient
     }
 
     /**
-     * @throws ServerException
+     * @throws ServerException|ReflectionException
      */
     public function webExecutor(Request $request, Response $response, string $controllerClassName, string $handle): void
     {
