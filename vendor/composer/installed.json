@@ -2,20 +2,20 @@
     "packages": [
         {
             "name": "muyomu/aop",
-            "version": "v1.0.10",
-            "version_normalized": "1.0.10.0",
+            "version": "v1.0.11",
+            "version_normalized": "1.0.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/aop.git",
-                "reference": "52e0701cd36833483085b4a23fc4fda4306fa162"
+                "reference": "cc3b5c9729443c2df341e7c586486894e595a4e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/aop/zipball/52e0701cd36833483085b4a23fc4fda4306fa162",
-                "reference": "52e0701cd36833483085b4a23fc4fda4306fa162",
+                "url": "https://api.github.com/repos/muyomu/aop/zipball/cc3b5c9729443c2df341e7c586486894e595a4e8",
+                "reference": "cc3b5c9729443c2df341e7c586486894e595a4e8",
                 "shasum": ""
             },
-            "time": "2023-01-04T02:07:51+00:00",
+            "time": "2023-01-04T02:19:48+00:00",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -36,7 +36,7 @@
             "description": "The aop framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/aop/issues",
-                "source": "https://github.com/muyomu/aop/tree/v1.0.10"
+                "source": "https://github.com/muyomu/aop/tree/v1.0.11"
             },
             "install-path": "../muyomu/aop"
         },
@@ -210,28 +210,28 @@
         },
         {
             "name": "muyomu/executor",
-            "version": "v2.0.19",
-            "version_normalized": "2.0.19.0",
+            "version": "v2.0.20",
+            "version_normalized": "2.0.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/executor.git",
-                "reference": "86cfab91fa67b5ab74b69613ecfe436dfec43795"
+                "reference": "33181429c72e7dce5c829b4c4f7f2be6fbea6b81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/executor/zipball/86cfab91fa67b5ab74b69613ecfe436dfec43795",
-                "reference": "86cfab91fa67b5ab74b69613ecfe436dfec43795",
+                "url": "https://api.github.com/repos/muyomu/executor/zipball/33181429c72e7dce5c829b4c4f7f2be6fbea6b81",
+                "reference": "33181429c72e7dce5c829b4c4f7f2be6fbea6b81",
                 "shasum": ""
             },
             "require": {
-                "muyomu/aop": "1.0.10",
+                "muyomu/aop": "1.0.11",
                 "muyomu/config": "v1.1.5",
                 "muyomu/http": "2.1.4",
                 "muyomu/inject": "1.0.4",
                 "muyomu/log4p": "1.1.5",
                 "muyomu/router": "2.0.6"
             },
-            "time": "2023-01-04T02:12:39+00:00",
+            "time": "2023-01-04T02:20:59+00:00",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -252,7 +252,7 @@
             "description": "The executor of muyomu framework",
             "support": {
                 "issues": "https://github.com/muyomu/executor/issues",
-                "source": "https://github.com/muyomu/executor/tree/v2.0.19"
+                "source": "https://github.com/muyomu/executor/tree/v2.0.20"
             },
             "install-path": "../muyomu/executor"
         },
