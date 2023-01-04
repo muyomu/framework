@@ -3,7 +3,7 @@
 namespace muyomu\executor;
 
 use muyomu\executor\client\ExecutorClient;
-use muyomu\executor\config\ExecutorDefaultConfig;
+use muyomu\executor\config\DefaultExecutorConfig;
 use muyomu\executor\exception\ServerException;
 use muyomu\http\Request;
 use muyomu\http\Response;
@@ -14,13 +14,13 @@ class WebExecutor implements ExecutorClient
 {
     private Utility $utility;
 
-    private ExecutorDefaultConfig $executorDefaultConfig;
+    private DefaultExecutorConfig $executorDefaultConfig;
 
     private Proxy $proxy;
 
     public function __construct(){
         $this->utility = new Utility();
-        $this->executorDefaultConfig = new ExecutorDefaultConfig();
+        $this->executorDefaultConfig = new DefaultExecutorConfig();
         $this->proxy = new Proxy();
     }
 

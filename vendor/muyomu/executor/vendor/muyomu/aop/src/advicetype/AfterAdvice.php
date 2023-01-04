@@ -15,6 +15,9 @@ class AfterAdvice
         $this->className = $className;
     }
 
+    /**
+     * @return \muyomu\aop\advice\AfterAdvice
+     */
     public function getInstance(): \muyomu\aop\advice\AfterAdvice
     {
         return $this->className;

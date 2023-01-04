@@ -14,6 +14,9 @@ class BeforeReturnAdvice
         $this->className = $className;
     }
 
+    /**
+     * @return \muyomu\aop\advice\BeforeReturnAdvice
+     */
     public function getInstance(): \muyomu\aop\advice\BeforeReturnAdvice
     {
         return $this->className;

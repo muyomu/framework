@@ -14,6 +14,9 @@ class RoundAdvice
         $this->className = $className;
     }
 
+    /**
+     * @return \muyomu\aop\advice\RoundAdvice
+     */
     public function getInstance(): \muyomu\aop\advice\RoundAdvice
     {
         return $this->className;
