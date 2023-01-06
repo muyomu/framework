@@ -10,7 +10,6 @@ use muyomu\framework\config\DefaultApplicationConfig;
 use muyomu\framework\filter\RequestMethodFilter;
 use muyomu\framework\filter\RequestRootRuteFilter;
 use muyomu\framework\system\System;
-use muyomu\http\message\Message;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\log4p\Log4p;

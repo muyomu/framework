@@ -4,9 +4,11 @@ namespace muyomu\framework;
 
 use Exception;
 use muyomu\dpara\DparaClient;
+use muyomu\dpara\exception\UrlNotMatch;
 use muyomu\executor\exception\ServerException;
 use muyomu\executor\WebExecutor;
 use muyomu\framework\config\DefaultApplicationConfig;
+use muyomu\framework\exception\RequestMethodNotMatchRoutException;
 use muyomu\framework\generic\Serve;
 use muyomu\http\Request;
 use muyomu\http\Response;
@@ -39,6 +41,7 @@ class CreateApp implements Serve
      * @param Request $request
      * @param Response $response
      * @return void
+     * @throws UrlNotMatch
      */
     private function do_dynamic_parameter_resolve(Request $request, Response $response):void{
         $this->dparaClient->dpara($request,$response,RouterClient::getDatabase());
@@ -95,6 +98,16 @@ class CreateApp implements Serve
         $this->webExecutor->webExecutor($request,$response,$controller,$handle);
     }
 
+    private function checkRequestMethod(Request $request):bool{
+        $routeMethod =  $request->getDbClient()->select("rule")->getData()->getMethod();
+        $requestMethod = $request->getRequestMethod();
+        if ($routeMethod === $requestMethod){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     /*
      * 安装全局中间件
      */
@@ -104,13 +117,24 @@ class CreateApp implements Serve
 
     /**
      * @throws ServerException
+     * @throws RequestMethodNotMatchRoutException
      */
     public function run(Request $request, Response $response):void{
 
         /*
          * 解析动态参数
          */
-        $this->do_dynamic_parameter_resolve($request,$response);
+        try {
+            $this->do_dynamic_parameter_resolve($request,$response);
+        }catch (Exception $exception){
+            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+            throw new ServerException();
+        }
+
+        //检查请求方法是否匹配
+        if (!$this->checkRequestMethod($request)){
+            throw new RequestMethodNotMatchRoutException();
+        }
 
         /*
          * 解析处理全局中间件
