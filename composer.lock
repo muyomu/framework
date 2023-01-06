@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "92aa17c46da035509fea9b212e1fea88",
+    "content-hash": "9516f97e8515315f5f6182fac6afa8ef",
     "packages": [
         {
             "name": "muyomu/aop",
@@ -446,6 +446,47 @@
                 "source": "https://github.com/muyomu/middleware/tree/v1.0.5"
             },
             "time": "2023-01-03T11:38:20+00:00"
+        },
+        {
+            "name": "muyomu/punit",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/punit.git",
+                "reference": "e144fa9b5dabd7257c1aad8955b13375978062d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/punit/zipball/e144fa9b5dabd7257c1aad8955b13375978062d6",
+                "reference": "e144fa9b5dabd7257c1aad8955b13375978062d6",
+                "shasum": ""
+            },
+            "require": {
+                "muyomu/aop": "1.0.11",
+                "muyomu/inject": "1.0.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\punit\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian",
+                    "email": "bhfqlz@outlook.com"
+                }
+            ],
+            "description": "The unit test",
+            "support": {
+                "issues": "https://github.com/muyomu/punit/issues",
+                "source": "https://github.com/muyomu/punit/tree/v1.0.2"
+            },
+            "time": "2023-01-06T05:29:01+00:00"
         },
         {
             "name": "muyomu/router",

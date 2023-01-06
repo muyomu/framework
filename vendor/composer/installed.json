@@ -475,6 +475,50 @@
             "install-path": "../muyomu/middleware"
         },
         {
+            "name": "muyomu/punit",
+            "version": "v1.0.2",
+            "version_normalized": "1.0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/punit.git",
+                "reference": "e144fa9b5dabd7257c1aad8955b13375978062d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/punit/zipball/e144fa9b5dabd7257c1aad8955b13375978062d6",
+                "reference": "e144fa9b5dabd7257c1aad8955b13375978062d6",
+                "shasum": ""
+            },
+            "require": {
+                "muyomu/aop": "1.0.11",
+                "muyomu/inject": "1.0.4"
+            },
+            "time": "2023-01-06T05:29:01+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\punit\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian",
+                    "email": "bhfqlz@outlook.com"
+                }
+            ],
+            "description": "The unit test",
+            "support": {
+                "issues": "https://github.com/muyomu/punit/issues",
+                "source": "https://github.com/muyomu/punit/tree/v1.0.2"
+            },
+            "install-path": "../muyomu/punit"
+        },
+        {
             "name": "muyomu/router",
             "version": "v2.0.6",
             "version_normalized": "2.0.6.0",
