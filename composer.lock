@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9516f97e8515315f5f6182fac6afa8ef",
+    "content-hash": "b14009d3e2c987d9a2cccc11df6f581f",
     "packages": [
         {
             "name": "muyomu/aop",
@@ -79,47 +79,6 @@
                 "source": "https://github.com/muyomu/config/tree/v1.1.5"
             },
             "time": "2023-01-03T10:25:07+00:00"
-        },
-        {
-            "name": "muyomu/dashboard",
-            "version": "v1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/muyomu/dashboard.git",
-                "reference": "6c502052695c1bee2eaef2f36ad2a28238e13126"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/dashboard/zipball/6c502052695c1bee2eaef2f36ad2a28238e13126",
-                "reference": "6c502052695c1bee2eaef2f36ad2a28238e13126",
-                "shasum": ""
-            },
-            "require": {
-                "muyomu/config": "1.1.5",
-                "muyomu/middleware": "1.0.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "muyomu\\dashboard\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "mutian",
-                    "email": "bhfqlz@qq.com"
-                }
-            ],
-            "description": "The config center framework for muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/dashboard/issues",
-                "source": "https://github.com/muyomu/dashboard/tree/v1.0.2"
-            },
-            "time": "2023-01-03T11:42:19+00:00"
         },
         {
             "name": "muyomu/database",

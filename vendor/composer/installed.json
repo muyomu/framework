@@ -81,50 +81,6 @@
             "install-path": "../muyomu/config"
         },
         {
-            "name": "muyomu/dashboard",
-            "version": "v1.0.2",
-            "version_normalized": "1.0.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/muyomu/dashboard.git",
-                "reference": "6c502052695c1bee2eaef2f36ad2a28238e13126"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/dashboard/zipball/6c502052695c1bee2eaef2f36ad2a28238e13126",
-                "reference": "6c502052695c1bee2eaef2f36ad2a28238e13126",
-                "shasum": ""
-            },
-            "require": {
-                "muyomu/config": "1.1.5",
-                "muyomu/middleware": "1.0.5"
-            },
-            "time": "2023-01-03T11:42:19+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "muyomu\\dashboard\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "mutian",
-                    "email": "bhfqlz@qq.com"
-                }
-            ],
-            "description": "The config center framework for muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/dashboard/issues",
-                "source": "https://github.com/muyomu/dashboard/tree/v1.0.2"
-            },
-            "install-path": "../muyomu/dashboard"
-        },
-        {
             "name": "muyomu/database",
             "version": "v2.0.2",
             "version_normalized": "2.0.2.0",
