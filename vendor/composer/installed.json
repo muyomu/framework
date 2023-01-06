@@ -122,17 +122,17 @@
         },
         {
             "name": "muyomu/dynamic",
-            "version": "v2.2.23",
-            "version_normalized": "2.2.23.0",
+            "version": "v2.2.24",
+            "version_normalized": "2.2.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/dynamic.git",
-                "reference": "75f2fc1f4679e6d70994ccd76b3456d3513dec29"
+                "reference": "29068916023492895dd5c488aac95bd290462d8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/dynamic/zipball/75f2fc1f4679e6d70994ccd76b3456d3513dec29",
-                "reference": "75f2fc1f4679e6d70994ccd76b3456d3513dec29",
+                "url": "https://api.github.com/repos/muyomu/dynamic/zipball/29068916023492895dd5c488aac95bd290462d8c",
+                "reference": "29068916023492895dd5c488aac95bd290462d8c",
                 "shasum": ""
             },
             "require": {
@@ -140,7 +140,7 @@
                 "muyomu/http": "2.1.4",
                 "muyomu/router": "2.0.6"
             },
-            "time": "2023-01-06T12:54:36+00:00",
+            "time": "2023-01-06T13:02:57+00:00",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -160,7 +160,7 @@
             "description": "The dynamic paramater resolver of muyomu framework",
             "support": {
                 "issues": "https://github.com/muyomu/dynamic/issues",
-                "source": "https://github.com/muyomu/dynamic/tree/v2.2.23"
+                "source": "https://github.com/muyomu/dynamic/tree/v2.2.24"
             },
             "install-path": "../muyomu/dynamic"
         },
@@ -519,28 +519,28 @@
         },
         {
             "name": "muyomu/security",
-            "version": "v1.1.21",
-            "version_normalized": "1.1.21.0",
+            "version": "v1.1.23",
+            "version_normalized": "1.1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/security.git",
-                "reference": "64d35e632937d0f07834fae4e770e93234ca40b3"
+                "reference": "5be1e942391fbb7eca55fc1da1dd0a12c2bfcc86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/security/zipball/64d35e632937d0f07834fae4e770e93234ca40b3",
-                "reference": "64d35e632937d0f07834fae4e770e93234ca40b3",
+                "url": "https://api.github.com/repos/muyomu/security/zipball/5be1e942391fbb7eca55fc1da1dd0a12c2bfcc86",
+                "reference": "5be1e942391fbb7eca55fc1da1dd0a12c2bfcc86",
                 "shasum": ""
             },
             "require": {
                 "muyomu/config": "1.1.5",
-                "muyomu/dynamic": "v2.2.23",
+                "muyomu/dynamic": "v2.2.24",
                 "muyomu/http": "2.1.4",
                 "muyomu/log4p": "1.1.5",
                 "muyomu/middleware": "1.0.5",
                 "muyomu/router": "2.0.6"
             },
-            "time": "2023-01-06T12:55:35+00:00",
+            "time": "2023-01-06T13:05:06+00:00",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -561,7 +561,7 @@
             "description": "The auth framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/security/issues",
-                "source": "https://github.com/muyomu/security/tree/v1.1.21"
+                "source": "https://github.com/muyomu/security/tree/v1.1.23"
             },
             "install-path": "../muyomu/security"
         }
