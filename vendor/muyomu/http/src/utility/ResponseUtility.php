@@ -10,7 +10,7 @@ use muyomu\http\message\MessageToArray;
 class ResponseUtility implements ResponseDataClient
 {
 
-    #[NoReturn] public function returnWhite(): void
+    public function returnWhite(): void
     {
         $message = new Message();
         $message->setDataType("empty");
@@ -19,12 +19,12 @@ class ResponseUtility implements ResponseDataClient
 
         $return = MessageToArray::messageToArray($message);
 
-        $this->setHeader("Content-Type: text/json");
+        $this->setHeader("Content-Type","text/json");
         echo json_encode($return, JSON_UNESCAPED_UNICODE);
         die();
     }
 
-    #[NoReturn] public function returnRaw(mixed $data): void
+    public function returnRaw(mixed $data): void
     {
         $message = new Message();
         $message->setDataType(gettype($data));
@@ -33,12 +33,12 @@ class ResponseUtility implements ResponseDataClient
 
         $return = MessageToArray::messageToArray($message);
 
-        $this->setHeader("Content-Type: text/json");
+        $this->setHeader("Content-Type","text/json");
         echo json_encode($return, JSON_UNESCAPED_UNICODE);
         die();
     }
 
-    #[NoReturn] public function returnJson(array $data): void
+    public function returnJson(array $data): void
     {
         $message = new Message();
         $message->setDataType(gettype($data));
@@ -47,13 +47,13 @@ class ResponseUtility implements ResponseDataClient
 
         $return = MessageToArray::messageToArray($message);
 
-        $this->setHeader("Content-Type: text/json");
+        $this->setHeader("Content-Type","text/json");
         echo json_encode($return, JSON_UNESCAPED_UNICODE);
         die();
     }
 
 
-    #[NoReturn] public function returnBadData(): void
+    public function returnBadData(): void
     {
         $message = new Message();
         $message->setDataType("NONE");
@@ -62,8 +62,14 @@ class ResponseUtility implements ResponseDataClient
 
         $return = MessageToArray::messageToArray($message);
 
-        $this->setHeader("Content-Type: text/json");
+        $this->setHeader("Content-Type","text/json");
         echo json_encode($return, JSON_UNESCAPED_UNICODE);
         die();
+    }
+
+    public function setHeader(string $field, string $content): void
+    {
+        $header = "$field: $content";
+        header($header);
     }
 }

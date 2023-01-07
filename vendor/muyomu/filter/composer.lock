@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3bef625fb5de587e4ebedc4b3a2e0380",
+    "content-hash": "87d01172b10c6f0c5ecef771c55d9d17",
     "packages": [
         {
             "name": "muyomu/config",
@@ -82,22 +82,21 @@
         },
         {
             "name": "muyomu/http",
-            "version": "v2.1.4",
+            "version": "v2.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/http.git",
-                "reference": "72e3c72cd1d8db29c911432ec95708a148860378"
+                "reference": "0c843be7cd88da9a7b37999ebc90cd7408174282"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/http/zipball/72e3c72cd1d8db29c911432ec95708a148860378",
-                "reference": "72e3c72cd1d8db29c911432ec95708a148860378",
+                "url": "https://api.github.com/repos/muyomu/http/zipball/0c843be7cd88da9a7b37999ebc90cd7408174282",
+                "reference": "0c843be7cd88da9a7b37999ebc90cd7408174282",
                 "shasum": ""
             },
             "require": {
                 "muyomu/config": "1.1.5",
                 "muyomu/database": "2.0.2",
-                "muyomu/log4p": "1.1.5",
                 "muyomu/router": "2.0.6"
             },
             "type": "library",
@@ -119,49 +118,9 @@
             "description": "The http helper of muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/http/issues",
-                "source": "https://github.com/muyomu/http/tree/v2.1.4"
+                "source": "https://github.com/muyomu/http/tree/v2.1.6"
             },
-            "time": "2023-01-03T11:33:07+00:00"
-        },
-        {
-            "name": "muyomu/log4p",
-            "version": "v1.1.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/muyomu/logger.git",
-                "reference": "a3de2b6d9c31839d18e34cbc59b210a3f877b524"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/logger/zipball/a3de2b6d9c31839d18e34cbc59b210a3f877b524",
-                "reference": "a3de2b6d9c31839d18e34cbc59b210a3f877b524",
-                "shasum": ""
-            },
-            "require": {
-                "muyomu/config": "1.1.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "muyomu\\log4p\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "mutian",
-                    "email": "bhfqlz@qq.com"
-                }
-            ],
-            "description": "The log framework for muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/logger/issues",
-                "source": "https://github.com/muyomu/logger/tree/v1.1.5"
-            },
-            "time": "2023-01-03T11:31:27+00:00"
+            "time": "2023-01-07T03:15:36+00:00"
         },
         {
             "name": "muyomu/router",

@@ -5,7 +5,7 @@ namespace muyomu\http\config;
 use muyomu\config\annotation\Configuration;
 use muyomu\config\GenericConfig;
 
-#[Configuration("config_http")]
+#[Configuration(DefaultHttpConfig::class)]
 class DefaultHttpConfig extends GenericConfig
 {
     protected string $configClass = self::class;
@@ -53,7 +53,7 @@ class DefaultHttpConfig extends GenericConfig
             504 => "HTTP/1.1 504 Gateway Time-out",
             505 => "HTTP/1.1 504 HTTP version not supported"
         ],
-        "response_headers"=>[
+        "headers"=>[
             "Cache-Control"=>"no-store",
             "Connection"=>"close",
             "Content-Type"=>"text/json;charset=UTF-8"

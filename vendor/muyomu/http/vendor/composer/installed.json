@@ -81,49 +81,6 @@
             "install-path": "../muyomu/database"
         },
         {
-            "name": "muyomu/log4p",
-            "version": "v1.1.5",
-            "version_normalized": "1.1.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/muyomu/logger.git",
-                "reference": "a3de2b6d9c31839d18e34cbc59b210a3f877b524"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/logger/zipball/a3de2b6d9c31839d18e34cbc59b210a3f877b524",
-                "reference": "a3de2b6d9c31839d18e34cbc59b210a3f877b524",
-                "shasum": ""
-            },
-            "require": {
-                "muyomu/config": "1.1.5"
-            },
-            "time": "2023-01-03T11:31:27+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "muyomu\\log4p\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "mutian",
-                    "email": "bhfqlz@qq.com"
-                }
-            ],
-            "description": "The log framework for muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/logger/issues",
-                "source": "https://github.com/muyomu/logger/tree/v1.1.5"
-            },
-            "install-path": "../muyomu/log4p"
-        },
-        {
             "name": "muyomu/router",
             "version": "v2.0.6",
             "version_normalized": "2.0.6.0",

@@ -3,7 +3,6 @@
 namespace muyomu\http;
 
 use Exception;
-use JetBrains\PhpStorm\NoReturn;
 use muyomu\http\client\ResponseClient;
 use muyomu\http\config\DefaultFileConfig;
 use muyomu\http\config\DefaultHttpConfig;
@@ -39,10 +38,10 @@ class Response implements ResponseClient
         }
     }
 
-    #[NoReturn] public function doDataResponse(mixed $data,int $code): void
+    public function doDataResponse(mixed $data,int $code): void
     {
         http_response_code($code);
-        $this->addAllHeaders($this->defaultHttpConfig->getOptions("response_headers"));
+        $this->addAllHeaders($this->defaultHttpConfig->getOptions("headers"));
 
         $message = new Message();
         $message->setDataStatus("Success");
@@ -54,10 +53,10 @@ class Response implements ResponseClient
         die(json_encode($data));
     }
 
-    #[NoReturn] public function doExceptionResponse(Exception $exception, int $code,): void
+    public function doExceptionResponse(Exception $exception, int $code,): void
     {
         http_response_code($code);
-        $this->addAllHeaders($this->defaultHttpConfig->getOptions("response_headers"));
+        $this->addAllHeaders($this->defaultHttpConfig->getOptions("headers"));
 
         $message = new Message();
         $message->setDataStatus("Failure");
@@ -69,12 +68,12 @@ class Response implements ResponseClient
         die(json_encode($data));
     }
 
-    #[NoReturn] public function doFileResponse(string $file): void
+    public function doFileResponse(string $file): void
     {
         $file_location = $this->defaultFileConfig->getOptions("location").$file;
         $resource = fopen($file_location,"r");
         if ($resource){
-            $this->addAllHeaders($this->defaultFileConfig->getOptions("response_headers"));
+            $this->addAllHeaders($this->defaultFileConfig->getOptions("headers"));
             Header ( "Accept-Length: " . filesize ($file_location) );
             Header ( "Content-Disposition: attachment; filename=" . $file );
             $content = fread($resource,filesize($file_location));
@@ -85,7 +84,7 @@ class Response implements ResponseClient
     }
 
 
-    #[NoReturn] public function doCustomizeResponse(mixed $data, int $code, array $headerConfig = array()):void
+    public function doCustomizeResponse(mixed $data, int $code, array $headerConfig = array()):void
     {
         http_response_code($code);
         $this->customizeHeaders($headerConfig);

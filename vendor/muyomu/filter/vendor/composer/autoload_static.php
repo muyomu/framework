@@ -10,7 +10,6 @@ class ComposerStaticInitb8210cc27746014efcea8625037bf54c
         'm' => 
         array (
             'muyomu\\router\\' => 14,
-            'muyomu\\log4p\\' => 13,
             'muyomu\\http\\' => 12,
             'muyomu\\filter\\' => 14,
             'muyomu\\database\\' => 16,
@@ -22,10 +21,6 @@ class ComposerStaticInitb8210cc27746014efcea8625037bf54c
         'muyomu\\router\\' => 
         array (
             0 => __DIR__ . '/..' . '/muyomu/router/src',
-        ),
-        'muyomu\\log4p\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/muyomu/log4p/src',
         ),
         'muyomu\\http\\' => 
         array (
