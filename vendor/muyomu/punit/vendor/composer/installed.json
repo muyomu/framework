@@ -17,7 +17,7 @@
             },
             "time": "2023-01-04T02:19:48+00:00",
             "type": "library",
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "muyomu\\aop\\": "src/"
@@ -57,7 +57,7 @@
             },
             "time": "2023-01-03T10:25:07+00:00",
             "type": "library",
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "muyomu\\config\\": "src/"
@@ -100,7 +100,7 @@
             },
             "time": "2023-01-03T11:46:20+00:00",
             "type": "library",
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "muyomu\\inject\\": "src/"
@@ -143,7 +143,7 @@
             },
             "time": "2023-01-03T11:31:27+00:00",
             "type": "library",
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "muyomu\\log4p\\": "src/"

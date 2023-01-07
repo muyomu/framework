@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "345d233eafe736aa74221f2a6a5f988b",
+    "content-hash": "0b4e9b6f1287617981f370028cc36b1b",
     "packages": [
         {
             "name": "muyomu/aop",
@@ -407,16 +407,16 @@
         },
         {
             "name": "muyomu/punit",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/punit.git",
-                "reference": "e144fa9b5dabd7257c1aad8955b13375978062d6"
+                "reference": "395b5e030164772421b98e0c74e4454a52768878"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/punit/zipball/e144fa9b5dabd7257c1aad8955b13375978062d6",
-                "reference": "e144fa9b5dabd7257c1aad8955b13375978062d6",
+                "url": "https://api.github.com/repos/muyomu/punit/zipball/395b5e030164772421b98e0c74e4454a52768878",
+                "reference": "395b5e030164772421b98e0c74e4454a52768878",
                 "shasum": ""
             },
             "require": {
@@ -442,9 +442,9 @@
             "description": "The unit test",
             "support": {
                 "issues": "https://github.com/muyomu/punit/issues",
-                "source": "https://github.com/muyomu/punit/tree/v1.0.2"
+                "source": "https://github.com/muyomu/punit/tree/v1.0.3"
             },
-            "time": "2023-01-06T05:29:01+00:00"
+            "time": "2023-01-07T03:49:22+00:00"
         },
         {
             "name": "muyomu/router",

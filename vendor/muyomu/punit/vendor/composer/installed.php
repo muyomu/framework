@@ -3,7 +3,7 @@
         'name' => 'muyomu/punit',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '71667867e4f532c3a8b6aee6ba2b4a7e6cfea80c',
+        'reference' => 'e144fa9b5dabd7257c1aad8955b13375978062d6',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -49,7 +49,7 @@
         'muyomu/punit' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '71667867e4f532c3a8b6aee6ba2b4a7e6cfea80c',
+            'reference' => 'e144fa9b5dabd7257c1aad8955b13375978062d6',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
