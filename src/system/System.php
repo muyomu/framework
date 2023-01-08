@@ -2,7 +2,9 @@
 
 namespace muyomu\framework\system;
 
+use muyomu\framework\config\DefaultInitializeConfig;
 use muyomu\http\message\Message;
+use muyomu\log4p\Log4p;
 
 class System
 {
@@ -40,5 +42,25 @@ class System
 
             echo json_encode($return, JSON_UNESCAPED_UNICODE);
         });
+
+        //set ini
+        $logger = new Log4p();
+        $ini = new DefaultInitializeConfig();
+        $iniArray = $ini->getOptions("ini");
+        $keys = array_keys($iniArray);
+        foreach ( $keys as $key){
+            $k = ini_set($key,$iniArray[$key]);
+            if (!$k){
+                $logger->muix_log_info("ini set","failed to set {$key} env");
+            }
+        }
+        $extArray = $ini->getOptions("ext");
+        $items = array_keys($extArray);
+        foreach ($items as $item){
+            $result = extension_loaded($item);
+            if (!$result){
+                $logger->muix_log_info("ext load","failed to load {$item} extension");
+            }
+        }
     }
 }
