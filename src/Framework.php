@@ -35,14 +35,14 @@ class Framework
      * @return void
      */
     public static function main():void{
-        //加载系统配置
-        System::system();
-
         //logger
         $logger = new Log4p();
 
         //framework
         $framework = new Framework();
+
+        //加载系统配置
+        System::system($framework->getResponse());
 
         //application
         $application = new CreateApp();
