@@ -43,9 +43,10 @@ class System
             echo json_encode($return, JSON_UNESCAPED_UNICODE);
         });
 
-        //set ini
         $logger = new Log4p();
         $ini = new DefaultInitializeConfig();
+
+        //set ini
         $iniArray = $ini->getOptions("ini");
         $keys = array_keys($iniArray);
         foreach ( $keys as $key){
@@ -54,9 +55,10 @@ class System
                 $logger->muix_log_info("ini set","failed to set {$key} env");
             }
         }
+
+        //load ext
         $extArray = $ini->getOptions("ext");
-        $items = array_keys($extArray);
-        foreach ($items as $item){
+        foreach ($extArray as $item){
             $result = extension_loaded($item);
             if (!$result){
                 $logger->muix_log_info("ext load","failed to load {$item} extension");
