@@ -12,6 +12,7 @@ class DefaultInitializeConfig extends GenericConfig
 
     protected array $configData = array(
         "ini"=>[],
-        "ext"=>[]
+        "ext"=>[],
+        "callable"=>[]
     );
 }

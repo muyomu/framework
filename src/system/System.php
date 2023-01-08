@@ -67,5 +67,10 @@ class System
                 $response->doExceptionResponse(new EnvConfigException(),500);
             }
         }
+
+        $callableArray = $ini->getOptions("callable");
+        foreach ($callableArray as $item){
+            $item();
+        }
     }
 }
