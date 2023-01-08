@@ -3,12 +3,14 @@
 namespace muyomu\framework\system;
 
 use muyomu\framework\config\DefaultInitializeConfig;
+use muyomu\framework\exception\EnvConfigException;
 use muyomu\http\message\Message;
+use muyomu\http\Response;
 use muyomu\log4p\Log4p;
 
 class System
 {
-    public static function system():void{
+    public static function system(Response $response):void{
         //global exception handle
         set_exception_handler(function ($exception) {
             $message = new Message();
@@ -61,7 +63,8 @@ class System
         foreach ($extArray as $item){
             $result = extension_loaded($item);
             if (!$result){
-                $logger->muix_log_info("ext load","failed to load {$item} extension");
+                $logger->muix_log_info("ext load","{$item} should be set to load but not be loaded!");
+                $response->doExceptionResponse(new EnvConfigException(),500);
             }
         }
     }
