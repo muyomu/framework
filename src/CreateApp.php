@@ -3,8 +3,8 @@
 namespace muyomu\framework;
 
 use Exception;
+use muyomu\database\base\Document;
 use muyomu\dpara\DparaClient;
-use muyomu\dpara\exception\UrlNotMatch;
 use muyomu\executor\exception\ServerException;
 use muyomu\executor\WebExecutor;
 use muyomu\framework\config\DefaultApplicationConfig;
@@ -22,8 +22,6 @@ class CreateApp implements Serve
 {
     private BaseMiddleWare $middleWare;
 
-    private DparaClient $dparaClient;
-
     private WebExecutor $webExecutor;
 
     private Log4p $log4p;
@@ -31,7 +29,6 @@ class CreateApp implements Serve
     private DefaultApplicationConfig $defaultApplicationConfig;
 
     public function __construct(){
-        $this->dparaClient = new DparaClient();
         $this->webExecutor = new WebExecutor();
         $this->log4p = new Log4p();
         $this->defaultApplicationConfig = new DefaultApplicationConfig();
@@ -41,10 +38,10 @@ class CreateApp implements Serve
      * @param Request $request
      * @param Response $response
      * @return void
-     * @throws UrlNotMatch
      */
     private function do_dynamic_parameter_resolve(Request $request, Response $response):void{
-        $this->dparaClient->dpara($request,$response,RouterClient::getDatabase());
+        $document = new Document(RouterClient::getDatabase()->select($request->getURL()));
+        $request->getDbClient()->insert("rule",$document);
     }
 
     /**

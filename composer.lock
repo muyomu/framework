@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0b4e9b6f1287617981f370028cc36b1b",
+    "content-hash": "9b5db8ba3a6f99e653ab779b634cc223",
     "packages": [
         {
             "name": "muyomu/aop",
@@ -530,6 +530,46 @@
                 "source": "https://github.com/muyomu/security/tree/v1.1.25"
             },
             "time": "2023-01-07T03:34:04+00:00"
+        },
+        {
+            "name": "muyomu/view",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/view.git",
+                "reference": "cd76cbf65f163b1e756e0613730209accf09105c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/view/zipball/cd76cbf65f163b1e756e0613730209accf09105c",
+                "reference": "cd76cbf65f163b1e756e0613730209accf09105c",
+                "shasum": ""
+            },
+            "require": {
+                "muyomu/http": "2.1.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\view\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian",
+                    "email": "bhfqlz@qq.com"
+                }
+            ],
+            "description": "The view resolver for muyomu web framework",
+            "support": {
+                "issues": "https://github.com/muyomu/view/issues",
+                "source": "https://github.com/muyomu/view/tree/v1.0.0"
+            },
+            "time": "2023-01-28T11:32:39+00:00"
         }
     ],
     "packages-dev": [],

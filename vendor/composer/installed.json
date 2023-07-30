@@ -563,6 +563,49 @@
                 "source": "https://github.com/muyomu/security/tree/v1.1.25"
             },
             "install-path": "../muyomu/security"
+        },
+        {
+            "name": "muyomu/view",
+            "version": "v1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/view.git",
+                "reference": "cd76cbf65f163b1e756e0613730209accf09105c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/view/zipball/cd76cbf65f163b1e756e0613730209accf09105c",
+                "reference": "cd76cbf65f163b1e756e0613730209accf09105c",
+                "shasum": ""
+            },
+            "require": {
+                "muyomu/http": "2.1.6"
+            },
+            "time": "2023-01-28T11:32:39+00:00",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\view\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian",
+                    "email": "bhfqlz@qq.com"
+                }
+            ],
+            "description": "The view resolver for muyomu web framework",
+            "support": {
+                "issues": "https://github.com/muyomu/view/issues",
+                "source": "https://github.com/muyomu/view/tree/v1.0.0"
+            },
+            "install-path": "../muyomu/view"
         }
     ],
     "dev": true,
