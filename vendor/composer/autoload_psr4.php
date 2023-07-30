@@ -15,7 +15,6 @@ return array(
     'muyomu\\framework\\' => array($baseDir . '/src'),
     'muyomu\\filter\\' => array($vendorDir . '/muyomu/filter/src'),
     'muyomu\\executor\\' => array($vendorDir . '/muyomu/executor/src'),
-    'muyomu\\dpara\\' => array($vendorDir . '/muyomu/dynamic/src'),
     'muyomu\\database\\' => array($vendorDir . '/muyomu/database/src'),
     'muyomu\\config\\' => array($vendorDir . '/muyomu/config/src'),
     'muyomu\\auth\\' => array($vendorDir . '/muyomu/security/src'),
