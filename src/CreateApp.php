@@ -4,7 +4,6 @@ namespace muyomu\framework;
 
 use Exception;
 use muyomu\database\base\Document;
-use muyomu\dpara\DparaClient;
 use muyomu\executor\exception\ServerException;
 use muyomu\executor\WebExecutor;
 use muyomu\framework\config\DefaultApplicationConfig;
@@ -40,7 +39,7 @@ class CreateApp implements Serve
      * @return void
      */
     private function do_dynamic_parameter_resolve(Request $request, Response $response):void{
-        $document = new Document(RouterClient::getDatabase()->select($request->getURL()));
+        $document = new Document(RouterClient::getRule($request->getURL()));
         $request->getDbClient()->insert("rule",$document);
     }
 
@@ -100,9 +99,8 @@ class CreateApp implements Serve
         $requestMethod = $request->getRequestMethod();
         if ($routeMethod === $requestMethod){
             return true;
-        }else{
-            return false;
         }
+        return false;
     }
 
     /*
