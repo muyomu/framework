@@ -8,7 +8,6 @@ use muyomu\filter\client\GenericFilter;
 use muyomu\filter\FilterExecutor;
 use muyomu\framework\config\DefaultApplicationConfig;
 use muyomu\framework\filter\RequestMethodFilter;
-use muyomu\framework\filter\RequestRootRuteFilter;
 use muyomu\framework\system\System;
 use muyomu\http\Request;
 use muyomu\http\Response;
@@ -71,7 +70,6 @@ class Framework
 
         //添加系统过滤器
         $filterChain->addFilter(new RequestMethodFilter());
-        $filterChain->addFilter(new RequestRootRuteFilter());
 
         //添加用户过滤器
         $framework->loadUserFilters($filterChain,$config->getOptions("filters"));
