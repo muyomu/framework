@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d20ae12507e2db4704335c003909017e",
+    "content-hash": "ad4aaad49e3a97b036d5bd0e73a92fb3",
     "packages": [
         {
             "name": "muyomu/aop",
@@ -447,16 +447,16 @@
         },
         {
             "name": "muyomu/security",
-            "version": "dev-main",
+            "version": "1.1.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/security.git",
-                "reference": "c58254af4f93ce972c553de644317bce36bd9ef2"
+                "reference": "c3ef687712acaeb0b26f4373af30a34c1ace1e43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/security/zipball/c58254af4f93ce972c553de644317bce36bd9ef2",
-                "reference": "c58254af4f93ce972c553de644317bce36bd9ef2",
+                "url": "https://api.github.com/repos/muyomu/security/zipball/c3ef687712acaeb0b26f4373af30a34c1ace1e43",
+                "reference": "c3ef687712acaeb0b26f4373af30a34c1ace1e43",
                 "shasum": ""
             },
             "require": {
@@ -466,7 +466,6 @@
                 "muyomu/middleware": "1.0.6",
                 "muyomu/router": "2.0.6"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -486,9 +485,9 @@
             "description": "The auth framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/security/issues",
-                "source": "https://github.com/muyomu/security/tree/v1.1.26"
+                "source": "https://github.com/muyomu/security/tree/1.1.27"
             },
-            "time": "2023-07-30T07:14:47+00:00"
+            "time": "2023-08-01T11:53:05+00:00"
         }
     ],
     "packages-dev": [],

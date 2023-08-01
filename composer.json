@@ -26,6 +26,6 @@
         "muyomu/config": "1.1.5",
         "muyomu/punit": "1.0.3",
         "muyomu/executor": "2.2.1",
-        "muyomu/security": "dev-main"
+        "muyomu/security": "1.1.27"
     }
 }
