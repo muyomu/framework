@@ -39,8 +39,7 @@ class CreateApp implements Serve
      * @return void
      */
     private function do_dynamic_parameter_resolve(Request $request, Response $response):void{
-        $document = new Document(RouterClient::getRule($request->getURL()));
-        $request->getDbClient()->insert("rule",$document);
+        $request->getDbClient()->insert("rule",RouterClient::getRule($request->getURL()));
     }
 
     /**
