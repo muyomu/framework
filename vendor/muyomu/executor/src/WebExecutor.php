@@ -69,6 +69,6 @@ class WebExecutor implements ExecutorClient
         /*
          * 处理返回数据
          */
-        $response->doDataResponse($returnData,200);
+        $response->doJsonResponse(200,"success",$returnData);
     }
 }

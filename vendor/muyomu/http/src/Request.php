@@ -17,13 +17,7 @@ class Request implements RequestClient,GetClient,PostClient,HeaderClient
 
     public function __construct()
     {
-        /*
-         * 内部数据库
-         */
         $this->dbClient = new DbClient();
-        /*
-         * 通用数据
-         */
         $this->attribute = new Attribute();
     }
 

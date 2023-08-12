@@ -22,13 +22,21 @@ class Response implements ResponseClient
         $this->defaultHttpConfig = new DefaultHttpConfig();
     }
 
-
+    /**
+     * @param string $field
+     * @param string $content
+     * @return void
+     */
     public function setHeader(string $field, string $content): void
     {
         $header = "$field: $content";
         header($header);
     }
 
+    /**
+     * @param array $config
+     * @return void
+     */
     private function addAllHeaders(array $config):void{
         $keys = array_keys($config);
         foreach ($keys as $key){
@@ -38,25 +46,49 @@ class Response implements ResponseClient
         }
     }
 
-    public function doDataResponse(mixed $data,int $code): void
+    /**
+     * @param int $code
+     * @param string $status
+     * @param mixed $data
+     * @return void
+     */
+    public function doJsonResponse(int $code,string $status,mixed $data): void
     {
+        //设置响应码
         http_response_code($code);
+        //设置响应头
         $this->addAllHeaders($this->defaultHttpConfig->getOptions("headers"));
 
+        //设置专用响应头
+        $this->setHeader("Content-Type","txt/json:charset=utf-8");
+
+        //封装回应体
         $message = new Message();
-        $message->setDataStatus("Success");
+        $message->setDataStatus($status);
         $message->setDataType(gettype($data));
         $message->setData($data);
 
+        //封装json
         $data = MessageToArray::messageToArray($message);
 
-        die(json_encode($data));
+        //返回Json数据
+        die(json_encode($data,JSON_UNESCAPED_UNICODE));
     }
 
+    /**
+     * @param Exception $exception
+     * @param int $code
+     * @return void
+     */
     public function doExceptionResponse(Exception $exception, int $code,): void
     {
+        //设置状态码
         http_response_code($code);
+        //设置通用响应头
         $this->addAllHeaders($this->defaultHttpConfig->getOptions("headers"));
+
+        //设置专用响应头
+        $this->setHeader("Content-Type","txt/json:charset=utf-8");
 
         $message = new Message();
         $message->setDataStatus("Failure");
@@ -65,46 +97,65 @@ class Response implements ResponseClient
 
         $data = MessageToArray::messageToArray($message);
 
-        die(json_encode($data));
+        //返回数据
+        die(json_encode($data,JSON_UNESCAPED_UNICODE));
     }
 
+    /**
+     * @param string $file
+     * @return void
+     */
     public function doFileResponse(string $file): void
     {
+        //获取文件位置
         $file_location = $this->defaultFileConfig->getOptions("location").$file;
+
+        //打开文件
         $resource = fopen($file_location,"r");
         if ($resource){
+            //设置通用响应头
             $this->addAllHeaders($this->defaultFileConfig->getOptions("headers"));
+
+            //设置专用响应头
             Header ( "Accept-Length: " . filesize ($file_location) );
             Header ( "Content-Disposition: attachment; filename=" . $file );
+
+            //获取文件内容
             $content = fread($resource,filesize($file_location));
+
+            //输出文件内容
             die($content);
         }else{
             $this->doExceptionResponse(new FileNotFoundException(),404);
         }
     }
 
-
-    public function doCustomizeResponse(mixed $data, int $code, array $headerConfig = array()):void
+    /**
+     * @param string $file
+     * @return void
+     */
+    public function doStreamResponse(string $file): void
     {
-        http_response_code($code);
-        $this->customizeHeaders($headerConfig);
+        //获取资源位置
+        $file_location = $this->defaultFileConfig->getOptions("location").$file;
 
-        $message = new Message();
-        $message->setDataStatus("Success");
-        $message->setDataType(gettype("string"));
-        $message->setData($data);
+        //打开资源文件
+        $resource = fopen($file_location,"r");
 
-        $data = MessageToArray::messageToArray($message);
+        if ($resource){
+            //设置通用响应头
+            $this->addAllHeaders($this->defaultFileConfig->getOptions("headers"));
 
-        die(json_encode($data));
-    }
+            //设置专用响应头
+            Header ( "Accept-Length: " . filesize ($file_location) );
 
-    private function customizeHeaders(array $config):void{
-        $keys = array_keys($config);
-        foreach ($keys as $key){
-            $value = $config[$key];
-            $header = "$key: $value";
-            header("$header");
+            //获取文件内容
+            $content = fread($resource,filesize($file_location));
+
+            //返回流文件
+            die($content);
+        }else{
+            $this->doExceptionResponse(new FileNotFoundException(),404);
         }
     }
 }
