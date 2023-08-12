@@ -9,7 +9,6 @@ use muyomu\executor\utility\ParaResolve;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\inject\Proxy;
-use muyomu\web\Para;
 use ReflectionException;
 
 class WebExecutor implements ExecutorClient

@@ -22,6 +22,6 @@
         "muyomu/router": "2.0.6",
         "muyomu/inject": "1.0.4",
         "muyomu/config": "v1.1.5",
-        "muyomu/web": "1.0.0"
+        "muyomu/web": "1.0.2"
     }
 }

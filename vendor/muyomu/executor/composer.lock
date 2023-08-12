@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "436b26893736490793554a1b0ee620db",
+    "content-hash": "988f7831e904782d7a88a4856dc1056d",
     "packages": [
         {
             "name": "muyomu/aop",
@@ -281,22 +281,22 @@
         },
         {
             "name": "muyomu/web",
-            "version": "v1.0.0",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/web.git",
-                "reference": "eaaef0df00b59b400a9f808ea312f317105f6393"
+                "reference": "f4bde006c8a3377b1e4e9efc43b84707a133199e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/web/zipball/eaaef0df00b59b400a9f808ea312f317105f6393",
-                "reference": "eaaef0df00b59b400a9f808ea312f317105f6393",
+                "url": "https://api.github.com/repos/muyomu/web/zipball/f4bde006c8a3377b1e4e9efc43b84707a133199e",
+                "reference": "f4bde006c8a3377b1e4e9efc43b84707a133199e",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "muyomu\\Web\\": "src/"
+                    "muyomu\\web\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -312,9 +312,9 @@
             "description": "The web dependence",
             "support": {
                 "issues": "https://github.com/muyomu/web/issues",
-                "source": "https://github.com/muyomu/web/tree/v1.0.0"
+                "source": "https://github.com/muyomu/web/tree/v1.0.2"
             },
-            "time": "2023-08-12T10:17:30+00:00"
+            "time": "2023-08-12T10:51:53+00:00"
         }
     ],
     "packages-dev": [],

@@ -122,17 +122,17 @@
         },
         {
             "name": "muyomu/executor",
-            "version": "v2.2.3",
-            "version_normalized": "2.2.3.0",
+            "version": "v2.2.4",
+            "version_normalized": "2.2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/executor.git",
-                "reference": "62ea422987109f7c271aeaf5e78d104e5709f357"
+                "reference": "518626e58d71dabddc68b80a567fc8da249af4dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/executor/zipball/62ea422987109f7c271aeaf5e78d104e5709f357",
-                "reference": "62ea422987109f7c271aeaf5e78d104e5709f357",
+                "url": "https://api.github.com/repos/muyomu/executor/zipball/518626e58d71dabddc68b80a567fc8da249af4dd",
+                "reference": "518626e58d71dabddc68b80a567fc8da249af4dd",
                 "shasum": ""
             },
             "require": {
@@ -142,9 +142,9 @@
                 "muyomu/inject": "1.0.4",
                 "muyomu/log4p": "1.1.5",
                 "muyomu/router": "2.0.6",
-                "muyomu/web": "1.0.0"
+                "muyomu/web": "1.0.2"
             },
-            "time": "2023-08-12T10:41:59+00:00",
+            "time": "2023-08-12T11:05:01+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -165,7 +165,7 @@
             "description": "The executor of muyomu framework",
             "support": {
                 "issues": "https://github.com/muyomu/executor/issues",
-                "source": "https://github.com/muyomu/executor/tree/v2.2.3"
+                "source": "https://github.com/muyomu/executor/tree/v2.2.4"
             },
             "install-path": "../muyomu/executor"
         },
@@ -522,25 +522,25 @@
         },
         {
             "name": "muyomu/web",
-            "version": "v1.0.0",
-            "version_normalized": "1.0.0.0",
+            "version": "v1.0.2",
+            "version_normalized": "1.0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/web.git",
-                "reference": "eaaef0df00b59b400a9f808ea312f317105f6393"
+                "reference": "f4bde006c8a3377b1e4e9efc43b84707a133199e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/web/zipball/eaaef0df00b59b400a9f808ea312f317105f6393",
-                "reference": "eaaef0df00b59b400a9f808ea312f317105f6393",
+                "url": "https://api.github.com/repos/muyomu/web/zipball/f4bde006c8a3377b1e4e9efc43b84707a133199e",
+                "reference": "f4bde006c8a3377b1e4e9efc43b84707a133199e",
                 "shasum": ""
             },
-            "time": "2023-08-12T10:17:30+00:00",
+            "time": "2023-08-12T10:51:53+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "muyomu\\Web\\": "src/"
+                    "muyomu\\web\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -556,7 +556,7 @@
             "description": "The web dependence",
             "support": {
                 "issues": "https://github.com/muyomu/web/issues",
-                "source": "https://github.com/muyomu/web/tree/v1.0.0"
+                "source": "https://github.com/muyomu/web/tree/v1.0.2"
             },
             "install-path": "../muyomu/web"
         }
