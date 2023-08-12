@@ -19,4 +19,5 @@ return array(
     'muyomu\\config\\' => array($vendorDir . '/muyomu/config/src'),
     'muyomu\\auth\\' => array($vendorDir . '/muyomu/security/src'),
     'muyomu\\aop\\' => array($vendorDir . '/muyomu/aop/src'),
+    'muyomu\\Web\\' => array($vendorDir . '/muyomu/web/src'),
 );

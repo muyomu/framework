@@ -25,7 +25,7 @@
         "muyomu/middleware": "1.0.7",
         "muyomu/config": "1.1.5",
         "muyomu/punit": "1.0.3",
-        "muyomu/executor": "2.2.2",
+        "muyomu/executor": "2.2.3",
         "muyomu/security": "1.1.28"
     }
 }

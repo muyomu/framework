@@ -5,9 +5,11 @@ namespace muyomu\executor;
 use muyomu\executor\client\ExecutorClient;
 use muyomu\executor\config\DefaultExecutorConfig;
 use muyomu\executor\exception\ServerException;
+use muyomu\executor\utility\ParaResolve;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\inject\Proxy;
+use muyomu\web\Para;
 use ReflectionException;
 
 class WebExecutor implements ExecutorClient
@@ -18,10 +20,13 @@ class WebExecutor implements ExecutorClient
 
     private Proxy $proxy;
 
+    private ParaResolve $paraResolve;
+
     public function __construct(){
         $this->utility = new Utility();
         $this->executorDefaultConfig = new DefaultExecutorConfig();
         $this->proxy = new Proxy();
+        $this->paraResolve = new ParaResolve();
     }
 
     /**
@@ -57,14 +62,9 @@ class WebExecutor implements ExecutorClient
         $method = $this->utility->getControllerHandle($response,$class,$handle);
 
         /*
-         * prepare data
-         */
-        $rule = $request->getDbClient()->select("rule")->getData();
-
-        /*
          * 执行控制器处理器
          */
-        $returnData = $this->utility->handleExecutor($response,$instance,$method,$rule->getPathPara());
+        $returnData = $this->utility->handleExecutor($response,$instance,$method,$this->paraResolve->resolvePara($method));
 
         /*
          * 处理返回数据
