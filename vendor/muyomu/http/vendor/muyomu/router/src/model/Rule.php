@@ -14,10 +14,6 @@ class Rule
 
     private ?string $middleware = null;
 
-    private array $pathPara = array();
-
-    private array $pathKey = array();
-
     /**
      * @param string $route
      * @param string $method
@@ -31,7 +27,6 @@ class Rule
         $this->controller = $controller;
         $this->handle = $handle;
     }
-
 
     /**
      * @return string
@@ -82,14 +77,6 @@ class Rule
     }
 
     /**
-     * @return array
-     */
-    public function getPathPara(): array
-    {
-        return $this->pathPara;
-    }
-
-    /**
      * @param string $middleware
      * @return Rule
      */
@@ -97,31 +84,5 @@ class Rule
     {
         $this->middleware = $middleware;
         return $this;
-    }
-
-    /**
-     * @param array $pathPara
-     * @return Rule
-     */
-    public function setPathPara(array $pathPara): Rule
-    {
-        $this->pathPara = $pathPara;
-        return $this;
-    }
-
-    /**
-     * @return array
-     */
-    public function getPathKey(): array
-    {
-        return $this->pathKey;
-    }
-
-    /**
-     * @param array $pathKey
-     */
-    public function setPathKey(array $pathKey): void
-    {
-        $this->pathKey = $pathKey;
     }
 }

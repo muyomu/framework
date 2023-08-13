@@ -2,8 +2,15 @@
 
 namespace muyomu\router\attribute;
 
-enum RuleMethod: string
+enum RuleMethod
 {
-    case RULE_GET = 'GET';
-    case RULE_POST = 'POST';
+    case GET;
+    case POST;
+    case HEAD;
+    case OPTIONS;
+    case PUT;
+    case DELETE;
+    case TRACE;
+    case CONNECT;
+    case PATCH;
 }

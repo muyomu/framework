@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c1268e98c1cf6f7eab5db90d8a31475",
+    "content-hash": "0409a99f3375687d963a3507f6c987d2",
     "packages": [
         {
             "name": "muyomu/config",
