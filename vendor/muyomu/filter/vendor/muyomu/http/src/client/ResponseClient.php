@@ -12,7 +12,7 @@ interface ResponseClient
 
     public function doFileResponse(string $file):void;
 
-    public function doStreamResponse(string $file):void;
-
     public function doExceptionResponse(Exception $exception, int $code,):void;
+
+    public function reDirect(string $url):void;
 }

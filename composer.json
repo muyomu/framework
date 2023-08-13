@@ -17,15 +17,15 @@
     ],
     "require": {
         "php": ">=8.1",
-        "muyomu/router": "2.0.6",
-        "muyomu/http": "2.1.7",
+        "muyomu/router": "2.0.8",
+        "muyomu/http": "2.1.9",
         "muyomu/database": "2.0.2",
         "muyomu/log4p": "1.1.5",
-        "muyomu/filter": "1.0.18",
-        "muyomu/middleware": "1.0.7",
+        "muyomu/filter": "1.0.20",
+        "muyomu/middleware": "1.0.9",
         "muyomu/config": "1.1.5",
         "muyomu/punit": "1.0.3",
-        "muyomu/executor": "2.2.4",
-        "muyomu/security": "1.1.28"
+        "muyomu/executor": "2.2.5",
+        "muyomu/security": "1.1.30"
     }
 }

@@ -60,7 +60,7 @@ class Response implements ResponseClient
         $this->addAllHeaders($this->defaultHttpConfig->getOptions("headers"));
 
         //设置专用响应头
-        $this->setHeader("Content-Type","txt/json:charset=utf-8");
+        $this->setHeader("Content-Type","text/json:charset=utf-8");
 
         //封装回应体
         $message = new Message();
@@ -88,7 +88,7 @@ class Response implements ResponseClient
         $this->addAllHeaders($this->defaultHttpConfig->getOptions("headers"));
 
         //设置专用响应头
-        $this->setHeader("Content-Type","txt/json:charset=utf-8");
+        $this->setHeader("Content-Type","text/json:charset=utf-8");
 
         $message = new Message();
         $message->setDataStatus("Failure");
@@ -131,31 +131,11 @@ class Response implements ResponseClient
     }
 
     /**
-     * @param string $file
+     * @param string $url
      * @return void
      */
-    public function doStreamResponse(string $file): void
-    {
-        //获取资源位置
-        $file_location = $this->defaultFileConfig->getOptions("location").$file;
-
-        //打开资源文件
-        $resource = fopen($file_location,"r");
-
-        if ($resource){
-            //设置通用响应头
-            $this->addAllHeaders($this->defaultFileConfig->getOptions("headers"));
-
-            //设置专用响应头
-            Header ( "Accept-Length: " . filesize ($file_location) );
-
-            //获取文件内容
-            $content = fread($resource,filesize($file_location));
-
-            //返回流文件
-            die($content);
-        }else{
-            $this->doExceptionResponse(new FileNotFoundException(),404);
-        }
+    public function reDirect(string $url):void{
+        $this->setHeader("Location",$url);
+        die();
     }
 }
