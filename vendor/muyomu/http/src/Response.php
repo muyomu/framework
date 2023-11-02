@@ -138,4 +138,54 @@ class Response implements ResponseClient
         $this->setHeader("Location",$url);
         die();
     }
+
+    public function doTemplateResponse(string $file):void{
+        //获取文件位置
+        $file_location = $this->defaultFileConfig->getOptions("location").$file;
+
+        //打开文件
+        $resource = fopen($file_location,"r");
+
+        if ($resource){
+            //设置通用响应头
+            $this->addAllHeaders($this->defaultFileConfig->getOptions("headers"));
+
+            //设置专用响应头
+            Header ( "Accept-Length: " . filesize ($file_location) );
+            Header ( "Content-Type: text/html; charset=utf-8");
+
+            //获取文件内容
+            $content = fread($resource,filesize($file_location));
+
+            //输出文件内容
+            die($content);
+        }else{
+            $this->doExceptionResponse(new FileNotFoundException(),404);
+        }
+    }
+
+    public function doResourceResponse(string $file,string $contentType):void{
+        //获取文件位置
+        $file_location = $this->defaultFileConfig->getOptions("location").$file;
+
+        //打开文件
+        $resource = fopen($file_location,"r");
+
+        if ($resource){
+            //设置通用响应头
+            $this->addAllHeaders($this->defaultFileConfig->getOptions("headers"));
+
+            //设置专用响应头
+            Header ( "Accept-Length: " . filesize ($file_location) );
+            Header ( $contentType);
+
+            //获取文件内容
+            $content = fread($resource,filesize($file_location));
+
+            //输出文件内容
+            die($content);
+        }else{
+            $this->doExceptionResponse(new FileNotFoundException(),404);
+        }
+    }
 }

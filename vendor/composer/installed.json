@@ -122,18 +122,24 @@
         },
         {
             "name": "muyomu/executor",
-            "version": "v2.2.8",
-            "version_normalized": "2.2.8.0",
+            "version": "v2.2.9",
+            "version_normalized": "2.2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/executor.git",
-                "reference": "f3d5a71d91db4146a09d1bbe25cc433f19dd185f"
+                "reference": "82e009d81ca3f0b0a73316a9efeb4c57c10b40fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/executor/v2.2.8/muyomu-executor-v2.2.8.zip",
-                "reference": "f3d5a71d91db4146a09d1bbe25cc433f19dd185f",
-                "shasum": ""
+                "url": "https://api.github.com/repos/muyomu/executor/zipball/82e009d81ca3f0b0a73316a9efeb4c57c10b40fd",
+                "reference": "82e009d81ca3f0b0a73316a9efeb4c57c10b40fd",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "muyomu/aop": "1.0.11",
@@ -141,10 +147,9 @@
                 "muyomu/http": "2.1.13",
                 "muyomu/inject": "1.0.4",
                 "muyomu/log4p": "1.1.5",
-                "muyomu/router": "2.0.9",
-                "muyomu/web": "1.0.2"
+                "muyomu/router": "2.0.9"
             },
-            "time": "2023-11-02T13:36:03+00:00",
+            "time": "2023-11-02T14:23:04+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -152,6 +157,7 @@
                     "muyomu\\executor\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -162,6 +168,10 @@
                 }
             ],
             "description": "The executor of muyomu framework",
+            "support": {
+                "issues": "https://github.com/muyomu/executor/issues",
+                "source": "https://github.com/muyomu/executor/tree/v2.2.9"
+            },
             "install-path": "../muyomu/executor"
         },
         {
@@ -204,25 +214,31 @@
         },
         {
             "name": "muyomu/http",
-            "version": "2.1.11",
-            "version_normalized": "2.1.11.0",
+            "version": "v2.1.13",
+            "version_normalized": "2.1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/http.git",
-                "reference": "28d527b887bb968f3f34a68d46696ce14abe0de2"
+                "reference": "30c2344d8c3b0076c4cdfb3d490dec2349149487"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/http/zipball/28d527b887bb968f3f34a68d46696ce14abe0de2",
-                "reference": "28d527b887bb968f3f34a68d46696ce14abe0de2",
-                "shasum": ""
+                "url": "https://api.github.com/repos/muyomu/http/zipball/30c2344d8c3b0076c4cdfb3d490dec2349149487",
+                "reference": "30c2344d8c3b0076c4cdfb3d490dec2349149487",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "muyomu/config": "1.1.5",
                 "muyomu/database": "2.0.2",
                 "muyomu/router": "2.0.9"
             },
-            "time": "2023-08-13T01:53:55+00:00",
+            "time": "2023-11-02T13:28:20+00:00",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -243,7 +259,7 @@
             "description": "The http helper of muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/http/issues",
-                "source": "https://github.com/muyomu/http/tree/2.1.11"
+                "source": "https://github.com/muyomu/http/tree/v2.1.13"
             },
             "install-path": "../muyomu/http"
         },
@@ -335,23 +351,29 @@
         },
         {
             "name": "muyomu/middleware",
-            "version": "v1.0.11",
-            "version_normalized": "1.0.11.0",
+            "version": "v1.0.13",
+            "version_normalized": "1.0.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/middleware.git",
-                "reference": "ff613a363883359ebad4d63967878067a9908bbe"
+                "reference": "77528602ace34bbee18f567b5fdcd0d656d2301e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/middleware/zipball/ff613a363883359ebad4d63967878067a9908bbe",
-                "reference": "ff613a363883359ebad4d63967878067a9908bbe",
-                "shasum": ""
+                "url": "https://api.github.com/repos/muyomu/middleware/zipball/77528602ace34bbee18f567b5fdcd0d656d2301e",
+                "reference": "77528602ace34bbee18f567b5fdcd0d656d2301e",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
-                "muyomu/http": "2.1.11"
+                "muyomu/http": "2.1.13"
             },
-            "time": "2023-08-13T01:57:11+00:00",
+            "time": "2023-11-02T13:32:15+00:00",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -372,7 +394,7 @@
             "description": "The plugin framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/middleware/issues",
-                "source": "https://github.com/muyomu/middleware/tree/v1.0.11"
+                "source": "https://github.com/muyomu/middleware/tree/v1.0.13"
             },
             "install-path": "../muyomu/middleware"
         },
@@ -504,46 +526,6 @@
             ],
             "description": "The auth framework for muyomu web framework",
             "install-path": "../muyomu/security"
-        },
-        {
-            "name": "muyomu/web",
-            "version": "v1.0.2",
-            "version_normalized": "1.0.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/muyomu/web.git",
-                "reference": "f4bde006c8a3377b1e4e9efc43b84707a133199e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/web/zipball/f4bde006c8a3377b1e4e9efc43b84707a133199e",
-                "reference": "f4bde006c8a3377b1e4e9efc43b84707a133199e",
-                "shasum": ""
-            },
-            "time": "2023-08-12T10:51:53+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "muyomu\\web\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "mutian",
-                    "email": "bhfqlz@qq.com"
-                }
-            ],
-            "description": "The web dependence",
-            "support": {
-                "issues": "https://github.com/muyomu/web/issues",
-                "source": "https://github.com/muyomu/web/tree/v1.0.2"
-            },
-            "install-path": "../muyomu/web"
         }
     ],
     "dev": true,

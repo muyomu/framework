@@ -293,46 +293,6 @@
                 "source": "https://github.com/muyomu/router/tree/v2.0.9"
             },
             "install-path": "../muyomu/router"
-        },
-        {
-            "name": "muyomu/web",
-            "version": "v1.0.2",
-            "version_normalized": "1.0.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/muyomu/web.git",
-                "reference": "f4bde006c8a3377b1e4e9efc43b84707a133199e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/web/zipball/f4bde006c8a3377b1e4e9efc43b84707a133199e",
-                "reference": "f4bde006c8a3377b1e4e9efc43b84707a133199e",
-                "shasum": ""
-            },
-            "time": "2023-08-12T10:51:53+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "muyomu\\web\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "mutian",
-                    "email": "bhfqlz@qq.com"
-                }
-            ],
-            "description": "The web dependence",
-            "support": {
-                "issues": "https://github.com/muyomu/web/issues",
-                "source": "https://github.com/muyomu/web/tree/v1.0.2"
-            },
-            "install-path": "../muyomu/web"
         }
     ],
     "dev": true,
