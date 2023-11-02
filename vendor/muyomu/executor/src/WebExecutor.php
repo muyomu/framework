@@ -63,7 +63,13 @@ class WebExecutor implements ExecutorClient
         /*
          * 执行控制器处理器
          */
-        $returnData = $this->utility->handleExecutor($response,$instance,$method,$this->paraResolve->resolvePara($method));
+        $returnData = null;
+        
+        try {
+            $returnData = $this->utility->handleExecutor($response, $instance, $method, $this->paraResolve->resolvePara($method));
+        } catch (exception\ParaMissException|ServerException|exception\UnKnownPara $e) {
+
+        }
 
         /*
          * 处理返回数据

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3631853c9b5b85f8733f95a0dfad1e12",
+    "content-hash": "be01504475fa962248f04ea59fe09505",
     "packages": [
         {
             "name": "muyomu/aop",
@@ -119,16 +119,16 @@
         },
         {
             "name": "muyomu/http",
-            "version": "2.1.11",
+            "version": "v2.1.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/http.git",
-                "reference": "28d527b887bb968f3f34a68d46696ce14abe0de2"
+                "reference": "30c2344d8c3b0076c4cdfb3d490dec2349149487"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/http/zipball/28d527b887bb968f3f34a68d46696ce14abe0de2",
-                "reference": "28d527b887bb968f3f34a68d46696ce14abe0de2",
+                "url": "https://api.github.com/repos/muyomu/http/zipball/30c2344d8c3b0076c4cdfb3d490dec2349149487",
+                "reference": "30c2344d8c3b0076c4cdfb3d490dec2349149487",
                 "shasum": ""
             },
             "require": {
@@ -155,9 +155,9 @@
             "description": "The http helper of muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/http/issues",
-                "source": "https://github.com/muyomu/http/tree/2.1.11"
+                "source": "https://github.com/muyomu/http/tree/v2.1.13"
             },
-            "time": "2023-08-13T01:53:55+00:00"
+            "time": "2023-11-02T13:28:20+00:00"
         },
         {
             "name": "muyomu/inject",

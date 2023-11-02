@@ -82,17 +82,17 @@
         },
         {
             "name": "muyomu/http",
-            "version": "2.1.11",
-            "version_normalized": "2.1.11.0",
+            "version": "v2.1.13",
+            "version_normalized": "2.1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/http.git",
-                "reference": "28d527b887bb968f3f34a68d46696ce14abe0de2"
+                "reference": "30c2344d8c3b0076c4cdfb3d490dec2349149487"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/http/zipball/28d527b887bb968f3f34a68d46696ce14abe0de2",
-                "reference": "28d527b887bb968f3f34a68d46696ce14abe0de2",
+                "url": "https://api.github.com/repos/muyomu/http/zipball/30c2344d8c3b0076c4cdfb3d490dec2349149487",
+                "reference": "30c2344d8c3b0076c4cdfb3d490dec2349149487",
                 "shasum": ""
             },
             "require": {
@@ -100,7 +100,7 @@
                 "muyomu/database": "2.0.2",
                 "muyomu/router": "2.0.9"
             },
-            "time": "2023-08-13T01:53:55+00:00",
+            "time": "2023-11-02T13:28:20+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -121,7 +121,7 @@
             "description": "The http helper of muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/http/issues",
-                "source": "https://github.com/muyomu/http/tree/2.1.11"
+                "source": "https://github.com/muyomu/http/tree/v2.1.13"
             },
             "install-path": "../muyomu/http"
         },

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c4ff276b95f6a865ae75af4036721b75",
+    "content-hash": "71123eeadc2a0c794b50e22474ab8bb6",
     "packages": [
         {
             "name": "muyomu/aop",
@@ -16,7 +16,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/aop/zipball/cc3b5c9729443c2df341e7c586486894e595a4e8",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/aop/v1.0.11/muyomu-aop-v1.0.11.zip",
                 "reference": "cc3b5c9729443c2df341e7c586486894e595a4e8",
                 "shasum": ""
             },
@@ -26,7 +26,6 @@
                     "muyomu\\aop\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -37,10 +36,6 @@
                 }
             ],
             "description": "The aop framework for muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/aop/issues",
-                "source": "https://github.com/muyomu/aop/tree/v1.0.11"
-            },
             "time": "2023-01-04T02:19:48+00:00"
         },
         {
@@ -53,7 +48,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/config/zipball/6f9045d5c9db392e23f4f31cfde63dff0b9966a3",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/config/v1.1.5/muyomu-config-v1.1.5.zip",
                 "reference": "6f9045d5c9db392e23f4f31cfde63dff0b9966a3",
                 "shasum": ""
             },
@@ -63,7 +58,6 @@
                     "muyomu\\config\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -74,10 +68,6 @@
                 }
             ],
             "description": "The config framework for muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/config/issues",
-                "source": "https://github.com/muyomu/config/tree/v1.1.5"
-            },
             "time": "2023-01-03T10:25:07+00:00"
         },
         {
@@ -90,7 +80,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/database/zipball/5ce80913b931cedd6ffb9d1559e2919f9db85d8a",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/database/v2.0.2/muyomu-database-v2.0.2.zip",
                 "reference": "5ce80913b931cedd6ffb9d1559e2919f9db85d8a",
                 "shasum": ""
             },
@@ -100,7 +90,6 @@
                     "muyomu\\database\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -111,30 +100,26 @@
                 }
             ],
             "description": "The database of muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/database/issues",
-                "source": "https://github.com/muyomu/database/tree/v2.0.2"
-            },
             "time": "2022-11-26T13:00:09+00:00"
         },
         {
             "name": "muyomu/executor",
-            "version": "v2.2.7",
+            "version": "v2.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/executor.git",
-                "reference": "ad2d5da34afb7f535c283dc0b7a589fad0c990da"
+                "reference": "f3d5a71d91db4146a09d1bbe25cc433f19dd185f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/executor/zipball/ad2d5da34afb7f535c283dc0b7a589fad0c990da",
-                "reference": "ad2d5da34afb7f535c283dc0b7a589fad0c990da",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/executor/v2.2.8/muyomu-executor-v2.2.8.zip",
+                "reference": "f3d5a71d91db4146a09d1bbe25cc433f19dd185f",
                 "shasum": ""
             },
             "require": {
                 "muyomu/aop": "1.0.11",
                 "muyomu/config": "v1.1.5",
-                "muyomu/http": "2.1.11",
+                "muyomu/http": "2.1.13",
                 "muyomu/inject": "1.0.4",
                 "muyomu/log4p": "1.1.5",
                 "muyomu/router": "2.0.9",
@@ -146,7 +131,6 @@
                     "muyomu\\executor\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -157,28 +141,24 @@
                 }
             ],
             "description": "The executor of muyomu framework",
-            "support": {
-                "issues": "https://github.com/muyomu/executor/issues",
-                "source": "https://github.com/muyomu/executor/tree/v2.2.7"
-            },
-            "time": "2023-08-13T01:59:10+00:00"
+            "time": "2023-11-02T13:36:03+00:00"
         },
         {
             "name": "muyomu/filter",
-            "version": "v1.0.22",
+            "version": "v1.0.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/filter.git",
-                "reference": "9c1ae3b6598dcc074b921186870be476b00277a4"
+                "reference": "0e0fe023131a568b14c0e4375d2aab333a646eac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/filter/zipball/9c1ae3b6598dcc074b921186870be476b00277a4",
-                "reference": "9c1ae3b6598dcc074b921186870be476b00277a4",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/filter/v1.0.24/muyomu-filter-v1.0.24.zip",
+                "reference": "0e0fe023131a568b14c0e4375d2aab333a646eac",
                 "shasum": ""
             },
             "require": {
-                "muyomu/http": "2.1.11"
+                "muyomu/http": "2.1.13"
             },
             "type": "library",
             "autoload": {
@@ -186,7 +166,6 @@
                     "muyomu\\filter\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -197,24 +176,20 @@
                 }
             ],
             "description": "The filter framework for muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/filter/issues",
-                "source": "https://github.com/muyomu/filter/tree/v1.0.22"
-            },
-            "time": "2023-08-13T01:56:19+00:00"
+            "time": "2023-11-02T13:30:31+00:00"
         },
         {
             "name": "muyomu/http",
-            "version": "2.1.11",
+            "version": "v2.1.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/http.git",
-                "reference": "28d527b887bb968f3f34a68d46696ce14abe0de2"
+                "reference": "30c2344d8c3b0076c4cdfb3d490dec2349149487"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/http/zipball/28d527b887bb968f3f34a68d46696ce14abe0de2",
-                "reference": "28d527b887bb968f3f34a68d46696ce14abe0de2",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/http/v2.1.13/muyomu-http-v2.1.13.zip",
+                "reference": "30c2344d8c3b0076c4cdfb3d490dec2349149487",
                 "shasum": ""
             },
             "require": {
@@ -228,7 +203,6 @@
                     "muyomu\\http\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -239,11 +213,7 @@
                 }
             ],
             "description": "The http helper of muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/http/issues",
-                "source": "https://github.com/muyomu/http/tree/2.1.11"
-            },
-            "time": "2023-08-13T01:53:55+00:00"
+            "time": "2023-11-02T13:28:20+00:00"
         },
         {
             "name": "muyomu/inject",
@@ -255,7 +225,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/inject/zipball/87d4fa789447527a95c45e33a480c08bad4569e9",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/inject/v1.0.4/muyomu-inject-v1.0.4.zip",
                 "reference": "87d4fa789447527a95c45e33a480c08bad4569e9",
                 "shasum": ""
             },
@@ -268,7 +238,6 @@
                     "muyomu\\inject\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -279,10 +248,6 @@
                 }
             ],
             "description": "The auto-wired framework to muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/inject/issues",
-                "source": "https://github.com/muyomu/inject/tree/v1.0.4"
-            },
             "time": "2023-01-03T11:46:20+00:00"
         },
         {
@@ -295,7 +260,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/logger/zipball/a3de2b6d9c31839d18e34cbc59b210a3f877b524",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/log4p/v1.1.5/muyomu-log4p-v1.1.5.zip",
                 "reference": "a3de2b6d9c31839d18e34cbc59b210a3f877b524",
                 "shasum": ""
             },
@@ -308,7 +273,6 @@
                     "muyomu\\log4p\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -319,28 +283,24 @@
                 }
             ],
             "description": "The log framework for muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/logger/issues",
-                "source": "https://github.com/muyomu/logger/tree/v1.1.5"
-            },
             "time": "2023-01-03T11:31:27+00:00"
         },
         {
             "name": "muyomu/middleware",
-            "version": "v1.0.11",
+            "version": "v1.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/middleware.git",
-                "reference": "ff613a363883359ebad4d63967878067a9908bbe"
+                "reference": "77528602ace34bbee18f567b5fdcd0d656d2301e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/middleware/zipball/ff613a363883359ebad4d63967878067a9908bbe",
-                "reference": "ff613a363883359ebad4d63967878067a9908bbe",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/middleware/v1.0.13/muyomu-middleware-v1.0.13.zip",
+                "reference": "77528602ace34bbee18f567b5fdcd0d656d2301e",
                 "shasum": ""
             },
             "require": {
-                "muyomu/http": "2.1.11"
+                "muyomu/http": "2.1.13"
             },
             "type": "library",
             "autoload": {
@@ -348,7 +308,6 @@
                     "muyomu\\middleware\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -359,11 +318,7 @@
                 }
             ],
             "description": "The plugin framework for muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/middleware/issues",
-                "source": "https://github.com/muyomu/middleware/tree/v1.0.11"
-            },
-            "time": "2023-08-13T01:57:11+00:00"
+            "time": "2023-11-02T13:32:15+00:00"
         },
         {
             "name": "muyomu/punit",
@@ -375,7 +330,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/punit/zipball/395b5e030164772421b98e0c74e4454a52768878",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/punit/v1.0.3/muyomu-punit-v1.0.3.zip",
                 "reference": "395b5e030164772421b98e0c74e4454a52768878",
                 "shasum": ""
             },
@@ -389,7 +344,6 @@
                     "muyomu\\punit\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -400,10 +354,6 @@
                 }
             ],
             "description": "The unit test",
-            "support": {
-                "issues": "https://github.com/muyomu/punit/issues",
-                "source": "https://github.com/muyomu/punit/tree/v1.0.3"
-            },
             "time": "2023-01-07T03:49:22+00:00"
         },
         {
@@ -416,7 +366,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/router/zipball/5b62cacf1c29520bf3c79e521e2b706f5f4c4545",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/router/v2.0.9/muyomu-router-v2.0.9.zip",
                 "reference": "5b62cacf1c29520bf3c79e521e2b706f5f4c4545",
                 "shasum": ""
             },
@@ -429,7 +379,6 @@
                     "muyomu\\router\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -440,31 +389,27 @@
                 }
             ],
             "description": "The router of muyomu framework",
-            "support": {
-                "issues": "https://github.com/muyomu/router/issues",
-                "source": "https://github.com/muyomu/router/tree/v2.0.9"
-            },
             "time": "2023-08-13T01:52:43+00:00"
         },
         {
             "name": "muyomu/security",
-            "version": "v1.1.32",
+            "version": "v1.1.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/security.git",
-                "reference": "451df5dfdafed5c52426eadf30ec8f46bc1a4067"
+                "reference": "677db7ad6b90271df115992eac88569d6fe2602a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/security/zipball/451df5dfdafed5c52426eadf30ec8f46bc1a4067",
-                "reference": "451df5dfdafed5c52426eadf30ec8f46bc1a4067",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/security/v1.1.33/muyomu-security-v1.1.33.zip",
+                "reference": "677db7ad6b90271df115992eac88569d6fe2602a",
                 "shasum": ""
             },
             "require": {
                 "muyomu/config": "1.1.5",
-                "muyomu/http": "2.1.11",
+                "muyomu/http": "2.1.13",
                 "muyomu/log4p": "1.1.5",
-                "muyomu/middleware": "1.0.11",
+                "muyomu/middleware": "1.0.13",
                 "muyomu/router": "2.0.9"
             },
             "type": "library",
@@ -473,7 +418,6 @@
                     "muyomu\\auth\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -484,11 +428,7 @@
                 }
             ],
             "description": "The auth framework for muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/security/issues",
-                "source": "https://github.com/muyomu/security/tree/v1.1.32"
-            },
-            "time": "2023-08-13T01:58:14+00:00"
+            "time": "2023-11-02T13:40:36+00:00"
         },
         {
             "name": "muyomu/web",
@@ -500,7 +440,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/web/zipball/f4bde006c8a3377b1e4e9efc43b84707a133199e",
+                "url": "https://mirrors.huaweicloud.com/repository/php/muyomu/web/v1.0.2/muyomu-web-v1.0.2.zip",
                 "reference": "f4bde006c8a3377b1e4e9efc43b84707a133199e",
                 "shasum": ""
             },
@@ -510,7 +450,6 @@
                     "muyomu\\web\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "apache-2.0"
             ],
@@ -521,10 +460,6 @@
                 }
             ],
             "description": "The web dependence",
-            "support": {
-                "issues": "https://github.com/muyomu/web/issues",
-                "source": "https://github.com/muyomu/web/tree/v1.0.2"
-            },
             "time": "2023-08-12T10:51:53+00:00"
         }
     ],
