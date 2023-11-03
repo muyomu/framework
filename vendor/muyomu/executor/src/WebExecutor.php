@@ -78,7 +78,7 @@ class WebExecutor implements ExecutorClient
             $returnData = $this->utility->handleExecutor($response, $instance, $method, $this->paraResolve->resolvePara($method));
 
             if ($returnData instanceof FormatClient){
-                die(join($returnData->format(),JSON_UNESCAPED_UNICODE));
+                die(json_decode($returnData->format(),JSON_UNESCAPED_UNICODE));
             }else{
                 if (gettype($returnData) == "object"){
                     die(serialize($returnData));

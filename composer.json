@@ -22,7 +22,7 @@
         "muyomu/filter": "1.0.26",
         "muyomu/config": "1.1.5",
         "muyomu/punit": "1.0.3",
-        "muyomu/executor": "2.2.10",
+        "muyomu/executor": "2.2.11",
         "muyomu/router": "2.0.9",
         "muyomu/http": "2.1.14"
     }
