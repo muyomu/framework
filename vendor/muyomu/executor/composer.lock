@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a7e9ab1defa953fa5762edee867a226",
+    "content-hash": "60b95bb6d611c3ff82e5b1b45b2960bb",
     "packages": [
         {
             "name": "muyomu/aop",
@@ -18,7 +18,13 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/muyomu/aop/zipball/cc3b5c9729443c2df341e7c586486894e595a4e8",
                 "reference": "cc3b5c9729443c2df341e7c586486894e595a4e8",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "type": "library",
             "autoload": {
@@ -55,7 +61,13 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/muyomu/config/zipball/6f9045d5c9db392e23f4f31cfde63dff0b9966a3",
                 "reference": "6f9045d5c9db392e23f4f31cfde63dff0b9966a3",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "type": "library",
             "autoload": {
@@ -92,7 +104,13 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/muyomu/database/zipball/5ce80913b931cedd6ffb9d1559e2919f9db85d8a",
                 "reference": "5ce80913b931cedd6ffb9d1559e2919f9db85d8a",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "type": "library",
             "autoload": {
@@ -119,17 +137,23 @@
         },
         {
             "name": "muyomu/http",
-            "version": "v2.1.13",
+            "version": "v2.1.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/http.git",
-                "reference": "30c2344d8c3b0076c4cdfb3d490dec2349149487"
+                "reference": "eab36772f92c101e98f32a2ed4dfc0a5ce68278e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/http/zipball/30c2344d8c3b0076c4cdfb3d490dec2349149487",
-                "reference": "30c2344d8c3b0076c4cdfb3d490dec2349149487",
-                "shasum": ""
+                "url": "https://api.github.com/repos/muyomu/http/zipball/eab36772f92c101e98f32a2ed4dfc0a5ce68278e",
+                "reference": "eab36772f92c101e98f32a2ed4dfc0a5ce68278e",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "muyomu/config": "1.1.5",
@@ -155,9 +179,9 @@
             "description": "The http helper of muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/http/issues",
-                "source": "https://github.com/muyomu/http/tree/v2.1.13"
+                "source": "https://github.com/muyomu/http/tree/v2.1.14"
             },
-            "time": "2023-11-02T13:28:20+00:00"
+            "time": "2023-11-03T12:00:29+00:00"
         },
         {
             "name": "muyomu/inject",
@@ -171,7 +195,13 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/muyomu/inject/zipball/87d4fa789447527a95c45e33a480c08bad4569e9",
                 "reference": "87d4fa789447527a95c45e33a480c08bad4569e9",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "muyomu/log4p": "v1.1.5"
@@ -211,7 +241,13 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/muyomu/logger/zipball/a3de2b6d9c31839d18e34cbc59b210a3f877b524",
                 "reference": "a3de2b6d9c31839d18e34cbc59b210a3f877b524",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "muyomu/config": "1.1.5"
@@ -251,7 +287,13 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/muyomu/router/zipball/5b62cacf1c29520bf3c79e521e2b706f5f4c4545",
                 "reference": "5b62cacf1c29520bf3c79e521e2b706f5f4c4545",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "muyomu/database": "2.0.2"

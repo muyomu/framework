@@ -3,33 +3,33 @@
 namespace muyomu\framework;
 
 use Exception;
-use muyomu\database\base\Document;
 use muyomu\executor\exception\ServerException;
 use muyomu\executor\WebExecutor;
+use muyomu\filter\client\GenericFilter;
 use muyomu\framework\config\DefaultApplicationConfig;
 use muyomu\framework\exception\RequestMethodNotMatchRoutException;
 use muyomu\framework\generic\Serve;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\log4p\Log4p;
-use muyomu\middleware\BaseMiddleWare;
 use muyomu\router\RouterClient;
 use ReflectionClass;
 use ReflectionException;
 
-class CreateApp implements Serve
+class Runtime implements Serve
 {
-    private BaseMiddleWare $middleWare;
-
     private WebExecutor $webExecutor;
 
     private Log4p $log4p;
 
     private DefaultApplicationConfig $defaultApplicationConfig;
 
-    public function __construct(){
+    public function __construct(Log4p $log4p){
+
         $this->webExecutor = new WebExecutor();
-        $this->log4p = new Log4p();
+
+        $this->log4p = $log4p;
+
         $this->defaultApplicationConfig = new DefaultApplicationConfig();
     }
 
@@ -79,7 +79,7 @@ class CreateApp implements Serve
         if ($request->getDbClient()->select("rule")->getData()->getMiddleWare() !== null){
             $rule_middleware_class = new ReflectionClass($request->getDbClient()->select("rule")->getData()->getMiddleWare());
             $rule_middleware_instance = $rule_middleware_class->newInstance();
-            $rule_middleware_method = $rule_middleware_class->getMethod("handle");
+            $rule_middleware_method = $rule_middleware_class->getMethod("filter");
             $rule_middleware_method->invoke($rule_middleware_instance,$request,$response);
         }
     }
@@ -105,7 +105,7 @@ class CreateApp implements Serve
     /*
      * 安装全局中间件
      */
-    public function configApplicationMiddleWare(BaseMiddleWare $middleWare):void{
+    public function configApplicationMiddleWare(GenericFilter $middleWare):void{
         $this->middleWare = $middleWare;
     }
 
@@ -120,13 +120,17 @@ class CreateApp implements Serve
          */
         try {
             $this->do_dynamic_parameter_resolve($request,$response);
+
         }catch (Exception $exception){
+
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+
             throw new ServerException();
         }
 
         //检查请求方法是否匹配
         if (!$this->checkRequestMethod($request)){
+
             throw new RequestMethodNotMatchRoutException();
         }
 
@@ -157,8 +161,11 @@ class CreateApp implements Serve
          */
         try {
             $this->do_route_middleware_handle($request,$response);
+
         }catch (Exception $exception){
+
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+
             throw new ServerException();
         }
 
@@ -167,8 +174,11 @@ class CreateApp implements Serve
          */
         try {
             $this->do_web_executor($request,$response);
+
         }catch (Exception $exception){
+
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+
             throw new ServerException();
         }
     }

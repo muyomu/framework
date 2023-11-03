@@ -6,9 +6,11 @@ use muyomu\executor\client\ExecutorClient;
 use muyomu\executor\config\DefaultExecutorConfig;
 use muyomu\executor\exception\ServerException;
 use muyomu\executor\utility\ParaResolve;
+use muyomu\http\client\FormatClient;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\inject\Proxy;
+use muyomu\log4p\Log4p;
 use ReflectionException;
 
 class WebExecutor implements ExecutorClient
@@ -21,11 +23,19 @@ class WebExecutor implements ExecutorClient
 
     private ParaResolve $paraResolve;
 
+    private Log4p $log4p;
+
     public function __construct(){
+
         $this->utility = new Utility();
+
         $this->executorDefaultConfig = new DefaultExecutorConfig();
+
         $this->proxy = new Proxy();
+
         $this->paraResolve = new ParaResolve();
+
+        $this->log4p = new Log4p();
     }
 
     /**
@@ -63,17 +73,22 @@ class WebExecutor implements ExecutorClient
         /*
          * 执行控制器处理器
          */
-        $returnData = null;
-        
+
         try {
             $returnData = $this->utility->handleExecutor($response, $instance, $method, $this->paraResolve->resolvePara($method));
+
+            if ($returnData instanceof FormatClient){
+                die(join($returnData->format(),JSON_UNESCAPED_UNICODE));
+            }else{
+                if (gettype($returnData) == "object"){
+                    die(serialize($returnData));
+                }else{
+                    die($returnData);
+                }
+            }
+
         } catch (exception\ParaMissException|ServerException|exception\UnKnownPara $e) {
-
+            $this->log4p->muix_log_error(__CLASS__,__METHOD__,__LINE__,$e->getMessage());
         }
-
-        /*
-         * 处理返回数据
-         */
-        $response->doJsonResponse(200,"success",$returnData);
     }
 }

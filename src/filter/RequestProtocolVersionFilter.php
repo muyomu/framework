@@ -21,6 +21,7 @@ class RequestProtocolVersionFilter implements GenericFilter
     {
         if(!($_SERVER["SERVER_PROTOCOL"] === "HTTP/1.1")){
            $this->log4p->muix_log_error(__CLASS__,__METHOD__,__LINE__,"The request protocol version is not supported");
+
            $response->doExceptionResponse(new ProtocolVersionSupportException(),200);
         }
     }

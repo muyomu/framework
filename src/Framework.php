@@ -8,6 +8,7 @@ use muyomu\filter\client\GenericFilter;
 use muyomu\filter\FilterExecutor;
 use muyomu\framework\config\DefaultApplicationConfig;
 use muyomu\framework\filter\RequestMethodFilter;
+use muyomu\framework\filter\RequestProtocolVersionFilter;
 use muyomu\framework\system\System;
 use muyomu\http\Request;
 use muyomu\http\Response;
@@ -23,19 +24,23 @@ class Framework
 
     private FilterExecutor $filterExecutor;
 
+    private Log4p $logger;
+
     public function __construct()
     {
         $this->request = new Request();
+
         $this->response = new Response();
+
         $this->filterExecutor = new FilterExecutor();
+
+        $this->logger = new Log4p();
     }
 
     /**
      * @return void
      */
     public static function main():void{
-        //logger
-        $logger = new Log4p();
 
         //framework
         $framework = new Framework();
@@ -44,24 +49,32 @@ class Framework
         System::system($framework->getResponse());
 
         //application
-        $application = new CreateApp();
+        $application = new Runtime($framework->logger);
 
         //config
         $config = new DefaultApplicationConfig();
 
         //获取中间件实例
         try {
-            $middleWare = new ReflectionClass($config->getOptions("globalMiddleWare"));
+            if ($config->getOptions("globalMiddleWare") != null){
+                $middleWare = new ReflectionClass($config->getOptions("globalMiddleWare"));
+            }
+
         }catch (ReflectionException $exception){
-            $logger->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+
+            $framework->logger->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+
             $framework->getResponse()->doExceptionResponse(new ServerException(),503);
         }
 
         //配置全局中间件
         try {
             $application->configApplicationMiddleWare($middleWare->newInstance());
+
         }catch (Exception $exception){
-            $logger->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+
+            $framework->logger->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+
             $framework->getResponse()->doExceptionResponse(new ServerException(),503);
         }
 
@@ -70,6 +83,7 @@ class Framework
 
         //添加系统过滤器
         $filterChain->addFilter(new RequestMethodFilter());
+        $filterChain->addFilter(new RequestProtocolVersionFilter());
 
         //添加用户过滤器
         $framework->loadUserFilters($filterChain,$config->getOptions("filters"));
@@ -80,8 +94,11 @@ class Framework
         //执行web请求
         try {
             $application->run($framework->getRequest(),$framework->getResponse());
+
         }catch (Exception $e){
-            $logger->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$e->getMessage());
+
+            $framework->logger->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$e->getMessage());
+
             $framework->getResponse()->doExceptionResponse(new ServerException(),503);
         }
     }
@@ -115,9 +132,12 @@ class Framework
      * @param array $userFilters
      * @return void
      */
-    public function loadUserFilters(FilterExecutor $filterChain,array $userFilters):void{
+    public function loadUserFilters(FilterExecutor $filterChain, array $userFilters):void{
+
         foreach ($userFilters as $filter){
+
             if ($filter instanceof GenericFilter){
+
                 $filterChain->addFilter($filter);
             }
         }

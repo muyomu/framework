@@ -5,8 +5,8 @@ namespace muyomu\http\config;
 use muyomu\config\annotation\Configuration;
 use muyomu\config\GenericConfig;
 
-#[Configuration(DefaultFileConfig::class)]
-class DefaultFileConfig extends GenericConfig
+#[Configuration(DefaultResourceConfig::class)]
+class DefaultResourceConfig extends GenericConfig
 {
     protected string $configClass = self::class;
 

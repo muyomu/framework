@@ -2,17 +2,21 @@
 
 namespace muyomu\http\client;
 
-use Exception;
-
 interface ResponseClient
 {
-    public function setHeader(string $field,string $content):void;
+    public function doPlainResponse(string $fileName, bool $display = true):void;
 
-    public function doJsonResponse(int $code,string $status,mixed $data):void;
+    public function doJsonResponse(string $fileName, bool $display = true):void;
 
-    public function doFileResponse(string $file):void;
+    public function doXmlResponse(string $fileName, bool $display = true):void;
 
-    public function doExceptionResponse(Exception $exception, int $code,):void;
+    public function doImageResponse(string $fileName, bool $display = true):void;
 
-    public function reDirect(string $url):void;
+    public function doAudioResponse(string $fileName, bool $display = true):void;
+
+    public function doVideoResponse(string $fileName, bool $display = true):void;
+
+    public function doResourceResponse(string $fileName):void;
+
+    public function doViewResponse(string $fileName):void;
 }

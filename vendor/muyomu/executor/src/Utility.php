@@ -22,6 +22,7 @@ class Utility implements ExecutorHelper
     public function __construct()
     {
         $this->frameWorkClient = new FrameWorkClient();
+
         $this->log4p = new Log4p();
     }
 

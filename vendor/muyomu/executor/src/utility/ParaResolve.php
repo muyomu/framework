@@ -2,9 +2,9 @@
 
 namespace muyomu\executor\utility;
 
+use muyomu\executor\annotation\Para;
 use muyomu\executor\exception\ParaMissException;
 use muyomu\executor\exception\UnKnownPara;
-use muyomu\web\Para;
 use ReflectionMethod;
 
 class ParaResolve
@@ -14,6 +14,7 @@ class ParaResolve
      * @throws UnKnownPara
      */
     public function resolvePara(ReflectionMethod $method):array{
+
         $options = array();
 
         $parameters = $method->getParameters();
@@ -23,7 +24,9 @@ class ParaResolve
             $ReflectParameters =$parameter->getAttributes(Para::class);
 
             if (empty($ReflectParameters)){
+
                 throw new UnKnownPara("UnKnownPara");
+
             }else{
                 $instance = $ReflectParameters[0]->newInstance();
 
@@ -33,7 +36,9 @@ class ParaResolve
 
                 switch ($range){
                     case "get": $options[] = $this->getPara($name);break;
+
                     case "post":$options[] = $this->postPara($name);break;
+
                     case "file":$options[] = $this->filePara($name);break;
                 }
             }

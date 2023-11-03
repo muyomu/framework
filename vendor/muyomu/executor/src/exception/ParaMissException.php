@@ -10,5 +10,4 @@ class ParaMissException extends Exception
     {
         parent::__construct($message);
     }
-
 }

@@ -18,6 +18,7 @@ class Request implements RequestClient,GetClient,PostClient,HeaderClient
     public function __construct()
     {
         $this->dbClient = new DbClient();
+
         $this->attribute = new Attribute();
     }
 
@@ -43,6 +44,10 @@ class Request implements RequestClient,GetClient,PostClient,HeaderClient
      * parameter---------------------------------------------------------
      */
 
+    /**
+     * @param string $varName
+     * @return mixed
+     */
     public function getPara(string $varName): mixed
     {
         if (filter_has_var(INPUT_GET,$varName)){
@@ -52,6 +57,10 @@ class Request implements RequestClient,GetClient,PostClient,HeaderClient
         }
     }
 
+    /**
+     * @param string $varName
+     * @return mixed
+     */
     public function postPara(string $varName): mixed
     {
         if (filter_has_var(INPUT_GET,$varName)){
@@ -61,6 +70,10 @@ class Request implements RequestClient,GetClient,PostClient,HeaderClient
         }
     }
 
+    /**
+     * @param string $key
+     * @return string|null
+     */
     public function getHeader(string $key):string |null{
         $headers = apache_request_headers();
         return $headers[$key] ?? null;
@@ -70,11 +83,20 @@ class Request implements RequestClient,GetClient,PostClient,HeaderClient
      * model------------------------------------------------------------
      */
 
+    /**
+     * @param string $key
+     * @param mixed $value
+     * @return bool
+     */
     public function setAttribute(string $key, mixed $value): bool
     {
         return $this->attribute->setAttribute($key,$value);
     }
 
+    /**
+     * @param string $key
+     * @return mixed
+     */
     public function getAttribute(string $key): mixed
     {
         return $this->attribute->getAttribute($key);
@@ -92,5 +114,4 @@ class Request implements RequestClient,GetClient,PostClient,HeaderClient
     {
         return $this->dbClient;
     }
-
 }
