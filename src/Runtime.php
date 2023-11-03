@@ -5,7 +5,6 @@ namespace muyomu\framework;
 use Exception;
 use muyomu\executor\exception\ServerException;
 use muyomu\executor\WebExecutor;
-use muyomu\filter\client\GenericFilter;
 use muyomu\framework\config\DefaultApplicationConfig;
 use muyomu\framework\exception\RequestMethodNotMatchRoutException;
 use muyomu\framework\generic\Serve;
@@ -42,16 +41,6 @@ class Runtime implements Serve
         $request->getDbClient()->insert("rule",RouterClient::getRule($request->getURL()));
     }
 
-    /**
-     * @param Request $request
-     * @param Response $response
-     * @return void
-     */
-    private function do_global_middleware_handle(Request $request, Response $response):void{
-        if(isset($this->middleWare)){
-            $this->middleWare->handle($request,$response);
-        }
-    }
 
     /**
      * @param Request $request
@@ -102,13 +91,6 @@ class Runtime implements Serve
         return false;
     }
 
-    /*
-     * 安装全局中间件
-     */
-    public function configApplicationMiddleWare(GenericFilter $middleWare):void{
-        $this->middleWare = $middleWare;
-    }
-
     /**
      * @throws ServerException
      * @throws RequestMethodNotMatchRoutException
@@ -132,16 +114,6 @@ class Runtime implements Serve
         if (!$this->checkRequestMethod($request)){
 
             throw new RequestMethodNotMatchRoutException();
-        }
-
-        /*
-         * 解析处理全局中间件
-         */
-        try {
-            $this->do_global_middleware_handle($request,$response);
-        }catch (Exception $exception){
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            throw new ServerException();
         }
 
         /*

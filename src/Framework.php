@@ -54,30 +54,6 @@ class Framework
         //config
         $config = new DefaultApplicationConfig();
 
-        //获取中间件实例
-        try {
-            if ($config->getOptions("globalMiddleWare") != null){
-                $middleWare = new ReflectionClass($config->getOptions("globalMiddleWare"));
-            }
-
-        }catch (ReflectionException $exception){
-
-            $framework->logger->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-
-            $framework->getResponse()->doExceptionResponse(new ServerException(),503);
-        }
-
-        //配置全局中间件
-        try {
-            $application->configApplicationMiddleWare($middleWare->newInstance());
-
-        }catch (Exception $exception){
-
-            $framework->logger->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-
-            $framework->getResponse()->doExceptionResponse(new ServerException(),503);
-        }
-
         //获取过滤器处理器
         $filterChain = $framework->getFilterExecutor();
 
