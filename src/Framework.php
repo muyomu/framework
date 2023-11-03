@@ -13,8 +13,6 @@ use muyomu\framework\system\System;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\log4p\Log4p;
-use ReflectionClass;
-use ReflectionException;
 
 class Framework
 {
