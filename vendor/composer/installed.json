@@ -122,17 +122,17 @@
         },
         {
             "name": "muyomu/executor",
-            "version": "v2.2.11",
-            "version_normalized": "2.2.11.0",
+            "version": "v2.2.12",
+            "version_normalized": "2.2.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/executor.git",
-                "reference": "be091a3810221174bfce228c59f5fd582ca40368"
+                "reference": "fabec43f639cef7fc0db9d112b9776f6c20caac9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/executor/zipball/be091a3810221174bfce228c59f5fd582ca40368",
-                "reference": "be091a3810221174bfce228c59f5fd582ca40368",
+                "url": "https://api.github.com/repos/muyomu/executor/zipball/fabec43f639cef7fc0db9d112b9776f6c20caac9",
+                "reference": "fabec43f639cef7fc0db9d112b9776f6c20caac9",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -149,7 +149,7 @@
                 "muyomu/log4p": "1.1.5",
                 "muyomu/router": "2.0.9"
             },
-            "time": "2023-11-03T13:39:59+00:00",
+            "time": "2023-11-03T13:51:20+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -170,7 +170,7 @@
             "description": "The executor of muyomu framework",
             "support": {
                 "issues": "https://github.com/muyomu/executor/issues",
-                "source": "https://github.com/muyomu/executor/tree/v2.2.11"
+                "source": "https://github.com/muyomu/executor/tree/v2.2.12"
             },
             "install-path": "../muyomu/executor"
         },
