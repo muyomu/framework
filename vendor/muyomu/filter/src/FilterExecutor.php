@@ -21,11 +21,9 @@ class FilterExecutor
 
             $objects = array_reverse($this->filterObjects);
 
-            foreach ($objects as $object){
+            foreach ($objects as $filter){
 
-                $filter = array_pop($object);
-
-                if (!is_null($filter)){
+                if ($filter instanceof GenericFilter){
 
                     $filter->filter($request,$response);
                 }
