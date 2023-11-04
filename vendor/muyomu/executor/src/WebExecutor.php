@@ -86,7 +86,10 @@ class WebExecutor implements ExecutorClient
                 if (gettype($returnData) == "object"){
 
                     die(serialize($returnData));
-                }else{
+                }elseif (gettype($returnData) == "array"){
+                    die(json_encode($returnData,JSON_UNESCAPED_UNICODE));
+                }
+                else{
 
                     die($returnData);
                 }
