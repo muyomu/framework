@@ -375,7 +375,7 @@ class Response implements ResponseClient, HttpClient
         $format = new ExceptionFormat("Exception","String",$exception->getMessage());
 
         //返回数据
-        die(json_encode($format,JSON_UNESCAPED_UNICODE));
+        die(json_encode($format->format(),JSON_UNESCAPED_UNICODE));
     }
 
     //view

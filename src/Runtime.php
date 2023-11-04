@@ -82,6 +82,10 @@ class Runtime implements Serve
         $this->webExecutor->webExecutor($request,$response,$controller,$handle);
     }
 
+    /**
+     * @param Request $request
+     * @return bool
+     */
     private function checkRequestMethod(Request $request):bool{
         $routeMethod =  $request->getDbClient()->select("rule")->getData()->getMethod();
         $requestMethod = $request->getRequestMethod();

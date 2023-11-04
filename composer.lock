@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c2dc74fd72b1dca340666ea522f1f92",
+    "content-hash": "f1cbcd5e0407153e077f71097b7a082d",
     "packages": [
         {
             "name": "muyomu/aop",
@@ -18,13 +18,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/muyomu/aop/zipball/cc3b5c9729443c2df341e7c586486894e595a4e8",
                 "reference": "cc3b5c9729443c2df341e7c586486894e595a4e8",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "type": "library",
             "autoload": {
@@ -61,13 +55,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/muyomu/config/zipball/6f9045d5c9db392e23f4f31cfde63dff0b9966a3",
                 "reference": "6f9045d5c9db392e23f4f31cfde63dff0b9966a3",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "type": "library",
             "autoload": {
@@ -104,13 +92,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/muyomu/database/zipball/5ce80913b931cedd6ffb9d1559e2919f9db85d8a",
                 "reference": "5ce80913b931cedd6ffb9d1559e2919f9db85d8a",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "type": "library",
             "autoload": {
@@ -137,28 +119,22 @@
         },
         {
             "name": "muyomu/executor",
-            "version": "v2.2.12",
+            "version": "v2.2.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/executor.git",
-                "reference": "fabec43f639cef7fc0db9d112b9776f6c20caac9"
+                "reference": "e74ecf0af850cb63e5e133153024e39ae250d04f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/executor/zipball/fabec43f639cef7fc0db9d112b9776f6c20caac9",
-                "reference": "fabec43f639cef7fc0db9d112b9776f6c20caac9",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "url": "https://api.github.com/repos/muyomu/executor/zipball/e74ecf0af850cb63e5e133153024e39ae250d04f",
+                "reference": "e74ecf0af850cb63e5e133153024e39ae250d04f",
+                "shasum": ""
             },
             "require": {
                 "muyomu/aop": "1.0.11",
                 "muyomu/config": "v1.1.5",
-                "muyomu/http": "2.1.14",
+                "muyomu/http": "2.1.15",
                 "muyomu/inject": "1.0.4",
                 "muyomu/log4p": "1.1.5",
                 "muyomu/router": "2.0.9"
@@ -182,32 +158,26 @@
             "description": "The executor of muyomu framework",
             "support": {
                 "issues": "https://github.com/muyomu/executor/issues",
-                "source": "https://github.com/muyomu/executor/tree/v2.2.12"
+                "source": "https://github.com/muyomu/executor/tree/v2.2.13"
             },
-            "time": "2023-11-03T13:51:20+00:00"
+            "time": "2023-11-04T05:36:00+00:00"
         },
         {
             "name": "muyomu/filter",
-            "version": "v1.0.26",
+            "version": "v1.0.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/filter.git",
-                "reference": "4bbfe5d9f11b6c35917aeb3dd00b898be1cc974d"
+                "reference": "c822812346081296177ecfdc7048ce9ffbef3602"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/filter/zipball/4bbfe5d9f11b6c35917aeb3dd00b898be1cc974d",
-                "reference": "4bbfe5d9f11b6c35917aeb3dd00b898be1cc974d",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "url": "https://api.github.com/repos/muyomu/filter/zipball/c822812346081296177ecfdc7048ce9ffbef3602",
+                "reference": "c822812346081296177ecfdc7048ce9ffbef3602",
+                "shasum": ""
             },
             "require": {
-                "muyomu/http": "2.1.14"
+                "muyomu/http": "2.1.15"
             },
             "type": "library",
             "autoload": {
@@ -228,29 +198,23 @@
             "description": "The filter framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/filter/issues",
-                "source": "https://github.com/muyomu/filter/tree/v1.0.26"
+                "source": "https://github.com/muyomu/filter/tree/v1.0.27"
             },
-            "time": "2023-11-03T13:14:40+00:00"
+            "time": "2023-11-04T05:34:57+00:00"
         },
         {
             "name": "muyomu/http",
-            "version": "v2.1.14",
+            "version": "v2.1.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/http.git",
-                "reference": "eab36772f92c101e98f32a2ed4dfc0a5ce68278e"
+                "reference": "4b27c83681b06c42dfcfd20acc07bc381ea4903a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/http/zipball/eab36772f92c101e98f32a2ed4dfc0a5ce68278e",
-                "reference": "eab36772f92c101e98f32a2ed4dfc0a5ce68278e",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "url": "https://api.github.com/repos/muyomu/http/zipball/4b27c83681b06c42dfcfd20acc07bc381ea4903a",
+                "reference": "4b27c83681b06c42dfcfd20acc07bc381ea4903a",
+                "shasum": ""
             },
             "require": {
                 "muyomu/config": "1.1.5",
@@ -276,9 +240,9 @@
             "description": "The http helper of muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/http/issues",
-                "source": "https://github.com/muyomu/http/tree/v2.1.14"
+                "source": "https://github.com/muyomu/http/tree/v2.1.15"
             },
-            "time": "2023-11-03T12:00:29+00:00"
+            "time": "2023-11-04T05:33:46+00:00"
         },
         {
             "name": "muyomu/inject",
@@ -292,13 +256,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/muyomu/inject/zipball/87d4fa789447527a95c45e33a480c08bad4569e9",
                 "reference": "87d4fa789447527a95c45e33a480c08bad4569e9",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "muyomu/log4p": "v1.1.5"
@@ -338,13 +296,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/muyomu/logger/zipball/a3de2b6d9c31839d18e34cbc59b210a3f877b524",
                 "reference": "a3de2b6d9c31839d18e34cbc59b210a3f877b524",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "muyomu/config": "1.1.5"
@@ -384,13 +336,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/muyomu/punit/zipball/395b5e030164772421b98e0c74e4454a52768878",
                 "reference": "395b5e030164772421b98e0c74e4454a52768878",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "muyomu/aop": "1.0.11",
@@ -431,13 +377,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/muyomu/router/zipball/5b62cacf1c29520bf3c79e521e2b706f5f4c4545",
                 "reference": "5b62cacf1c29520bf3c79e521e2b706f5f4c4545",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "muyomu/database": "2.0.2"
@@ -472,9 +412,7 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {
-        "php": ">=8.1"
-    },
+    "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

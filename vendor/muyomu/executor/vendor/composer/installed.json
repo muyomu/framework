@@ -122,31 +122,25 @@
         },
         {
             "name": "muyomu/http",
-            "version": "v2.1.14",
-            "version_normalized": "2.1.14.0",
+            "version": "v2.1.15",
+            "version_normalized": "2.1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/http.git",
-                "reference": "eab36772f92c101e98f32a2ed4dfc0a5ce68278e"
+                "reference": "4b27c83681b06c42dfcfd20acc07bc381ea4903a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/http/zipball/eab36772f92c101e98f32a2ed4dfc0a5ce68278e",
-                "reference": "eab36772f92c101e98f32a2ed4dfc0a5ce68278e",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "url": "https://api.github.com/repos/muyomu/http/zipball/4b27c83681b06c42dfcfd20acc07bc381ea4903a",
+                "reference": "4b27c83681b06c42dfcfd20acc07bc381ea4903a",
+                "shasum": ""
             },
             "require": {
                 "muyomu/config": "1.1.5",
                 "muyomu/database": "2.0.2",
                 "muyomu/router": "2.0.9"
             },
-            "time": "2023-11-03T12:00:29+00:00",
+            "time": "2023-11-04T05:33:46+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -167,7 +161,7 @@
             "description": "The http helper of muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/http/issues",
-                "source": "https://github.com/muyomu/http/tree/v2.1.14"
+                "source": "https://github.com/muyomu/http/tree/v2.1.15"
             },
             "install-path": "../muyomu/http"
         },

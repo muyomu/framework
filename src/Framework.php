@@ -71,7 +71,7 @@ class Framework
 
         }catch (Exception $e){
 
-            $framework->getResponse()->doExceptionResponse(new ServerException(),503);
+            $framework->getResponse()->doExceptionResponse($e,503);
         }
     }
 

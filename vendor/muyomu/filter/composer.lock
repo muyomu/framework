@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2b84e768387467384a4df20cfe9fdca",
+    "content-hash": "4678d576c3386994c99e32cd0b7aec6d",
     "packages": [
         {
             "name": "muyomu/config",
@@ -18,13 +18,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/muyomu/config/zipball/6f9045d5c9db392e23f4f31cfde63dff0b9966a3",
                 "reference": "6f9045d5c9db392e23f4f31cfde63dff0b9966a3",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "type": "library",
             "autoload": {
@@ -61,13 +55,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/muyomu/database/zipball/5ce80913b931cedd6ffb9d1559e2919f9db85d8a",
                 "reference": "5ce80913b931cedd6ffb9d1559e2919f9db85d8a",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "type": "library",
             "autoload": {
@@ -94,23 +82,17 @@
         },
         {
             "name": "muyomu/http",
-            "version": "v2.1.14",
+            "version": "v2.1.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/http.git",
-                "reference": "eab36772f92c101e98f32a2ed4dfc0a5ce68278e"
+                "reference": "4b27c83681b06c42dfcfd20acc07bc381ea4903a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/http/zipball/eab36772f92c101e98f32a2ed4dfc0a5ce68278e",
-                "reference": "eab36772f92c101e98f32a2ed4dfc0a5ce68278e",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "url": "https://api.github.com/repos/muyomu/http/zipball/4b27c83681b06c42dfcfd20acc07bc381ea4903a",
+                "reference": "4b27c83681b06c42dfcfd20acc07bc381ea4903a",
+                "shasum": ""
             },
             "require": {
                 "muyomu/config": "1.1.5",
@@ -136,9 +118,9 @@
             "description": "The http helper of muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/http/issues",
-                "source": "https://github.com/muyomu/http/tree/v2.1.14"
+                "source": "https://github.com/muyomu/http/tree/v2.1.15"
             },
-            "time": "2023-11-03T12:00:29+00:00"
+            "time": "2023-11-04T05:33:46+00:00"
         },
         {
             "name": "muyomu/router",
@@ -152,13 +134,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/muyomu/router/zipball/5b62cacf1c29520bf3c79e521e2b706f5f4c4545",
                 "reference": "5b62cacf1c29520bf3c79e521e2b706f5f4c4545",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "muyomu/database": "2.0.2"
@@ -195,5 +171,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
