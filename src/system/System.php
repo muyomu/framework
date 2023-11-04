@@ -32,6 +32,7 @@ class System
         });
 
         $logger = new Log4p();
+
         $ini = new DefaultInitializeConfig();
 
         //set ini

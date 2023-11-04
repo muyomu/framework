@@ -16,7 +16,6 @@
         }
     ],
     "require": {
-        "php": ">=8.1",
         "muyomu/database": "2.0.2",
         "muyomu/log4p": "1.1.5",
         "muyomu/filter": "1.0.26",
