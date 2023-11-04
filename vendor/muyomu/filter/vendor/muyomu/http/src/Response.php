@@ -30,6 +30,7 @@ class Response implements ResponseClient, HttpClient
      * @param string $fileName
      * @param bool $display
      * @return void
+     * @throws FileNotFoundException
      */
     public function doPlainResponse(string $fileName, bool $display = true): void
     {
@@ -67,7 +68,7 @@ class Response implements ResponseClient, HttpClient
             die($content);
         }else{
 
-            $this->doExceptionResponse(new FileNotFoundException(),404);
+            throw new FileNotFoundException();
         }
     }
 
@@ -75,6 +76,7 @@ class Response implements ResponseClient, HttpClient
      * @param string $fileName
      * @param bool $display
      * @return void
+     * @throws FileNotFoundException
      */
     public function doJsonResponse(string $fileName, bool $display = true): void
     {
@@ -112,7 +114,7 @@ class Response implements ResponseClient, HttpClient
             die($content);
         }else{
 
-            $this->doExceptionResponse(new FileNotFoundException(),404);
+            throw new FileNotFoundException();
         }
     }
 
@@ -120,6 +122,7 @@ class Response implements ResponseClient, HttpClient
      * @param string $fileName
      * @param bool $display
      * @return void
+     * @throws FileNotFoundException
      */
     public function doXmlResponse(string $fileName, bool $display = true): void
     {
@@ -157,7 +160,7 @@ class Response implements ResponseClient, HttpClient
             die($content);
         }else{
 
-            $this->doExceptionResponse(new FileNotFoundException(),404);
+            throw new FileNotFoundException();
         }
     }
 
@@ -165,6 +168,7 @@ class Response implements ResponseClient, HttpClient
      * @param string $fileName
      * @param bool $display
      * @return void
+     * @throws FileNotFoundException
      */
     public function doImageResponse(string $fileName, bool $display = true): void
     {
@@ -202,7 +206,7 @@ class Response implements ResponseClient, HttpClient
             die($content);
         }else{
 
-            $this->doExceptionResponse(new FileNotFoundException(),404);
+            throw new FileNotFoundException();
         }
     }
 
@@ -210,6 +214,7 @@ class Response implements ResponseClient, HttpClient
      * @param string $fileName
      * @param bool $display
      * @return void
+     * @throws FileNotFoundException
      */
     public function doVideoResponse(string $fileName, bool $display = true): void
     {
@@ -247,7 +252,7 @@ class Response implements ResponseClient, HttpClient
             die($content);
         }else{
 
-            $this->doExceptionResponse(new FileNotFoundException(),404);
+            throw new FileNotFoundException();
         }
     }
 
@@ -255,6 +260,7 @@ class Response implements ResponseClient, HttpClient
      * @param string $fileName
      * @param bool $display
      * @return void
+     * @throws FileNotFoundException
      */
     public function doAudioResponse(string $fileName, bool $display = true): void
     {
@@ -292,13 +298,14 @@ class Response implements ResponseClient, HttpClient
             die($content);
         }else{
 
-            $this->doExceptionResponse(new FileNotFoundException(),404);
+            throw new FileNotFoundException();
         }
     }
 
     /**
      * @param string $fileName
      * @return void
+     * @throws FileNotFoundException
      */
     public function doResourceResponse(string $fileName):void{
         //设置响应码
@@ -326,7 +333,7 @@ class Response implements ResponseClient, HttpClient
             die($content);
         }else{
 
-            $this->doExceptionResponse(new FileNotFoundException(),404);
+            throw new FileNotFoundException();
         }
     }
 
@@ -379,6 +386,7 @@ class Response implements ResponseClient, HttpClient
     /**
      * @param string $fileName
      * @return void
+     * @throws FileNotFoundException
      */
     public function doViewResponse(string $fileName):void{
         //设置响应码
@@ -406,7 +414,7 @@ class Response implements ResponseClient, HttpClient
             die($content);
         }else{
 
-            $this->doExceptionResponse(new FileNotFoundException(),404);
+            throw new FileNotFoundException();
         }
     }
 }

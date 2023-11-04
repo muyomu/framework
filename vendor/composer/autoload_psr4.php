@@ -15,6 +15,7 @@ return array(
     'muyomu\\filter\\' => array($vendorDir . '/muyomu/filter/src'),
     'muyomu\\executor\\' => array($vendorDir . '/muyomu/executor/src'),
     'muyomu\\database\\' => array($vendorDir . '/muyomu/database/src'),
+    'muyomu\\data\\' => array($vendorDir . '/muyomu/data/src'),
     'muyomu\\config\\' => array($vendorDir . '/muyomu/config/src'),
     'muyomu\\aop\\' => array($vendorDir . '/muyomu/aop/src'),
 );

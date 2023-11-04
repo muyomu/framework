@@ -1,0 +1,22 @@
+{
+    "name": "muyomu/data",
+    "description": "The mysql connector for muyomu web frameowork",
+    "license": "apache-2.0",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "muyomu\\data\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mutian",
+            "email": "mutian-xiangcai@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "muyomu/log4p": "1.1.6",
+        "muyomu/config": "1.1.6"
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "packages": [
+        {
+            "name": "muyomu/config",
+            "version": "v1.1.6",
+            "version_normalized": "1.1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/config.git",
+                "reference": "af9814e4d221e92b6a968b3bee4a046367bc1cda"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/config/zipball/af9814e4d221e92b6a968b3bee4a046367bc1cda",
+                "reference": "af9814e4d221e92b6a968b3bee4a046367bc1cda",
+                "shasum": ""
+            },
+            "time": "2023-11-04T14:55:25+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\config\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian",
+                    "email": "mutian-xiangcai@outlook.com"
+                }
+            ],
+            "description": "The config framework for muyomu web framework",
+            "support": {
+                "issues": "https://github.com/muyomu/config/issues",
+                "source": "https://github.com/muyomu/config/tree/v1.1.6"
+            },
+            "install-path": "../muyomu/config"
+        },
+        {
+            "name": "muyomu/log4p",
+            "version": "v1.1.6",
+            "version_normalized": "1.1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/muyomu/logger.git",
+                "reference": "ce5e937043c5d3f964dabd8406838e9770a134e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/muyomu/logger/zipball/ce5e937043c5d3f964dabd8406838e9770a134e3",
+                "reference": "ce5e937043c5d3f964dabd8406838e9770a134e3",
+                "shasum": ""
+            },
+            "time": "2023-11-04T14:49:39+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "muyomu\\log4p\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mutian",
+                    "email": "mutian-xiangcai@outlook.com"
+                }
+            ],
+            "description": "The log framework for muyomu web framework",
+            "support": {
+                "issues": "https://github.com/muyomu/logger/issues",
+                "source": "https://github.com/muyomu/logger/tree/v1.1.6"
+            },
+            "install-path": "../muyomu/log4p"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
