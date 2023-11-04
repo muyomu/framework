@@ -4,7 +4,7 @@ namespace muyomu\executor\annotation;
 
 use Attribute;
 
-#[Attribute(Attribute::TARGET_CLASS)]
+#[Attribute(Attribute::TARGET_PARAMETER)]
 class Para
 {
     private string $name;
@@ -17,10 +17,16 @@ class Para
         $this->range = $range;
     }
 
+    /**
+     * @return string
+     */
     public function getName():string{
         return $this->name;
     }
 
+    /**
+     * @return string
+     */
     public function getRange():string{
         return $this->range;
     }

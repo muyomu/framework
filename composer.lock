@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "60f8bc2bc9e881d37d2a50a5f2411e8a",
+    "content-hash": "ab0ca05a5ed8b73b42f691131a93a4bd",
     "packages": [
         {
             "name": "muyomu/aop",
@@ -119,16 +119,16 @@
         },
         {
             "name": "muyomu/executor",
-            "version": "v2.2.14",
+            "version": "v2.2.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/executor.git",
-                "reference": "8f0761063ad976f538731d6a178f1e66ca5914e7"
+                "reference": "c74c473f13591a02cb90872d5ef855daa9da6aa8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/executor/zipball/8f0761063ad976f538731d6a178f1e66ca5914e7",
-                "reference": "8f0761063ad976f538731d6a178f1e66ca5914e7",
+                "url": "https://api.github.com/repos/muyomu/executor/zipball/c74c473f13591a02cb90872d5ef855daa9da6aa8",
+                "reference": "c74c473f13591a02cb90872d5ef855daa9da6aa8",
                 "shasum": ""
             },
             "require": {
@@ -158,9 +158,9 @@
             "description": "The executor of muyomu framework",
             "support": {
                 "issues": "https://github.com/muyomu/executor/issues",
-                "source": "https://github.com/muyomu/executor/tree/v2.2.14"
+                "source": "https://github.com/muyomu/executor/tree/v2.2.15"
             },
-            "time": "2023-11-04T08:11:01+00:00"
+            "time": "2023-11-04T13:57:06+00:00"
         },
         {
             "name": "muyomu/filter",
