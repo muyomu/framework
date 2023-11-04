@@ -71,8 +71,6 @@ class Framework
 
         }catch (Exception $e){
 
-            $framework->logger->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$e->getMessage());
-
             $framework->getResponse()->doExceptionResponse(new ServerException(),503);
         }
     }
