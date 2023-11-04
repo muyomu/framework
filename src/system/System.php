@@ -2,6 +2,7 @@
 
 namespace muyomu\framework\system;
 
+use Exception;
 use muyomu\framework\config\DefaultInitializeConfig;
 use muyomu\framework\exception\EnvConfigException;
 use muyomu\http\format\ExceptionFormat;
@@ -12,21 +13,21 @@ class System
 {
     public static function system(Response $response):void{
         //global exception handle
-        set_exception_handler(function ($exception) {
+        set_exception_handler(function (Exception $exception) {
 
             header("Content-Type: text/json;charset=UTF-8");
 
-            $format = new ExceptionFormat("ServerError","Describe Message",$exception->getMessage());
+            $format = new ExceptionFormat("ServerError","Describe Exception Message",$exception->getMessage());
 
             echo json_encode($format->format(), JSON_UNESCAPED_UNICODE);
         });
 
         //global error handle
-        set_error_handler(function ($error, $message) {
+        set_error_handler(function ($errno) {
 
             header("Content-Type: text/json;charset=UTF-8");
 
-            $format = new ExceptionFormat("ServerError","Describe Message",$message);
+            $format = new ExceptionFormat("ServerError","Describe Error Message",$errno);
 
             echo json_encode($format->format(), JSON_UNESCAPED_UNICODE);
         });
