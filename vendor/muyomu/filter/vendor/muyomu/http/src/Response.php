@@ -5,7 +5,6 @@ namespace muyomu\http;
 use Exception;
 use muyomu\http\client\HttpClient;
 use muyomu\http\client\ResponseClient;
-use muyomu\http\config\DefaultResourceConfig;
 use muyomu\http\config\DefaultHttpConfig;
 use muyomu\http\exception\FileNotFoundException;
 use muyomu\http\format\ExceptionFormat;
@@ -13,7 +12,6 @@ use muyomu\http\utility\HeaderUtility;
 
 class Response implements ResponseClient, HttpClient
 {
-    private DefaultResourceConfig $defaultFileConfig;
 
     private DefaultHttpConfig $defaultHttpConfig;
 
@@ -21,8 +19,6 @@ class Response implements ResponseClient, HttpClient
 
     public function __construct()
     {
-        $this->defaultFileConfig = new DefaultResourceConfig();
-
         $this->defaultHttpConfig = new DefaultHttpConfig();
 
         $this->headerUtility = new HeaderUtility();
@@ -57,7 +53,7 @@ class Response implements ResponseClient, HttpClient
         $this->setHeader("Content-Type","text/plain;charset=utf-8");
 
         //获取文件位置
-        $file_location = $this->defaultFileConfig->getOptions("location").$fileName;
+        $file_location = $GLOBALS["super_config"]["resDir"].$fileName;
 
         //打开文件
         $resource = fopen($file_location,"r");
@@ -102,7 +98,7 @@ class Response implements ResponseClient, HttpClient
         $this->setHeader("Content-Type","text/json;charset=utf-8");
 
         //获取文件位置
-        $file_location = $this->defaultFileConfig->getOptions("location").$fileName;
+        $file_location = $GLOBALS["super_config"]["resDir"].$fileName;
 
         //打开文件
         $resource = fopen($file_location,"r");
@@ -147,7 +143,7 @@ class Response implements ResponseClient, HttpClient
         $this->setHeader("Content-Type","text/xml;charset=utf-8");
 
         //获取文件位置
-        $file_location = $this->defaultFileConfig->getOptions("location").$fileName;
+        $file_location = $GLOBALS["super_config"]["resDir"].$fileName;
 
         //打开文件
         $resource = fopen($file_location,"r");
@@ -192,7 +188,7 @@ class Response implements ResponseClient, HttpClient
         $this->setHeader("Content-Type","image/".pathinfo($fileName,PATHINFO_EXTENSION).";charset=utf-8");
 
         //获取文件位置
-        $file_location = $this->defaultFileConfig->getOptions("location").$fileName;
+        $file_location = $GLOBALS["super_config"]["resDir"].$fileName;
 
         //打开文件
         $resource = fopen($file_location,"r");
@@ -237,7 +233,7 @@ class Response implements ResponseClient, HttpClient
         $this->setHeader("Content-Type","video/".pathinfo($fileName,PATHINFO_EXTENSION).";charset=utf-8");
 
         //获取文件位置
-        $file_location = $this->defaultFileConfig->getOptions("location").$fileName;
+        $file_location = $GLOBALS["super_config"]["resDir"].$fileName;
 
         //打开文件
         $resource = fopen($file_location,"r");
@@ -282,7 +278,7 @@ class Response implements ResponseClient, HttpClient
         $this->setHeader("Content-Type","audio/".pathinfo($fileName,PATHINFO_EXTENSION).";charset=utf-8");
 
         //获取文件位置
-        $file_location = $this->defaultFileConfig->getOptions("location").$fileName;
+        $file_location = $GLOBALS["super_config"]["resDir"].$fileName;
 
         //打开文件
         $resource = fopen($file_location,"r");
@@ -316,7 +312,7 @@ class Response implements ResponseClient, HttpClient
         $this->setHeader("Content-Type","image/".pathinfo($fileName,PATHINFO_EXTENSION).";charset=utf-8");
 
         //获取文件位置
-        $file_location = $this->defaultFileConfig->getOptions("location").$fileName;
+        $file_location = $GLOBALS["super_config"]["resDir"].$fileName;
 
         //打开文件
         $resource = fopen($file_location,"r");
@@ -396,7 +392,7 @@ class Response implements ResponseClient, HttpClient
         $this->setHeader("Content-Type","text/".pathinfo($fileName,PATHINFO_EXTENSION).";charset=utf-8");
 
         //获取文件位置
-        $file_location = $this->defaultFileConfig->getOptions("location").$fileName;
+        $file_location = $GLOBALS["super_config"]["resDir"].$fileName;
 
         //打开文件
         $resource = fopen($file_location,"r");

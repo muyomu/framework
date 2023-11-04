@@ -17,12 +17,13 @@
     ],
     "require": {
         "muyomu/database": "2.0.2",
-        "muyomu/log4p": "1.1.5",
-        "muyomu/filter": "1.0.27",
-        "muyomu/config": "1.1.5",
-        "muyomu/punit": "1.0.3",
-        "muyomu/executor": "2.2.15",
+        "muyomu/log4p": "1.1.6",
+        "muyomu/filter": "1.1.0",
+        "muyomu/config": "1.1.6",
+        "muyomu/punit": "1.0.4",
+        "muyomu/executor": "2.2.16",
         "muyomu/router": "2.0.9",
-        "muyomu/http": "2.1.15"
+        "muyomu/http": "2.1.16",
+        "muyomu/inject": "1.0.5"
     }
 }

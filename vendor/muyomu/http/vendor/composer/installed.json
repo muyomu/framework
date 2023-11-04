@@ -2,20 +2,20 @@
     "packages": [
         {
             "name": "muyomu/config",
-            "version": "v1.1.5",
-            "version_normalized": "1.1.5.0",
+            "version": "v1.1.6",
+            "version_normalized": "1.1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/config.git",
-                "reference": "6f9045d5c9db392e23f4f31cfde63dff0b9966a3"
+                "reference": "af9814e4d221e92b6a968b3bee4a046367bc1cda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/config/zipball/6f9045d5c9db392e23f4f31cfde63dff0b9966a3",
-                "reference": "6f9045d5c9db392e23f4f31cfde63dff0b9966a3",
+                "url": "https://api.github.com/repos/muyomu/config/zipball/af9814e4d221e92b6a968b3bee4a046367bc1cda",
+                "reference": "af9814e4d221e92b6a968b3bee4a046367bc1cda",
                 "shasum": ""
             },
-            "time": "2023-01-03T10:25:07+00:00",
+            "time": "2023-11-04T14:55:25+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -36,7 +36,7 @@
             "description": "The config framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/config/issues",
-                "source": "https://github.com/muyomu/config/tree/v1.1.5"
+                "source": "https://github.com/muyomu/config/tree/v1.1.6"
             },
             "install-path": "../muyomu/config"
         },

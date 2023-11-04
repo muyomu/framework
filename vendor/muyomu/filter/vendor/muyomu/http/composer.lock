@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a0f07ee372f6a2d98263d30da5fd4f5e",
+    "content-hash": "801d802979cddecb7ff2c41f3818a3d8",
     "packages": [
         {
             "name": "muyomu/config",
-            "version": "v1.1.5",
+            "version": "v1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/config.git",
-                "reference": "6f9045d5c9db392e23f4f31cfde63dff0b9966a3"
+                "reference": "af9814e4d221e92b6a968b3bee4a046367bc1cda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/config/zipball/6f9045d5c9db392e23f4f31cfde63dff0b9966a3",
-                "reference": "6f9045d5c9db392e23f4f31cfde63dff0b9966a3",
+                "url": "https://api.github.com/repos/muyomu/config/zipball/af9814e4d221e92b6a968b3bee4a046367bc1cda",
+                "reference": "af9814e4d221e92b6a968b3bee4a046367bc1cda",
                 "shasum": ""
             },
             "type": "library",
@@ -39,9 +39,9 @@
             "description": "The config framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/config/issues",
-                "source": "https://github.com/muyomu/config/tree/v1.1.5"
+                "source": "https://github.com/muyomu/config/tree/v1.1.6"
             },
-            "time": "2023-01-03T10:25:07+00:00"
+            "time": "2023-11-04T14:55:25+00:00"
         },
         {
             "name": "muyomu/database",
@@ -129,5 +129,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

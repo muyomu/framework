@@ -26,14 +26,23 @@ class Request implements RequestClient,GetClient,PostClient,HeaderClient
      * http method ==========================================
      */
 
+    /**
+     * @return string
+     */
     public function getRequestMethod():string{
         return $_SERVER['REQUEST_METHOD'];
     }
 
+    /**
+     * @return string
+     */
     public function getRemoteHost():string{
         return $_SERVER['REMOTE_HOST'];
     }
 
+    /**
+     * @return string
+     */
     public function getURL(): string
     {
         $data = explode("?",$_SERVER['REQUEST_URI']);

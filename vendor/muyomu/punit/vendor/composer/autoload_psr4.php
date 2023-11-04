@@ -9,6 +9,5 @@ return array(
     'muyomu\\punit\\' => array($baseDir . '/src'),
     'muyomu\\log4p\\' => array($vendorDir . '/muyomu/log4p/src'),
     'muyomu\\inject\\' => array($vendorDir . '/muyomu/inject/src'),
-    'muyomu\\config\\' => array($vendorDir . '/muyomu/config/src'),
     'muyomu\\aop\\' => array($vendorDir . '/muyomu/aop/src'),
 );

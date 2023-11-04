@@ -11,10 +11,7 @@ class DefaultApplicationConfig extends GenericConfig
     protected string $configClass = self::class;
 
     protected array $configData = [
-        "application"=>"muix",
-        "globalMiddleWare"=>null,
         "organization"=>true,
-        "applicationRootPath"=>"../",
         "filters"=>[]
     ];
 }

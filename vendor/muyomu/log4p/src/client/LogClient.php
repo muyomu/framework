@@ -2,8 +2,6 @@
 
 namespace muyomu\log4p\client;
 
-use Exception;
-
 interface LogClient
 {
     public function muix_log_error(string $className,string $method,int $line,string $message):void;

@@ -10,7 +10,6 @@ class ComposerStaticInitb33a86403c28edf82d1b72c4f5624134
         'm' => 
         array (
             'muyomu\\log4p\\' => 13,
-            'muyomu\\config\\' => 14,
         ),
     );
 
@@ -18,10 +17,6 @@ class ComposerStaticInitb33a86403c28edf82d1b72c4f5624134
         'muyomu\\log4p\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
-        ),
-        'muyomu\\config\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/muyomu/config/src',
         ),
     );
 

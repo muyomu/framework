@@ -3,7 +3,7 @@
         'name' => 'muyomu/http',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '2d58ab5a630e4e41f97883f5e247120a9ffd5625',
+        'reference' => '4b27c83681b06c42dfcfd20acc07bc381ea4903a',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'muyomu/config' => array(
-            'pretty_version' => 'v1.1.5',
-            'version' => '1.1.5.0',
-            'reference' => '6f9045d5c9db392e23f4f31cfde63dff0b9966a3',
+            'pretty_version' => 'v1.1.6',
+            'version' => '1.1.6.0',
+            'reference' => 'af9814e4d221e92b6a968b3bee4a046367bc1cda',
             'type' => 'library',
             'install_path' => __DIR__ . '/../muyomu/config',
             'aliases' => array(),
@@ -31,7 +31,7 @@
         'muyomu/http' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '2d58ab5a630e4e41f97883f5e247120a9ffd5625',
+            'reference' => '4b27c83681b06c42dfcfd20acc07bc381ea4903a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -6,6 +6,7 @@ use muyomu\executor\client\ExecutorClient;
 use muyomu\executor\config\DefaultExecutorConfig;
 use muyomu\executor\exception\ServerException;
 use muyomu\executor\utility\ParaResolve;
+use muyomu\executor\utility\Utility;
 use muyomu\http\client\FormatClient;
 use muyomu\http\Request;
 use muyomu\http\Response;
@@ -39,7 +40,13 @@ class WebExecutor implements ExecutorClient
     }
 
     /**
-     * @throws ServerException|ReflectionException
+     * @param Request $request
+     * @param Response $response
+     * @param string $controllerClassName
+     * @param string $handle
+     * @return void
+     * @throws ReflectionException
+     * @throws ServerException
      */
     public function webExecutor(Request $request, Response $response, string $controllerClassName, string $handle): void
     {
@@ -90,13 +97,13 @@ class WebExecutor implements ExecutorClient
                     die(json_encode($returnData,JSON_UNESCAPED_UNICODE));
                 }
                 else{
-
                     die($returnData);
                 }
             }
 
         } catch (exception\ParaMissException|ServerException|exception\UnKnownPara $e) {
             $this->log4p->muix_log_error(__CLASS__,__METHOD__,__LINE__,$e->getMessage());
+            throw new ServerException();
         }
     }
 }

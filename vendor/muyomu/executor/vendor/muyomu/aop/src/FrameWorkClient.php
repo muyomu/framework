@@ -2,7 +2,6 @@
 
 namespace muyomu\aop;
 
-use muyomu\aop\advicetype\HystrixAdvice;
 use muyomu\aop\client\FrameClient;
 use muyomu\aop\utility\ReflectionUtility;
 use ReflectionException;

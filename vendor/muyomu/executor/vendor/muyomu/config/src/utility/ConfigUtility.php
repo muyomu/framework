@@ -10,19 +10,27 @@ use ReflectionException;
 class ConfigUtility implements UtilityClient
 {
 
-    public function getConfigClassInstance(string $className): ReflectionClass |null
+    /**
+     * @param string $className
+     * @return ReflectionClass|null
+     */
+    public function getConfigClassInstance(string $className): ReflectionClass | null
     {
-        $reflectionClass = null;
 
         try {
             $reflectionClass = new ReflectionClass($className);
-        }catch (ReflectionException $exception){
+        }catch (ReflectionException){
             return null;
         }
         return $reflectionClass;
     }
 
-    public function getAttributeClassInstance(ReflectionClass $reflectionClass,string $attributeClass): ReflectionAttribute |null
+    /**
+     * @param ReflectionClass $reflectionClass
+     * @param string $attributeClass
+     * @return ReflectionAttribute|null
+     */
+    public function getAttributeClassInstance(ReflectionClass $reflectionClass, string $attributeClass): ReflectionAttribute | null
     {
         $attributes = $reflectionClass->getAttributes($attributeClass);
         if (empty($attributes)){

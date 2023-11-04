@@ -1,6 +1,6 @@
 <?php
 
-namespace muyomu\executor;
+namespace muyomu\executor\utility;
 
 use Exception;
 use muyomu\aop\FrameWorkClient;

@@ -12,7 +12,6 @@ class ComposerStaticInitc24dc011f25008a5a3be5e9698a2e310
             'muyomu\\punit\\' => 13,
             'muyomu\\log4p\\' => 13,
             'muyomu\\inject\\' => 14,
-            'muyomu\\config\\' => 14,
             'muyomu\\aop\\' => 11,
         ),
     );
@@ -29,10 +28,6 @@ class ComposerStaticInitc24dc011f25008a5a3be5e9698a2e310
         'muyomu\\inject\\' => 
         array (
             0 => __DIR__ . '/..' . '/muyomu/inject/src',
-        ),
-        'muyomu\\config\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/muyomu/config/src',
         ),
         'muyomu\\aop\\' => 
         array (

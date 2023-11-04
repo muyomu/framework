@@ -92,7 +92,7 @@ class ConfigParser
 
             $configData = $reflectionProperty->getValue($reflectionClassInstance);
 
-        }catch (ReflectionException $exception){
+        }catch (ReflectionException){
             return array();
         }
         return $configData;

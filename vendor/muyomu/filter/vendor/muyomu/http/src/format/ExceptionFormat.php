@@ -12,6 +12,11 @@ class ExceptionFormat implements FormatClient
 
     private mixed $data;
 
+    /**
+     * @param string $dataStatus
+     * @param string $dataType
+     * @param $data
+     */
     public function __construct(string $dataStatus, string $dataType, $data)
     {
         $this->dataStatus = $dataStatus;
@@ -21,6 +26,9 @@ class ExceptionFormat implements FormatClient
         $this->data = $data;
     }
 
+    /**
+     * @return array
+     */
     public function format():array{
         return array("dataStatus"=>$this->dataStatus,"dataType"=>$this->dataType,"data"=>$this->data);
     }

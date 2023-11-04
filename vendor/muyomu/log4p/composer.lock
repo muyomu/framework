@@ -4,46 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "06018e934950093802fc1a6d39cf983d",
-    "packages": [
-        {
-            "name": "muyomu/config",
-            "version": "v1.1.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/muyomu/config.git",
-                "reference": "6f9045d5c9db392e23f4f31cfde63dff0b9966a3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/config/zipball/6f9045d5c9db392e23f4f31cfde63dff0b9966a3",
-                "reference": "6f9045d5c9db392e23f4f31cfde63dff0b9966a3",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "muyomu\\config\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "mutian",
-                    "email": "mutian-xiangcai@outlook.com"
-                }
-            ],
-            "description": "The config framework for muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/config/issues",
-                "source": "https://github.com/muyomu/config/tree/v1.1.5"
-            },
-            "time": "2023-01-03T10:25:07+00:00"
-        }
-    ],
+    "content-hash": "5a515edaa272a5559da73fa5f7d8e3d9",
+    "packages": [],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
@@ -52,5 +14,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
