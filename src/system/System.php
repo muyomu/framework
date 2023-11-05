@@ -5,7 +5,7 @@ namespace muyomu\framework\system;
 use Exception;
 use muyomu\framework\config\DefaultInitializeConfig;
 use muyomu\framework\exception\EnvConfigException;
-use muyomu\http\format\ExceptionFormat;
+use muyomu\framework\format\ExceptionFormat;
 use muyomu\http\Response;
 use muyomu\log4p\Log4p;
 
@@ -17,7 +17,7 @@ class System
 
             header("Content-Type: text/json;charset=UTF-8");
 
-            $format = new ExceptionFormat("ServerError","Describe Exception Message",$exception->getMessage());
+            $format = new ExceptionFormat(500,"ServerError","Describe Exception Message",$exception->getMessage());
 
             echo json_encode($format->format(), JSON_UNESCAPED_UNICODE);
         });
@@ -27,7 +27,7 @@ class System
 
             header("Content-Type: text/json;charset=UTF-8");
 
-            $format = new ExceptionFormat("ServerError","Describe Error Message",$errno);
+            $format = new ExceptionFormat(500,"ServerError","Describe Error Message",$errno);
 
             echo json_encode($format->format(), JSON_UNESCAPED_UNICODE);
         });
