@@ -2,11 +2,11 @@
 
 namespace muyomu\framework;
 
-use Exception;
 use muyomu\executor\exception\ServerException;
 use muyomu\filter\client\GenericFilter;
 use muyomu\filter\FilterExecutor;
 use muyomu\framework\config\DefaultApplicationConfig;
+use muyomu\framework\exception\RequestMethodNotMatchRoutException;
 use muyomu\framework\filter\RequestMethodFilter;
 use muyomu\framework\filter\RequestProtocolVersionFilter;
 use muyomu\framework\system\System;
@@ -37,6 +37,8 @@ class Framework
 
     /**
      * @return void
+     * @throws ServerException|exception\RequestMethodNotMatchRoutException
+     * @throws RequestMethodNotMatchRoutException
      */
     public static function main():void{
 
@@ -66,13 +68,7 @@ class Framework
         $filterChain->doFilterChain($framework->getRequest(),$framework->getResponse());
 
         //执行web请求
-        try {
-            $application->run($framework->getRequest(),$framework->getResponse());
-
-        }catch (Exception $e){
-
-            $framework->logger->muix_log_error(__CLASS__,__METHOD__,__LINE__,$e->getMessage());
-        }
+        $application->run($framework->getRequest(),$framework->getResponse());
     }
 
     /**
