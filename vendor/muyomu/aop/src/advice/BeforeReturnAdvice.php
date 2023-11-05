@@ -4,5 +4,5 @@ namespace muyomu\aop\advice;
 
 interface BeforeReturnAdvice
 {
-    public function beforeReturnAdvice():void;
+    public function beforeReturnAdvice(array $config):void;
 }

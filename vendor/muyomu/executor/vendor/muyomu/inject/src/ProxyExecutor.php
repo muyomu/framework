@@ -6,7 +6,7 @@ use muyomu\inject\client\ProxyClient;
 use muyomu\inject\utility\ReflectionTypeStrategy;
 use ReflectionException;
 
-class Proxy implements ProxyClient
+class ProxyExecutor implements ProxyClient
 {
     private ReflectionTypeStrategy $reflectionTypeStrategy;
 
@@ -20,8 +20,13 @@ class Proxy implements ProxyClient
      */
     public function getProxyInstance(mixed $classOrInstance): object
     {
+        //获取参数类型
         $type = gettype($classOrInstance);
+
+        //设置策略状态
         $this->reflectionTypeStrategy->setStatus($type);
+
+        //执行策略
         return $this->reflectionTypeStrategy->getInstance($classOrInstance);
     }
 }

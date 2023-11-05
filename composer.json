@@ -20,11 +20,11 @@
         "muyomu/log4p": "1.1.6",
         "muyomu/filter": "1.1.1",
         "muyomu/config": "1.1.6",
-        "muyomu/punit": "1.0.4",
-        "muyomu/executor": "2.2.17",
+        "muyomu/punit": "1.0.5",
+        "muyomu/executor": "2.2.18",
         "muyomu/router": "2.0.9",
         "muyomu/http": "2.1.17",
-        "muyomu/inject": "1.0.5",
+        "muyomu/inject": "1.0.6",
         "muyomu/data": "1.0.1"
     }
 }

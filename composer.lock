@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd19a50606e345e06027125d4e63352b",
+    "content-hash": "128e312dadb0cbca41772d54f1879a3b",
     "packages": [
         {
             "name": "muyomu/aop",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/aop.git",
-                "reference": "93899ed80595c6295b078c0863c0280e4642c4b0"
+                "reference": "87a830d91d1a58189ff1f163ecbba233e3672330"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/aop/zipball/93899ed80595c6295b078c0863c0280e4642c4b0",
-                "reference": "93899ed80595c6295b078c0863c0280e4642c4b0",
+                "url": "https://api.github.com/repos/muyomu/aop/zipball/87a830d91d1a58189ff1f163ecbba233e3672330",
+                "reference": "87a830d91d1a58189ff1f163ecbba233e3672330",
                 "shasum": ""
             },
             "type": "library",
@@ -39,9 +39,9 @@
             "description": "The aop framework for muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/aop/issues",
-                "source": "https://github.com/muyomu/aop/tree/v1.1.0"
+                "source": "https://github.com/muyomu/aop/tree/v1.1.1"
             },
-            "time": "2023-11-04T15:14:54+00:00"
+            "time": "2023-11-05T11:43:08+00:00"
         },
         {
             "name": "muyomu/config",
@@ -160,23 +160,23 @@
         },
         {
             "name": "muyomu/executor",
-            "version": "v2.2.17",
+            "version": "v2.2.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/executor.git",
-                "reference": "fab9e639fe0d46b03dd4dca5ae3f1315bb96b295"
+                "reference": "2c086152a89ca01e4ab398ef2363d8c70276a3b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/executor/zipball/fab9e639fe0d46b03dd4dca5ae3f1315bb96b295",
-                "reference": "fab9e639fe0d46b03dd4dca5ae3f1315bb96b295",
+                "url": "https://api.github.com/repos/muyomu/executor/zipball/2c086152a89ca01e4ab398ef2363d8c70276a3b0",
+                "reference": "2c086152a89ca01e4ab398ef2363d8c70276a3b0",
                 "shasum": ""
             },
             "require": {
-                "muyomu/aop": "1.1.0",
+                "muyomu/aop": "1.1.1",
                 "muyomu/config": "v1.1.6",
                 "muyomu/http": "2.1.17",
-                "muyomu/inject": "1.0.5",
+                "muyomu/inject": "1.0.6",
                 "muyomu/log4p": "1.1.6",
                 "muyomu/router": "2.0.9"
             },
@@ -199,9 +199,9 @@
             "description": "The executor of muyomu framework",
             "support": {
                 "issues": "https://github.com/muyomu/executor/issues",
-                "source": "https://github.com/muyomu/executor/tree/v2.2.17"
+                "source": "https://github.com/muyomu/executor/tree/v2.2.18"
             },
-            "time": "2023-11-04T16:08:52+00:00"
+            "time": "2023-11-05T12:22:12+00:00"
         },
         {
             "name": "muyomu/filter",
@@ -287,16 +287,16 @@
         },
         {
             "name": "muyomu/inject",
-            "version": "v1.0.5",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/inject.git",
-                "reference": "b6edcc57a0a66204854399380d907a0a88aa197f"
+                "reference": "aee8ef4f04e289382d0011f0e118433f7a53c95b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/inject/zipball/b6edcc57a0a66204854399380d907a0a88aa197f",
-                "reference": "b6edcc57a0a66204854399380d907a0a88aa197f",
+                "url": "https://api.github.com/repos/muyomu/inject/zipball/aee8ef4f04e289382d0011f0e118433f7a53c95b",
+                "reference": "aee8ef4f04e289382d0011f0e118433f7a53c95b",
                 "shasum": ""
             },
             "require": {
@@ -321,9 +321,9 @@
             "description": "The auto-wired framework to muyomu web framework",
             "support": {
                 "issues": "https://github.com/muyomu/inject/issues",
-                "source": "https://github.com/muyomu/inject/tree/v1.0.5"
+                "source": "https://github.com/muyomu/inject/tree/v1.0.6"
             },
-            "time": "2023-11-04T15:12:46+00:00"
+            "time": "2023-11-05T12:17:56+00:00"
         },
         {
             "name": "muyomu/log4p",
@@ -364,21 +364,21 @@
         },
         {
             "name": "muyomu/punit",
-            "version": "v1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/punit.git",
-                "reference": "72c606a16122d8adf8d46f35ffe8bb60cb6f2209"
+                "reference": "32a460925a9910db7760a08238b1a195b972ed76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/punit/zipball/72c606a16122d8adf8d46f35ffe8bb60cb6f2209",
-                "reference": "72c606a16122d8adf8d46f35ffe8bb60cb6f2209",
+                "url": "https://api.github.com/repos/muyomu/punit/zipball/32a460925a9910db7760a08238b1a195b972ed76",
+                "reference": "32a460925a9910db7760a08238b1a195b972ed76",
                 "shasum": ""
             },
             "require": {
-                "muyomu/aop": "1.1.0",
-                "muyomu/inject": "1.0.5"
+                "muyomu/aop": "1.1.1",
+                "muyomu/inject": "1.0.6"
             },
             "type": "library",
             "autoload": {
@@ -399,9 +399,9 @@
             "description": "The unit test",
             "support": {
                 "issues": "https://github.com/muyomu/punit/issues",
-                "source": "https://github.com/muyomu/punit/tree/v1.0.4"
+                "source": "https://github.com/muyomu/punit/tree/v1.0.5"
             },
-            "time": "2023-11-04T15:34:11+00:00"
+            "time": "2023-11-05T12:31:53+00:00"
         },
         {
             "name": "muyomu/router",

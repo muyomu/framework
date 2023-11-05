@@ -3,7 +3,7 @@
         'name' => 'muyomu/executor',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '3280fa1dfb9e001cf6ea93b68ececd69361c830f',
+        'reference' => 'fab9e639fe0d46b03dd4dca5ae3f1315bb96b295',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'muyomu/aop' => array(
-            'pretty_version' => 'v1.1.0',
-            'version' => '1.1.0.0',
-            'reference' => '93899ed80595c6295b078c0863c0280e4642c4b0',
+            'pretty_version' => 'v1.1.1',
+            'version' => '1.1.1.0',
+            'reference' => '87a830d91d1a58189ff1f163ecbba233e3672330',
             'type' => 'library',
             'install_path' => __DIR__ . '/../muyomu/aop',
             'aliases' => array(),
@@ -40,7 +40,7 @@
         'muyomu/executor' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '3280fa1dfb9e001cf6ea93b68ececd69361c830f',
+            'reference' => 'fab9e639fe0d46b03dd4dca5ae3f1315bb96b295',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -56,9 +56,9 @@
             'dev_requirement' => false,
         ),
         'muyomu/inject' => array(
-            'pretty_version' => 'v1.0.5',
-            'version' => '1.0.5.0',
-            'reference' => 'b6edcc57a0a66204854399380d907a0a88aa197f',
+            'pretty_version' => 'v1.0.6',
+            'version' => '1.0.6.0',
+            'reference' => 'aee8ef4f04e289382d0011f0e118433f7a53c95b',
             'type' => 'library',
             'install_path' => __DIR__ . '/../muyomu/inject',
             'aliases' => array(),

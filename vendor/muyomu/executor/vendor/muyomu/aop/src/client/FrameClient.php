@@ -6,5 +6,5 @@ use ReflectionMethod;
 
 interface FrameClient
 {
-    public function aopExecutor(object $instance, ReflectionMethod $method,mixed $args):mixed;
+    public function aopExecutor(object $instance, ReflectionMethod $method, array $args):mixed;
 }

@@ -2,11 +2,11 @@
 
 use muyomu\inject\annotation\AutoWired;
 use muyomu\inject\annotation\Value;
-use muyomu\inject\Proxy;
+use muyomu\inject\ProxyExecutor;
 
 include "vendor/autoload.php";
 
-$proxy = new Proxy();
+$proxy = new ProxyExecutor();
 
 class Tk{
     #[Value("liuzhang")]

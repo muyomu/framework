@@ -15,7 +15,7 @@ interface ExecutorHelper
 
     public function injectRR(Request $request,Response $response,ReflectionClass $reflectionClass,mixed $instance):void;
 
-    public function getControllerHandle(Response $response,ReflectionClass $reflectionClass,string $handle): ReflectionMethod;
+    public function getControllerHandle(ReflectionClass $reflectionClass,string $handle): ReflectionMethod;
 
-    public function handleExecutor(Response $response,mixed $instance,ReflectionMethod $method,array $argv):mixed;
+    public function handleExecutor(mixed $instance,ReflectionMethod $method,array $argv):mixed;
 }

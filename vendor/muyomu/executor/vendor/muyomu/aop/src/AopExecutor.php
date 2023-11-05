@@ -4,6 +4,7 @@ namespace muyomu\aop;
 
 use muyomu\aop\client\AopClient;
 use muyomu\aop\exception\AopException;
+use muyomu\aop\utility\AdviceResolver;
 use muyomu\aop\utility\ReflectionUtility;
 use ReflectionException;
 
@@ -11,9 +12,13 @@ class AopExecutor implements AopClient
 {
     private ReflectionUtility $reflectionUtility;
 
+    private AdviceResolver $adviceResolver;
+
     public function __construct()
     {
         $this->reflectionUtility = new ReflectionUtility();
+
+        $this->adviceResolver = new AdviceResolver();
     }
 
     /**
@@ -26,6 +31,6 @@ class AopExecutor implements AopClient
 
         $reflectionMethod = $this->reflectionUtility->getReflectionMethod($reflectionClass,$method);
 
-        return $this->reflectionUtility->adviceResolverHandle($instance,$reflectionMethod,$args);
+        return $this->adviceResolver->adviceResolverHandle($instance,$reflectionMethod,$args);
     }
 }

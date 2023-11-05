@@ -19,8 +19,8 @@
         "muyomu/http": "2.1.17",
         "muyomu/log4p": "1.1.6",
         "muyomu/router": "2.0.9",
-        "muyomu/inject": "1.0.5",
+        "muyomu/inject": "1.0.6",
         "muyomu/config": "v1.1.6",
-        "muyomu/aop": "1.1.0"
+        "muyomu/aop": "1.1.1"
     }
 }

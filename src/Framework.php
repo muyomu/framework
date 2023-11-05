@@ -13,6 +13,8 @@ use muyomu\framework\system\System;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\log4p\Log4p;
+use ReflectionClass;
+use ReflectionException;
 
 class Framework
 {
@@ -99,12 +101,17 @@ class Framework
      * @param FilterExecutor $filterChain
      * @param array $userFilters
      * @return void
+     * @throws ReflectionException
      */
     public function loadUserFilters(FilterExecutor $filterChain, array $userFilters):void{
 
-        foreach ($userFilters as $filter){
+        foreach ($userFilters as $filter => $config){
 
-            if ($filter instanceof GenericFilter){
+            $reflectionClass = new ReflectionClass($filter);
+
+            $reflectionInstance = $reflectionClass->newInstanceArgs($config);
+
+            if ($filter instanceof $reflectionInstance){
 
                 $filterChain->addFilter($filter);
             }

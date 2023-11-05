@@ -3,7 +3,7 @@
 namespace muyomu\executor\utility;
 
 use Exception;
-use muyomu\aop\FrameWorkClient;
+use muyomu\aop\FrameworkExecutor;
 use muyomu\executor\client\ExecutorHelper;
 use muyomu\executor\exception\ServerException;
 use muyomu\http\Request;
@@ -15,13 +15,13 @@ use ReflectionMethod;
 
 class Utility implements ExecutorHelper
 {
-    private FrameWorkClient $frameWorkClient;
+    private FrameworkExecutor $frameWorkClient;
 
     private Log4p $log4p;
 
     public function __construct()
     {
-        $this->frameWorkClient = new FrameWorkClient();
+        $this->frameWorkClient = new FrameworkExecutor();
 
         $this->log4p = new Log4p();
     }
@@ -75,7 +75,7 @@ class Utility implements ExecutorHelper
     /**
      * @throws ServerException
      */
-    public function getControllerHandle(Response $response, ReflectionClass $reflectionClass, string $handle): ReflectionMethod
+    public function getControllerHandle(ReflectionClass $reflectionClass, string $handle): ReflectionMethod
     {
         try {
             $method = $reflectionClass->getMethod($handle);
@@ -89,7 +89,7 @@ class Utility implements ExecutorHelper
     /**
      * @throws ServerException
      */
-    public function handleExecutor(Response $response, mixed $instance, ReflectionMethod $method, array $argv): mixed
+    public function handleExecutor(mixed $instance, ReflectionMethod $method, array $argv): mixed
     {
         try {
             $returnData = $this->frameWorkClient->aopExecutor($instance,$method,$argv);

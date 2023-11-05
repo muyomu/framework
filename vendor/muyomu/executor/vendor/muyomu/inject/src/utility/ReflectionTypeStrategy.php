@@ -59,10 +59,11 @@ class ReflectionTypeStrategy implements InstanceClient
     /**
      * @throws ReflectionException
      */
-    public function fillProperty(string $className, ReflectionProperty $reflectionProperty, object $instance): void
+    public function fillProperty(string $className, object $propertyInstance, ReflectionProperty $reflectionProperty, object $instance): void
     {
-        $object = $this->getInstanceWithNoInstance($className);
-        $reflectionProperty->setValue($instance,$object);
+        $object = $this->getInstanceWithInstance($className, $propertyInstance);
+
+        $reflectionProperty->setValue($instance, $object);
     }
 
     /**
@@ -86,18 +87,26 @@ class ReflectionTypeStrategy implements InstanceClient
                 if (!in_array($type, array("string", "int", "bool", "float"))) {
 
                     foreach ($attributes as $attribute) {
+
                         $attrName = $attribute->getName();
+
                         if ($attrName == AutoWired::class) {
+
                             $value = $attribute->newInstance()->getValue();
-                            $this->fillProperty($value, $property, $reflectionInstance);
+
+                            $this->fillProperty($value::class, $value, $property, $reflectionInstance);
                         }
                     }
                 } else {
 
                     foreach ($attributes as $attribute) {
+
                         $attrName = $attribute->getName();
+
                         if ($attrName == Value::class) {
+
                             $value = $attribute->newInstance()->getValue();
+
                             $property->setValue($reflectionInstance, $value);
                         }
                     }

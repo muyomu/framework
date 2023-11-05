@@ -4,5 +4,5 @@ namespace muyomu\aop\advice;
 
 interface BeforeCatchAdvice
 {
-    public function beforeCatchAdvice():void;
+    public function beforeCatchAdvice(array $config):void;
 }

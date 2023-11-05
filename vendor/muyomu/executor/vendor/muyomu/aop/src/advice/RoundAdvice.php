@@ -4,5 +4,5 @@ namespace muyomu\aop\advice;
 
 interface RoundAdvice
 {
-    public function roundAdvice():void;
+    public function roundAdvice(array $config):void;
 }
