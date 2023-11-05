@@ -41,6 +41,7 @@ class Framework
      * @return void
      * @throws ServerException|exception\RequestMethodNotMatchRoutException
      * @throws RequestMethodNotMatchRoutException
+     * @throws ReflectionException
      */
     public static function main():void{
 
@@ -111,9 +112,9 @@ class Framework
 
             $reflectionInstance = $reflectionClass->newInstanceArgs($config);
 
-            if ($filter instanceof $reflectionInstance){
+            if ($reflectionInstance instanceof GenericFilter){
 
-                $filterChain->addFilter($filter);
+                $filterChain->addFilter($reflectionInstance);
             }
         }
     }
