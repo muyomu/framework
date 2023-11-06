@@ -7,7 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'muyomu\\router\\' => array($vendorDir . '/muyomu/router/src'),
-    'muyomu\\punit\\' => array($vendorDir . '/muyomu/punit/src'),
     'muyomu\\log4p\\' => array($vendorDir . '/muyomu/log4p/src'),
     'muyomu\\inject\\' => array($vendorDir . '/muyomu/inject/src'),
     'muyomu\\http\\' => array($vendorDir . '/muyomu/http/src'),
@@ -15,7 +14,6 @@ return array(
     'muyomu\\filter\\' => array($vendorDir . '/muyomu/filter/src'),
     'muyomu\\executor\\' => array($vendorDir . '/muyomu/executor/src'),
     'muyomu\\database\\' => array($vendorDir . '/muyomu/database/src'),
-    'muyomu\\data\\' => array($vendorDir . '/muyomu/data/src'),
     'muyomu\\config\\' => array($vendorDir . '/muyomu/config/src'),
     'muyomu\\aop\\' => array($vendorDir . '/muyomu/aop/src'),
 );

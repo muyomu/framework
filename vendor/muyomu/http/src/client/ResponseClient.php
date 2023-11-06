@@ -19,4 +19,6 @@ interface ResponseClient
     public function doResourceResponse(string $fileName):void;
 
     public function doViewResponse(string $fileName):void;
+
+    public function doFormatResponse(FormatClient $format, int $code):void;
 }

@@ -3,6 +3,7 @@
 namespace muyomu\http;
 
 use Exception;
+use muyomu\http\client\FormatClient;
 use muyomu\http\client\HttpClient;
 use muyomu\http\client\ResponseClient;
 use muyomu\http\config\DefaultHttpConfig;
@@ -363,10 +364,10 @@ class Response implements ResponseClient, HttpClient
      * @param int $code
      * @return void
      */
-    public function doExceptionResponse(Exception $exception, int $code): void
+    public function doExceptionResponse(Exception $exception, int $code, int $httpCode = 200): void
     {
         //设置状态码
-        http_response_code($code);
+        http_response_code($httpCode);
 
         //设置通用响应头
         $this->headerUtility->addAllHeaders($this->defaultHttpConfig->getOptions("headers"));
@@ -375,7 +376,7 @@ class Response implements ResponseClient, HttpClient
         $this->setHeader("Content-Type","text/json:charset=utf-8");
 
         //数据格式
-        $format = new ExceptionFormat("Exception","String",$exception->getMessage());
+        $format = new ExceptionFormat($code,"Exception","String",$exception->getMessage());
 
         //返回数据
         die(json_encode($format->format(),JSON_UNESCAPED_UNICODE));
@@ -416,5 +417,20 @@ class Response implements ResponseClient, HttpClient
 
             throw new FileNotFoundException();
         }
+    }
+
+    public function doFormatResponse(FormatClient $format, int $code, int $httpCode = 200): void
+    {
+        //设置状态码
+        http_response_code($httpCode);
+
+        //设置通用响应头
+        $this->headerUtility->addAllHeaders($this->defaultHttpConfig->getOptions("headers"));
+
+        //设置专用响应头
+        $this->setHeader("Content-Type","text/json:charset=utf-8");
+
+        //返回数据
+        die(json_encode($format->format(),JSON_UNESCAPED_UNICODE));
     }
 }

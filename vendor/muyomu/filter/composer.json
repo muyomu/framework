@@ -16,6 +16,6 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "muyomu/http": "2.1.17"
+        "muyomu/http": "2.1.18"
     }
 }
