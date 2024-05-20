@@ -1,0 +1,18 @@
+{
+    "name": "muyomu/log4p",
+    "description": "The log framework for muyomu web framework",
+    "type": "library",
+    "license": "apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "muyomu\\log4p\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mutian",
+            "email": "mutian-xiangcai@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

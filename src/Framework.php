@@ -2,7 +2,6 @@
 
 namespace muyomu\framework;
 
-use muyomu\executor\exception\ServerException;
 use muyomu\filter\client\GenericFilter;
 use muyomu\filter\FilterExecutor;
 use muyomu\framework\config\DefaultApplicationConfig;
@@ -39,7 +38,6 @@ class Framework
 
     /**
      * @return void
-     * @throws ServerException|exception\RequestMethodNotMatchRoutException
      * @throws RequestMethodNotMatchRoutException
      * @throws ReflectionException
      */

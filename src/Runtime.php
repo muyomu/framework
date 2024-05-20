@@ -3,7 +3,6 @@
 namespace muyomu\framework;
 
 use Exception;
-use muyomu\executor\exception\ServerException;
 use muyomu\executor\WebExecutor;
 use muyomu\framework\config\DefaultApplicationConfig;
 use muyomu\framework\exception\RequestMethodNotMatchRoutException;
@@ -74,7 +73,7 @@ class Runtime implements Serve
     }
 
     /**
-     * @throws ReflectionException|ServerException
+     * @throws ReflectionException
      */
     private function do_web_executor(Request $request, Response $response):void{
         $controller = $request->getDbClient()->select("rule")->getData()->getController();
@@ -96,7 +95,6 @@ class Runtime implements Serve
     }
 
     /**
-     * @throws ServerException
      * @throws RequestMethodNotMatchRoutException
      */
     public function run(Request $request, Response $response):void{
@@ -110,8 +108,6 @@ class Runtime implements Serve
         }catch (Exception $exception){
 
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-
-            throw new ServerException();
         }
 
         //检查请求方法是否匹配
@@ -129,7 +125,6 @@ class Runtime implements Serve
             }
         }catch (Exception $exception){
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            throw new ServerException();
         }
 
         /*
@@ -141,8 +136,6 @@ class Runtime implements Serve
         }catch (Exception $exception){
 
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-
-            throw new ServerException();
         }
 
         /*
@@ -154,8 +147,6 @@ class Runtime implements Serve
         }catch (Exception $exception){
 
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-
-            throw new ServerException();
         }
     }
 }

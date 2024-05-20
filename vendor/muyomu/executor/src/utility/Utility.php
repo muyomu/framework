@@ -26,8 +26,11 @@ class Utility implements ExecutorHelper
         $this->log4p = new Log4p();
     }
 
+
     /**
-     * @throws ServerException
+     * @param Response $response
+     * @param string $class
+     * @return ReflectionClass
      */
     public function getReflectionClass(Response $response, string $class): ReflectionClass
     {
@@ -35,13 +38,14 @@ class Utility implements ExecutorHelper
             $class = new ReflectionClass($class);
         }catch (ReflectionException $exception){
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            throw new ServerException();
         }
         return $class;
     }
 
     /**
-     * @throws ServerException
+     * @param Response $response
+     * @param ReflectionClass $reflectionClass
+     * @return mixed
      */
     public function getControllerInstance(Response $response, ReflectionClass $reflectionClass): mixed
     {
@@ -49,13 +53,16 @@ class Utility implements ExecutorHelper
             $instance = $reflectionClass->newInstance();
         }catch (ReflectionException $exception){
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            throw new ServerException();
         }
         return $instance;
     }
 
     /**
-     * @throws ServerException
+     * @param Request $request
+     * @param Response $response
+     * @param ReflectionClass $reflectionClass
+     * @param mixed $instance
+     * @return void
      */
     public function injectRR(Request $request, Response $response, ReflectionClass $reflectionClass, mixed $instance): void
     {
@@ -68,12 +75,13 @@ class Utility implements ExecutorHelper
         }
         catch (ReflectionException $exception) {
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            throw new ServerException();
         }
     }
 
     /**
-     * @throws ServerException
+     * @param ReflectionClass $reflectionClass
+     * @param string $handle
+     * @return ReflectionMethod
      */
     public function getControllerHandle(ReflectionClass $reflectionClass, string $handle): ReflectionMethod
     {
@@ -81,13 +89,15 @@ class Utility implements ExecutorHelper
             $method = $reflectionClass->getMethod($handle);
         }catch (ReflectionException $exception) {
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            throw new ServerException();
         }
         return $method;
     }
 
     /**
-     * @throws ServerException
+     * @param mixed $instance
+     * @param ReflectionMethod $method
+     * @param array $argv
+     * @return mixed
      */
     public function handleExecutor(mixed $instance, ReflectionMethod $method, array $argv): mixed
     {
@@ -95,7 +105,6 @@ class Utility implements ExecutorHelper
             $returnData = $this->frameWorkClient->aopExecutor($instance,$method,$argv);
         }catch (Exception $exception) {
             $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
-            throw new ServerException();
         }
         return $returnData;
     }

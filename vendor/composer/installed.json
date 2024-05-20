@@ -57,7 +57,7 @@
             },
             "time": "2023-11-04T14:55:25+00:00",
             "type": "library",
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "muyomu\\config\\": "src/"
@@ -122,17 +122,17 @@
         },
         {
             "name": "muyomu/executor",
-            "version": "v2.2.19",
-            "version_normalized": "2.2.19.0",
+            "version": "v2.2.21",
+            "version_normalized": "2.2.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muyomu/executor.git",
-                "reference": "bfbdd5e6a4d07c01eb8a3fd081b8b65e93619420"
+                "reference": "117aff69fdbfe53a3d5b72f56640a5542369b53b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/executor/zipball/bfbdd5e6a4d07c01eb8a3fd081b8b65e93619420",
-                "reference": "bfbdd5e6a4d07c01eb8a3fd081b8b65e93619420",
+                "url": "https://api.github.com/repos/muyomu/executor/zipball/117aff69fdbfe53a3d5b72f56640a5542369b53b",
+                "reference": "117aff69fdbfe53a3d5b72f56640a5542369b53b",
                 "shasum": ""
             },
             "require": {
@@ -143,7 +143,7 @@
                 "muyomu/log4p": "1.1.6",
                 "muyomu/router": "2.0.9"
             },
-            "time": "2023-11-06T12:55:32+00:00",
+            "time": "2024-05-20T05:20:01+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -164,7 +164,7 @@
             "description": "The executor of muyomu framework",
             "support": {
                 "issues": "https://github.com/muyomu/executor/issues",
-                "source": "https://github.com/muyomu/executor/tree/v2.2.19"
+                "source": "https://github.com/muyomu/executor/tree/v2.2.21"
             },
             "install-path": "../muyomu/executor"
         },
@@ -276,7 +276,7 @@
             },
             "time": "2023-11-05T12:17:56+00:00",
             "type": "library",
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "muyomu\\inject\\": "src/"

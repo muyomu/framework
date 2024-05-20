@@ -46,7 +46,6 @@ class WebExecutor implements ExecutorClient
      * @param string $handle
      * @return void
      * @throws ReflectionException
-     * @throws ServerException
      */
     public function webExecutor(Request $request, Response $response, string $controllerClassName, string $handle): void
     {
@@ -69,6 +68,7 @@ class WebExecutor implements ExecutorClient
 
         //执行控制器处理器
         try {
+
             $returnData = $this->utility->handleExecutor($instance, $method, $this->paraResolve->resolvePara($method));
 
             if ($returnData instanceof FormatClient){
@@ -94,8 +94,6 @@ class WebExecutor implements ExecutorClient
         } catch (exception\ParaMissException|ServerException|exception\UnKnownPara $e) {
 
             $this->log4p->muix_log_error(__CLASS__,__METHOD__,__LINE__,$e->getMessage());
-
-            throw new ServerException();
         }
     }
 }

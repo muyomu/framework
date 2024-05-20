@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'muyomu/executor',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => '2c086152a89ca01e4ab398ef2363d8c70276a3b0',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => null,
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -38,9 +38,9 @@
             'dev_requirement' => false,
         ),
         'muyomu/executor' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '2c086152a89ca01e4ab398ef2363d8c70276a3b0',
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => null,
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
