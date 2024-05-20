@@ -8,7 +8,7 @@ use muyomu\config\GenericConfig;
 #[Configuration(DefaultApplicationConfig::class)]
 class DefaultApplicationConfig extends GenericConfig
 {
-    protected string $configClass = (string)self::class;
+    protected string $configClass = self::class;
 
     protected array $configData = [
         "organization"=>true,
