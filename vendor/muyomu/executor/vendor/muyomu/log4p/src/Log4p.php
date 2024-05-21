@@ -7,13 +7,6 @@ use muyomu\log4p\utility\LogUtility;
 
 class Log4p implements LogClient
 {
-    private LogUtility $utility;
-
-    public function __construct()
-    {
-        $this->utility = new LogUtility();
-    }
-
     /**
      * @param string $className
      * @param string $method
@@ -21,13 +14,19 @@ class Log4p implements LogClient
      * @param string $message
      * @return void
      */
-    public function muix_log_error(string $className,string $method,int $line,string $message):void{
-        $date = $this->utility->getData();
+    public static function framework_log_error(string $className,string $method,int $line,string $message):void{
+
+        $date = LogUtility::getData();
+
         $log = fopen($GLOBALS["super_config"]["logDir"].date("Ymd").".log","a+");
+
         if (!$log) {
+
             $log = fopen("../log/" . date("Ymd") . ".log", "a+");
         }
+
         fputs($log,"[$date] [ERROR]:    ".$className.":".$method.":  "."<$line>". "   $message"."\r\n");
+
         fclose($log);
     }
 
@@ -38,13 +37,19 @@ class Log4p implements LogClient
      * @param string $message
      * @return void
      */
-    public function muix_log_warn(string $className, string $method,int $line, string $message):void{
-        $date = $this->utility->getData();
+    public static function framework_log_warn(string $className, string $method,int $line, string $message):void{
+
+        $date = LogUtility::getData();
+
         $log = fopen($GLOBALS["super_config"]["logDir"].date("Ymd").".log","a+");
+
         if (!$log) {
+
             $log = fopen("../log/" . date("Ymd") . ".log", "a+");
         }
+
         fputs($log,"[$date] [WARN]:    ".$className.":".$method.": "."<$line>". "   $message"."\r\n");
+
         fclose($log);
     }
 
@@ -53,29 +58,19 @@ class Log4p implements LogClient
      * @param mixed $message
      * @return void
      */
-    public function muix_log_info(string $item, mixed $message):void{
-        $date = $this->utility->getData();
-        $log = fopen($GLOBALS["super_config"]["logDir"].date("Ymd").".log","a+");
-        if (!$log) {
-            $log = fopen("../log/" . date("Ymd") . ".log", "a+");
-        }
-        fputs($log,"[$date] [INFO]:    ".$item." : ".$message."\r\n");
-        fclose($log);
-    }
+    public static function framework_log_info(string $item, mixed $message):void{
 
-    /**
-     * @param string $varName
-     * @param mixed $value
-     * @return void
-     */
-    public function muix_log_debug(string $varName, mixed $value): void
-    {
-        $date = $this->utility->getData();
+        $date = LogUtility::getData();
+
         $log = fopen($GLOBALS["super_config"]["logDir"].date("Ymd").".log","a+");
+
         if (!$log) {
+
             $log = fopen("../log/" . date("Ymd") . ".log", "a+");
         }
-        fputs($log,"[$date] [DEBUG]:    ".$varName." : ".$value);
+
+        fputs($log,"[$date] [INFO]:    ".$item." : ".$message."\r\n");
+
         fclose($log);
     }
 }

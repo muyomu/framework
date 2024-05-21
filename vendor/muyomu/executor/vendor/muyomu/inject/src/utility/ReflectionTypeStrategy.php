@@ -27,7 +27,9 @@ class ReflectionTypeStrategy implements InstanceClient
     public function getInstance(mixed $classOrInstance): object
     {
         if ($this->status == "string")
+
             return $this->getInstanceWithNoInstance($classOrInstance);
+
         else
             return $this->getInstanceWithInstance($classOrInstance::class,$classOrInstance);
     }
@@ -72,7 +74,7 @@ class ReflectionTypeStrategy implements InstanceClient
      * @return object
      * @throws ReflectionException
      */
-    public function extracted(ReflectionClass $reflectionClass, object $reflectionInstance): object
+    private function extracted(ReflectionClass $reflectionClass, object $reflectionInstance): object
     {
         $properties = $reflectionClass->getProperties();
 
@@ -113,6 +115,7 @@ class ReflectionTypeStrategy implements InstanceClient
                 }
             }
         }
+
         return $reflectionInstance;
     }
 }

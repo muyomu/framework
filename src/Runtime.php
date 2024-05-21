@@ -18,15 +18,12 @@ class Runtime implements Serve
 {
     private WebExecutor $webExecutor;
 
-    private Log4p $log4p;
 
     private DefaultApplicationConfig $defaultApplicationConfig;
 
-    public function __construct(Log4p $log4p){
+    public function __construct(){
 
         $this->webExecutor = new WebExecutor();
-
-        $this->log4p = $log4p;
 
         $this->defaultApplicationConfig = new DefaultApplicationConfig();
     }
@@ -37,16 +34,16 @@ class Runtime implements Serve
      * @return void
      */
     private function do_dynamic_parameter_resolve(Request $request, Response $response):void{
+
         $request->getDbClient()->insert("rule",RouterClient::getRule($request->getURL()));
     }
 
 
     /**
      * @param Request $request
-     * @param Response $response
      * @return void
      */
-    private function do_resolve_controller(Request $request, Response $response):void{
+    private function do_resolve_controller(Request $request):void{
         $rule = $request->getDbClient()->select("rule")->getData();
         $rawController = $rule->getController();
         $rawController = explode(".",$rawController);
@@ -107,7 +104,7 @@ class Runtime implements Serve
 
         }catch (Exception $exception){
 
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+            Log4p::framework_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
         }
 
         //检查请求方法是否匹配
@@ -121,10 +118,10 @@ class Runtime implements Serve
          */
         try {
             if ($this->defaultApplicationConfig->getOptions("organization")){
-                $this->do_resolve_controller($request,$response);
+                $this->do_resolve_controller($request);
             }
         }catch (Exception $exception){
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+            Log4p::framework_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
         }
 
         /*
@@ -135,7 +132,7 @@ class Runtime implements Serve
 
         }catch (Exception $exception){
 
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+            Log4p::framework_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
         }
 
         /*
@@ -146,7 +143,7 @@ class Runtime implements Serve
 
         }catch (Exception $exception){
 
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+            Log4p::framework_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
         }
     }
 }

@@ -11,6 +11,7 @@ class DefaultExecutorConfig extends GenericConfig
     protected string $configClass = self::class;
 
     protected array $configData = [
-        "autoInject"=>false
+        "autoInject"=>false,
+        "view"=>"false"
     ];
 }

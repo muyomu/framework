@@ -2,7 +2,6 @@
 
 namespace muyomu\inject\client;
 
-use ReflectionClass;
 use ReflectionProperty;
 
 interface InstanceClient

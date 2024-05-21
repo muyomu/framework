@@ -29,7 +29,9 @@ class AutoWired
      * @throws ReflectionException
      */
     public function getValue():object{
+
         $reflectionClass = new ReflectionClass($this->className);
+
         return $reflectionClass->newInstanceArgs($this->config);
     }
 }

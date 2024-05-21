@@ -16,6 +16,8 @@ class ProxyExecutor implements ProxyClient
     }
 
     /**
+     * @param mixed $classOrInstance
+     * @return object
      * @throws ReflectionException
      */
     public function getProxyInstance(mixed $classOrInstance): object

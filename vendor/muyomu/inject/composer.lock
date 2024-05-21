@@ -4,46 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "88d00e071e22489c93b2330e3758862f",
-    "packages": [
-        {
-            "name": "muyomu/log4p",
-            "version": "v1.1.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/muyomu/logger.git",
-                "reference": "ce5e937043c5d3f964dabd8406838e9770a134e3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/muyomu/logger/zipball/ce5e937043c5d3f964dabd8406838e9770a134e3",
-                "reference": "ce5e937043c5d3f964dabd8406838e9770a134e3",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "muyomu\\log4p\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "mutian",
-                    "email": "mutian-xiangcai@outlook.com"
-                }
-            ],
-            "description": "The log framework for muyomu web framework",
-            "support": {
-                "issues": "https://github.com/muyomu/logger/issues",
-                "source": "https://github.com/muyomu/logger/tree/v1.1.6"
-            },
-            "time": "2023-11-04T14:49:39+00:00"
-        }
-    ],
+    "content-hash": "a111315f03782ab8476984981f497eca",
+    "packages": [],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",

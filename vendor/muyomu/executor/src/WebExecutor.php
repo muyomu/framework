@@ -4,7 +4,6 @@ namespace muyomu\executor;
 
 use muyomu\executor\client\ExecutorClient;
 use muyomu\executor\config\DefaultExecutorConfig;
-use muyomu\executor\exception\ServerException;
 use muyomu\executor\utility\ParaResolve;
 use muyomu\executor\utility\Utility;
 use muyomu\http\client\FormatClient;
@@ -24,8 +23,6 @@ class WebExecutor implements ExecutorClient
 
     private ParaResolve $paraResolve;
 
-    private Log4p $log4p;
-
     public function __construct(){
 
         $this->utility = new Utility();
@@ -35,8 +32,6 @@ class WebExecutor implements ExecutorClient
         $this->proxy = new ProxyExecutor();
 
         $this->paraResolve = new ParaResolve();
-
-        $this->log4p = new Log4p();
     }
 
     /**
@@ -82,6 +77,7 @@ class WebExecutor implements ExecutorClient
                 if (gettype($returnData) == "object"){
 
                     die(serialize($returnData));
+
                 }elseif (gettype($returnData) == "array"){
 
                     die(json_encode($returnData,JSON_UNESCAPED_UNICODE));
@@ -91,9 +87,9 @@ class WebExecutor implements ExecutorClient
                 }
             }
 
-        } catch (exception\ParaMissException|ServerException|exception\UnKnownPara $e) {
+        } catch (exception\ParaMissException|exception\UnKnownPara $e) {
 
-            $this->log4p->muix_log_error(__CLASS__,__METHOD__,__LINE__,$e->getMessage());
+            Log4p::framework_log_error(__CLASS__,__METHOD__,__LINE__,$e->getMessage());
         }
     }
 }

@@ -17,9 +17,9 @@
     ],
     "require": {
         "muyomu/http": "2.1.18",
-        "muyomu/log4p": "1.1.6",
+        "muyomu/log4p": "1.1.7",
         "muyomu/router": "2.0.9",
-        "muyomu/inject": "1.0.6",
+        "muyomu/inject": "1.0.7",
         "muyomu/config": "v1.1.6",
         "muyomu/aop": "1.1.1"
     }

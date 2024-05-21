@@ -5,7 +5,6 @@ namespace muyomu\executor\utility;
 use Exception;
 use muyomu\aop\FrameworkExecutor;
 use muyomu\executor\client\ExecutorHelper;
-use muyomu\executor\exception\ServerException;
 use muyomu\http\Request;
 use muyomu\http\Response;
 use muyomu\log4p\Log4p;
@@ -17,13 +16,9 @@ class Utility implements ExecutorHelper
 {
     private FrameworkExecutor $frameWorkClient;
 
-    private Log4p $log4p;
-
     public function __construct()
     {
         $this->frameWorkClient = new FrameworkExecutor();
-
-        $this->log4p = new Log4p();
     }
 
 
@@ -37,7 +32,7 @@ class Utility implements ExecutorHelper
         try {
             $class = new ReflectionClass($class);
         }catch (ReflectionException $exception){
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+             Log4p::framework_log_error(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
         }
         return $class;
     }
@@ -52,7 +47,7 @@ class Utility implements ExecutorHelper
         try {
             $instance = $reflectionClass->newInstance();
         }catch (ReflectionException $exception){
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+            Log4p::framework_log_error(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
         }
         return $instance;
     }
@@ -74,7 +69,7 @@ class Utility implements ExecutorHelper
             $response_property->setValue($instance,$response);
         }
         catch (ReflectionException $exception) {
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+            Log4p::framework_log_error(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
         }
     }
 
@@ -88,7 +83,7 @@ class Utility implements ExecutorHelper
         try {
             $method = $reflectionClass->getMethod($handle);
         }catch (ReflectionException $exception) {
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+            Log4p::framework_log_error(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
         }
         return $method;
     }
@@ -104,7 +99,7 @@ class Utility implements ExecutorHelper
         try {
             $returnData = $this->frameWorkClient->aopExecutor($instance,$method,$argv);
         }catch (Exception $exception) {
-            $this->log4p->muix_log_warn(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
+            Log4p::framework_log_error(__CLASS__,__METHOD__,__LINE__,$exception->getMessage());
         }
         return $returnData;
     }

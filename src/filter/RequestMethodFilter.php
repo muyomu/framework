@@ -11,13 +11,6 @@ use muyomu\router\attribute\RuleMethod;
 
 class RequestMethodFilter implements GenericFilter
 {
-    private Log4p $log4p;
-
-    public function __construct()
-    {
-        $this->log4p = new Log4p();
-    }
-
     /**
      * @param Request $request
      * @param Response $response
@@ -27,7 +20,7 @@ class RequestMethodFilter implements GenericFilter
     {
         $method = $request->getRequestMethod();
         if (!($method == RuleMethod::RULE_GET->value || $method == RuleMethod::RULE_POST->value)){
-            $this->log4p->muix_log_error(__CLASS__,__METHOD__,__LINE__,"The request protocol version is not supported");
+            Log4p::framework_log_error(__CLASS__,__METHOD__,__LINE__,"The request protocol version is not supported");
             $response->doExceptionResponse(new MethodNotMatchException(),405);
         }
     }

@@ -16,12 +16,12 @@
         }
     ],
     "require": {
-        "muyomu/log4p": "1.1.6",
+        "muyomu/log4p": "1.1.7",
         "muyomu/filter": "1.1.2",
         "muyomu/config": "1.1.6",
-        "muyomu/executor": "2.2.21",
+        "muyomu/executor": "2.2.22",
         "muyomu/http": "2.1.18",
         "muyomu/database": "2.0.2",
-        "muyomu/inject": "1.0.6"
+        "muyomu/inject": "1.0.7"
     }
 }

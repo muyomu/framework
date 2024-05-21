@@ -23,7 +23,6 @@ class Framework
 
     private FilterExecutor $filterExecutor;
 
-    private Log4p $logger;
 
     public function __construct()
     {
@@ -33,7 +32,6 @@ class Framework
 
         $this->filterExecutor = new FilterExecutor();
 
-        $this->logger = new Log4p();
     }
 
     /**
@@ -50,7 +48,7 @@ class Framework
         System::system($framework->getResponse());
 
         //application
-        $application = new Runtime($framework->logger);
+        $application = new Runtime();
 
         //config
         $config = new DefaultApplicationConfig();

@@ -46,7 +46,7 @@ class System
             $k = ini_set($key,$iniArray[$key]);
 
             if (!$k){
-                $logger->muix_log_info("ini set","failed to set {$key} env");
+                Log4p::framework_log_info("ini set","failed to set {$key} env");
             }
         }
 
@@ -59,7 +59,7 @@ class System
 
             if (!$result){
 
-                $logger->muix_log_info("ext load","{$item} should be set to load but not be loaded!");
+                Log4p::framework_log_info("ext load","{$item} should be set to load but not be loaded!");
 
                 $response->doExceptionResponse(new EnvConfigException(),500);
             }
